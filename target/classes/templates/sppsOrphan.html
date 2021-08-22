@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<title>Сироты</title>
+    <head th:replace="commons::head"></head>
+    <body>
+        <div th:replace="commons::navbar"></div>
+        <div th:replace="commons::navSpps"></div>
+
+        <div class="wrapper" style="padding-top: 0px;">
+            <div class="container">
+            
+                <div class="row">
+                    <div class="col-md-8" style="padding-right: 0px;">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item nav-link">
+                                <a class="nav-link active" id="nav-list-tab" data-toggle="tab" href="#nav-list" role="tab" aria-selected="true" style="font-size: 100%; color:black;">Данные</a>
+                            </li>
+                            <li class="nav-item nav-link">
+                                <a class="nav-link" id="nav-info-tab" data-toggle="tab" href="#nav-info" role="tab" aria-selected="false" style="font-size: 100%; color:black;">Информация</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4" style="padding-top: 1rem; text-align: right;">
+                       
+                    </div>
+
+                </div>
+                <div class = "tab-content" >
+                    <div class="tab-pane fade show active" id="nav-list" role="tabpanel" aria-labelledby="nav-list-tab">
+                        <!-- данные -->
+                            <div class="row">
+                                <div class="col-md-7" style="padding-right: 0px;">
+                                    <form action="/sppsOrphanSearch" accept-charset="UTF-8" method="POST">
+                                        <div class="input-group" style="border-top: 10px solid transparent;">
+                                            <select class="custom-select" name="form" id="inputGroupSelect01">
+                                            <th:block th:if="${otdel != null && otdel!= 'Все'}">
+                                            <option selected th:value="${otdel}"> <th:block th:text="${otdel}"/> </option>
+                                            </th:block>
+                                                <option th:if="${(otdel == null) || (otdel != null && (otdel == 'Все' || otdel != 'Все') )}" value="Все"> Все отделения</option>
+                                                <option th:if="${otdel != 'Профессионально-технологическое'}" value="Профессионально-технологическое"> Профессионально-технологическое </option>
+                                                <option th:if="${otdel != 'Технико-технологическое'}" value="Технико-технологическое"> Технико-технологическое </option>
+                                                <option th:if="${otdel != 'Архитектурно-строительное'}"  value="Архитектурно-строительное"> Архитектурно-строительное </option>
+                                                <option th:if="${otdel != 'Промышленно-технологическое'}" value="Промышленно-технологическое"> Промышленно-технологическое </option>
+                                            </select>
+                                            <div class="input-group-append">
+                                                <button type="submit" class="btn btn-success">Найти</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-md-5" style="align-self: flex-end;">
+                                    <form action="/downloadDocxOrphanByOtdelSelect" accept-charset="UTF-8" method="POST">
+                                        <input type="hidden" name="ot" class="form-control" th:value=${ot} >
+                                        <button type="submit" class="btn btn-success" style="width: 100%;">Скачать св. об уч. сиротской категории по отделениям</button>
+                                    </form>
+                                </div>
+                             </div>
+                                    
+                                    <h5 th:if="${otdel != null && otdel!= 'Все'}" style="border-top: 10px solid transparent; text-align: center;"><th:block th:text="${otdel}"/></h5>
+                            <div class="row">
+                                <div class="col-md-7" style="padding-right: 0px;">
+                                    <ul class="nav nav-tabs">
+                                        <li class="nav-item nav-link">
+                                            <a class="nav-link active" id="nav-registered-tab" data-toggle="tab" href="#nav-registered" role="tab" aria-selected="true" style="font-size: 100%; color:black;">Стоят на учете</a>
+                                        </li>
+                                        <li class="nav-item nav-link">
+                                        <!-- 18.02 коммент -->
+                                            <!-- a class="nav-link" id="nav-not-registered-tab" data-toggle="tab" href="#nav-not-registere" role="tab" aria-selected="false" style="font-size: 100%; color:black;">Постинтернат</a-->
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-5" style="padding-top: 1rem; text-align: right;">
+                                    <form action="/downloadDocxOrphanSelect" accept-charset="UTF-8" method="POST">
+                                    <input type="hidden" name="ot" class="form-control" th:value=${ot} >
+                                        <button type="submit" class="btn btn-success" style = "width: 100%">Скачать св. об уч. сиротской категории</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class = "tab-content" >
+                                <div class="tab-pane fade show active" id="nav-registered" role="tabpanel" aria-labelledby="nav-registered-tab">
+                                    <!-- список -->
+                                    <ul class="list-group list-group-flush" style="border-top: 10px solid transparent; border-bottom: 20px solid transparent;">
+                                        <li th:each="student: ${students}" class="list-group-item">
+                                            <a th:href="@{/person?id={pid}(pid=${student.id})}"><th:block th:text="${student.surname}"/>
+                                            <th:block th:text="${student.name}"/>
+                                            <th:block th:text="${student.patronymic}"/></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tab-pane fade show" id="nav-not-registere" role="tabpanel" aria-labelledby="nav-not-registered-tab">
+                                    <!-- список -->
+                                    <ul class="list-group list-group-flush" style="border-top: 10px solid transparent; border-bottom: 20px solid transparent;">
+                                        <li th:each="person: ${persons}" class="list-group-item">
+                                            <a th:href="@{/person?id={pid}(pid=${person.id})}"><th:block th:text="${person.surname}"/>
+                                            <th:block th:text="${person.name}"/>
+                                            <th:block th:text="${person.patronymic}"/></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        <!-- данные -->    
+                    </div>
+                    <div class="tab-pane fade show" id="nav-info" role="tabpanel" aria-labelledby="nav-info-tab">
+                        <!-- информация -->
+                        <div class="card" style="width: 100%">
+                        <div class="card-header"><h4>Информация</h4></div>
+                        <div class="card-body">
+                            <div class="row row-m-0">
+                                <div class="col-md-10 pad-rl-0">
+                                    <!-- 130 текст -->
+                                    <!-- <pre style="margin-top: 0; margin-bottom: 0rem; font-size: 130%;"><b>Педагог социальный: </b><th:block th:text="${info.fio}"/></pre>
+                                    <pre style="margin-top: 0; margin-bottom: 0rem; font-size: 130%;">Рабочий номер: <th:block th:text="${info.phone}"/> Мобильный телефон: <th:block th:text="${info.mobPhone}"/></pre>
+                                    <pre style="margin-top: 0; margin-bottom: 0rem; font-size: 130%;"><b>Кабинет:</b> <th:block th:text="${info.cabinet}"/></pre>-->
+                                    <pre style="margin-top: 0; margin-bottom: 0rem; font-size: 130%;"><b>Общее количество человек на учете:</b> <th:block th:text="${countAll}"/></pre>
+                                     
+                                    <div class="row" style="margin-bottom: 0.25rem;">
+                                    <div class="col-md-3">
+                                    <div class="row">
+                                    <div class="col-md-5" style="padding-right: 0px;padding-top: 0.25rem;">
+                                     <b style="font-size: 110%;">Группа:</b>
+                                     </div>
+                                     <div class="col-md-7" style="padding-left: 0.5rem;padding-right: 0rem;"> 
+                                     <select class="custom-select" id="val1">
+                                        <option th:value="'orphan:ВС:group'">ВС</option>
+                                        <option th:value="'orphan:ит:group'">ит</option>
+                                        <option th:value="'orphan:МС:group'">МС</option>
+                                        <option th:value="'orphan:ПТ:group'">ПТ</option>
+                                        <option th:value="'orphan:ЭФ:group'">ЭФ</option>
+                                    </select>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6" style="padding-top: 0.3rem;">
+                                    <b style="font-size: 110%;">Количество: </b><span id="answer1" th:text="${findByGroup[0].count}" style="font-size: 110%;">---</span>
+                                    </div>
+                                    </div>
+                                    
+                                    
+                                    <div class="row">
+                                    <div class="col-md-1" style="padding-right: 0px;padding-top: 0.25rem;">
+                                     <b style="font-size: 110%;">Отдел:</b>
+                                     </div>
+                                     <div class="col-md-5" style="padding-left: 0.5rem;padding-right: 0rem;"> 
+                                      <select class="custom-select" id="val2" >
+                                            <option th:value="'orphan:Архитектурно-строительное:otdel'">Архитектурно-строительное</option>
+                                            <option th:value="'orphan:Промышленно-технологическое:otdel'">Промышленно-технологическое</option>
+                                            <option th:value="'orphan:Профессионально-технологическое:otdel'">Профессионально-технологическое</option>
+                                            <option th:value="'orphan:Технико-технологическое:otdel'">Технико-технологическое</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6" style="padding-top: 0.3rem;">
+                                    <b style="font-size: 110%;">Количество:</b> <span id="answer2" th:text="${findByOtdel[0].count}" style="font-size: 110%;">---</span>
+                                    </div>
+                                    </div>
+                                  
+                                    <script>
+                                     var selVal1 = document.getElementById('val1')
+                                     selVal1.onchange = function () {
+                                     //alert(selVal.value)
+                                     fetch("http://localhost:8080/searchq2/?value=" + selVal1.value, {
+                                     credentials: 'same-origin',
+                                     method: 'POST',
+                                     headers: {
+                                     'Content-Type': 'application/json',
+                                     'Accept': 'application/json'
+                                     }
+                                     }).then(response => response.json())
+                                     .then(products => {
+                                     console.log("input.value1: " + products);
+                                     for (let i = 0; i < products.length; i++) {
+                                     var ii=products[i];
+                                     document.getElementById('answer1').textContent = ii;
+                                     }
+                                     }).catch(err => {
+                                     console.log("Error Reading data1 " + err);
+                                     });
+                                     }
+                                    </script>
+                                    
+                                    <script>
+                                     var selVal = document.getElementById('val2')
+                                     selVal.onchange = function () {
+                                     //alert(selVal.value)
+                                     fetch("http://localhost:8080/searchq2/?value=" + selVal.value, {
+                                     credentials: 'same-origin',
+                                     method: 'POST',
+                                     headers: {
+                                     'Content-Type': 'application/json',
+                                     'Accept': 'application/json'
+                                     }
+                                     }).then(response => response.json())
+                                     .then(products => {
+                                     console.log("input.value2: " + products);
+                                     for (let i = 0; i < products.length; i++) {
+                                     var ii=products[i];
+                                     document.getElementById('answer2').textContent = ii;
+                                     }
+                                     }).catch(err => {
+                                     console.log("Error Reading data2 " + err);
+                                     });
+                                     }
+                                    </script>
+                                    
+                                    <!-- b>all:</b><th:block th:text="${countAll}"/> 
+                                    <th:block th:if ="${findByGroup != null}">
+                                        <div th:each="group: ${findByGroup}">
+                                            <b>Группа:</b><th:block th:text="${group.type}"/> <b>Количество:</b> <th:block th:text="${group.count}"/>
+                                        </div>
+                                    </th:block>
+                                    
+                                    <th:block th:if ="${findByOtdel != null}">
+                                        <div th:each="otdel: ${findByOtdel}">
+                                            <b>Отдел:</b><th:block th:text="${otdel.type}"/> <b>Количество:</b> <th:block th:text="${otdel.count}"/>
+                                        </div>
+                                    </th:block-->
+                                    
+                                    <!--Временно-->
+                                    
+                                    
+                                </div>
+                                <!--  <div class="col-md-2 pad-rl-0">
+                                    <img alt="Фото" th:src="${'data:image/jpeg;base64,' + photo}" style="width: 100%; height: 267px">
+                                </div>-->
+                            </div>
+                        </div>
+                        </div>
+                        <!-- информация -->
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+    <script type="text/javascript"> $(".livesearch").chosen(); </script>
+
+
+    <script type="text/javascript">
+            $(document).ready(function(){
+                $(".find").click(function(e){
+    
+                	
+                	
+                });
+            });
+    </script>
+</body>
+</html>

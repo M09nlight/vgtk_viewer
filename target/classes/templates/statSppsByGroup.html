@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="commons::head"></head>
+<body>
+    <div th:replace="commons::navbar"></div>
+    <div th:replace="commons::navSpps"></div>
+
+    <div class="wrapper" style="padding-top: 20px;">
+        <div class="container">
+
+                            <div class="card" style="width: 100%">
+                                <div class="card-header"><h4>Статистика СОП, ИПР, ПИРП по отделению и группе</h4></div>
+                                <div class="card-body">
+                                    <div class="row row-m-0">
+                                        <div class="col-md-10 pad-rl-0">
+                                              <pre style="margin-top: 0; margin-bottom: 0rem; font-size: 130%;"><b>Общее количество человек на учете:</b> <th:block th:text="${countAll}"/></pre>
+                                         
+                                    <div class="row" style="margin-bottom: 0.25rem;">
+                                    <div class="col-md-3">
+                                    <div class="row">
+                                    <div class="col-md-5" style="padding-right: 0px;padding-top: 0.25rem;">
+                                     <b style="font-size: 110%;">Группа:</b>
+                                     </div>
+                                     <div class="col-md-7" style="padding-left: 0.5rem;padding-right: 0rem;"> 
+                                    <select class="custom-select" id="val1">
+                                        <option value="spps:ВС:group">ВС</option>
+                                        <option value="spps:ит:group">ит</option>
+                                        <option value="spps:МС:group">МС</option>
+                                        <option value="spps:ПТ:group">ПТ</option>
+                                        <option value="spps:ЭФ:group">ЭФ</option>
+                                    </select>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6" style="padding-top: 0.3rem;">
+                                    <b style="font-size: 110%;">Количество: </b><span id="answer1" th:text="${findByGroup[0].count}" style="font-size: 110%;">---</span>
+                                    </div>
+                                    </div>
+                                        
+                                    <div class="row">
+                                    <div class="col-md-1" style="padding-right: 0px;padding-top: 0.25rem;">
+                                     <b style="font-size: 110%;">Отдел:</b>
+                                     </div>
+                                     <div class="col-md-5" style="padding-left: 0.5rem;padding-right: 0rem;"> 
+                                      <select class="custom-select" id="val2">
+                                            <option value="spps:Архитектурно-строительное:otdel">Архитектурно-строительное</option>
+                                            <option value="spps:Промышленно-технологическое:otdel">Промышленно-технологическое</option>
+                                            <option value="spps:Профессионально-технологическое:otdel">Профессионально-технологическое</option>
+                                            <option value="spps:Технико-технологическое:otdel">Технико-технологическое</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6" style="padding-top: 0.3rem;">
+                                    <b style="font-size: 110%;">Количество:</b> <span id="answer2" th:text="${findByOtdel[0].count}" style="font-size: 110%;">---</span>
+                                    </div>
+                                    </div>
+                                    
+                                    <script>
+                                     var selVal1 = document.getElementById('val1')
+                                     selVal1.onchange = function () {
+                                     //alert(selVal.value)
+                                     fetch("http://localhost:8080/searchq2/?value=" + selVal1.value, {
+                                     credentials: 'same-origin',
+                                     method: 'POST',
+                                     headers: {
+                                     'Content-Type': 'application/json',
+                                     'Accept': 'application/json'
+                                     }
+                                     }).then(response => response.json())
+                                     .then(products => {
+                                     console.log("input.value1: " + products);
+                                     for (let i = 0; i < products.length; i++) {
+                                     var ii=products[i];
+                                     document.getElementById('answer1').textContent = ii;
+                                     }
+                                     }).catch(err => {
+                                     console.log("Error Reading data1 " + err);
+                                     });
+                                     }
+                                    </script>
+                                    
+                                    <script>
+                                     var selVal = document.getElementById('val2')
+                                     selVal.onchange = function () {
+                                     //alert(selVal.value)
+                                     fetch("http://localhost:8080/searchq2/?value=" + selVal.value, {
+                                     credentials: 'same-origin',
+                                     method: 'POST',
+                                     headers: {
+                                     'Content-Type': 'application/json',
+                                     'Accept': 'application/json'
+                                     }
+                                     }).then(response => response.json())
+                                     .then(products => {
+                                     console.log("input.value2: " + products);
+                                     for (let i = 0; i < products.length; i++) {
+                                     var ii=products[i];
+                                     document.getElementById('answer2').textContent = ii;
+                                     }
+                                     }).catch(err => {
+                                     console.log("Error Reading data2 " + err);
+                                     });
+                                     }
+                                    </script>
+                                        
+                                        
+                                       
+                                        <!-- th:block th:if ="${findByGroup != null}">
+                                            <div th:each="group: ${findByGroup}">
+                                                <b>Группа:</b><th:block th:text="${group.type}"/> <b>Количество:</b> <th:block th:text="${group.count}"/>
+                                            </div>
+                                        </th:block>
+                                        
+                                        <th:block th:if ="${findByOtdel != null}">
+                                            <div th:each="otdel: ${findByOtdel}">
+                                                <b>Отдел:</b><th:block th:text="${otdel.type}"/> <b>Количество:</b> <th:block th:text="${otdel.count}"/>
+                                            </div>
+                                        </th:block-->
+                                        
+                                        <!--Временно-->
+                                        
+                                        </div>
+                                        <!--<div class="col-md-2 pad-rl-0">
+                                            <img alt="Фото" th:src="${'data:image/jpeg;base64,' + photo}" style="width: 100%; height: 267px">
+                                        </div>-->
+                                    </div>
+                                </div>
+                            </div>
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<title>Учебная часть</title>
+<head th:replace="commons::head">
+</head>
+<style>
+.section {
+	flex-wrap: wrap;
+	display: flex;
+}
+
+.elem-group {
+	flex: 200px;
+	min-width: 197px;
+	max-width: 200px;
+	margin: 10px;
+}
+
+
+</style>
+<body>
+	<div th:replace="commons::navbar"></div>
+	<div th:replace="commons::navEdu"></div>
+
+	<div class="wrapper">
+		<div class="container text-center">
+
+			<div class="container text-center">
+				<div class="section">
+					<div class="card-deck"
+						style="border-left: 200px solid transparent; border-right: 200px solid transparent; margin-bottom: 15px;">
+
+						<div class="card border-success elem-group">
+							<img src="/img/stock_img/edu_icon/aso.png" class="card-img-top"
+								alt="Отделение" style="min-width: 180px;">
+							<div class="card-body" style="min-height: 100px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;padding-left: 5px;">
+								<h5 class="card-title text-center " style="color: #cc0000;">
+									<b>АСО</b>
+								</h5>
+								<p class="card-text" style="color: black;">Архитектурно-строительное
+									отделение</p>
+							</div>
+							<div class="card-footer">
+								<div class="card text-center">
+									<a th:href="@{/educational/deps?id=1}" class="btn btn-success">Перейти</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="card border-success  elem-group">
+							<img src="/img/stock_img/edu_icon/tto.png" class="card-img-top"
+								alt="Отделение" style="min-width: 180px;">
+							<div class="card-body" style="min-height: 100px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;padding-left: 5px;">
+								<h5 class="card-title text-center " style="color: #cc0000;">
+									<b>ТТО</b>
+								</h5>
+								<p class="card-text" style="color: black;">Технико-технологическое
+									отделение</p>
+							</div>
+							<div class="card-footer">
+								<div class="card text-center">
+									<a th:href="@{/educational/deps?id=2}" class="btn btn-success">Перейти</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="card border-success elem-group">
+							<img src="/img/stock_img/edu_icon/promto.png"
+								class="card-img-top"  alt="Отделение" style="min-width: 180px;">
+							<div class="card-body" style="min-height: 100px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;padding-left: 5px;">
+								<h5 class="card-title text-center " style="color: #cc0000;">
+									<b>ПромТО</b>
+								</h5>
+								<p class="card-text" style="color: black;">Промышленно-технологическое
+									отделение</p>
+							</div>
+							<div class="card-footer">
+								<div class="card text-center">
+									<a th:href="@{/educational/deps?id=3}" class="btn btn-success">Перейти</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="card border-success elem-group">
+							<img src="/img/stock_img/edu_icon/pto.png" class="card-img-top"
+								alt="Отделение" style="min-width: 180px;">
+							<div class="card-body" style="min-height: 100px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;padding-left: 5px;">
+								<h5 class="card-title text-center " style="color: #cc0000;">
+									<b>ПТО</b>
+								</h5>
+								<p class="card-text" style="color: black;">Профессионально-технологическое
+									отделение</p>
+							</div>
+							<div class="card-footer">
+								<div class="card text-center">
+									<a th:href="@{/educational/deps?id=4}" class="btn btn-success">Перейти</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="card border-success elem-group">
+							<img src="/img/stock_img/edu_icon/vecher.png" class="card-img-top"
+								alt="Отделение" style="min-width: 180px;">
+							<div class="card-body" style="min-height: 100px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;padding-left: 5px;">
+								<h5 class="card-title text-center " style="color: #cc0000;">
+									<b>Вечернее</b>
+								</h5>
+								<p class="card-text" style="color: black;">Вечерняя форма обучения</p>
+							</div>
+							<div class="card-footer">
+								<div class="card text-center">
+									<a th:href="@{/educational/deps?id=5}" class="btn btn-success">Перейти</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="card border-success elem-group">
+							<img src="/img/stock_img/edu_icon/zaoch.png"
+								class="card-img-top"  alt="Отделение" style="min-width: 180px;">
+							<div class="card-body" style="min-height: 100px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;padding-left: 5px;">
+								<h5 class="card-title text-center " style="color: #cc0000;">
+									<b>Заочное</b>
+								</h5>
+								<p class="card-text" style="color: black;">Заочная форма обучения</p>
+							</div>
+							<div class="card-footer">
+								<div class="card text-center">
+									<a th:href="@{/educational/deps?id=6}" class="btn btn-success">Перейти</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div style="background-color: #bcf5bc; border-bottom: 5px solid transparent;">
+					<h4 style="border: 10px solid #bcf5bc;">Поиск по ФИО</h4>
+					<form action="/personInfo.html" accept-charset="UTF-8"
+						method="POST">
+						<div class="" style="border: 5px solid #bcf5bc; text-align: left;">
+							<div class="row" style="margin-left: 0px; margin-right: 0px">
+								<select class="livesearch" name="idPerson" style="width: 100%;">
+									<div th:each="person: ${persons}">
+										<option th:value="${person.id}" th:text="${person.surname} + ' ' +${person.name}+' '+${person.patronymic}">
+										</option>
+									</div>
+								</select>
+							</div>
+						</div>
+						<button style="margin: 5px 5px 5px 5px" type="submit"
+							class="btn btn-success">Найти</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/select2.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/ru.js}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+    <script type="text/javascript" th:src="@{/js/jquery.maskedinput.min.js}"></script>
+   
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    
+    <script src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+    
+    <script type="text/javascript">
+        $(".livesearch").chosen();
+    </script>
+
+</body>
+</html>

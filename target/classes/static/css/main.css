@@ -1,0 +1,10 @@
+body {
+    padding-top: 56px;
+    padding-bottom: 56px;
+}
+.nav-item  > a{
+	margin-bottom: -4px;
+}
+.card {
+	border-top-style: none;
+}

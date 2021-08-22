@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<title>Фотогалерея общежития</title>
+    <head th:replace="commons::head"></head>
+    <body>
+        <div th:replace="commons::navbar(active='messages')"></div>
+            <div th:replace="commons::nav"></div>
+
+        <div class="wrapper">
+            <div class="container text-center">
+                <form action="/senddormphoto" method="POST" enctype="multipart/form-data">
+                    <input name="id" type="hidden" class="custom-file-input" id="idDormitory" th:value="${param.id}">
+                    <div class="input-group">
+                        <div class="custom-file">
+                            <input name="ph" type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" required="required">
+                            <label class="custom-file-label" for="inputGroupFile04"></label>
+                        </div>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon04">Загрузить</button>
+                        </div>
+                    </div>
+                </form>
+                 <table class="table table-primary" align="center">
+               				<thead th:each="photo, status: ${photos}" >
+								<tr align="center" >
+									<img hspace="5" vspace="5" th:name="${pids[status.index]}" th:src="${'data:image/jpeg;base64,' + photo}" width="240" height="135"
+									onclick="myFunction(this);"> <!--  Нет удаления: class="minimized"-->
+									
+								</tr>
+							</thead>
+                   
+				</table>
+
+                <div class="container1">
+                    <span onclick="this.parentElement.style.display='none'" class="closebtn1">×</span>
+                    <a id="hreff" th:href="'/deleteImgDorm/' + ${param.id} + '/'">
+                        <span class="deleteph"><img src="/img/can.png" style="height: 20px; width:20px"/>
+                    </a>
+                    <img id="expandedImg" style="width:100%">
+                    <div id="imgtext"></div>
+                    <!--a th:href="'/deleteImg/dormitory/'"><button class="btn btn-primary">Удалить</button></a-->
+                </div>
+            </div>
+        </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    function myFunction(imgs) {
+        var expandImg = document.getElementById("expandedImg");
+        var hreff = document.getElementById("hreff");
+        var imgText = document.getElementById("imgtext");
+        expandImg.src = imgs.src;
+        hreff.href += imgs.name;
+        imgText.innerHTML = imgs.alt;
+        expandImg.parentElement.style.display = "block";
+     }
+    </script>
+    
+     <script type="text/javascript">
+    $(function(){
+    	  $('.minimized').click(function(event) {
+    	    var i_path = $(this).attr('src');
+    	    $('body').append('<div id="overlay"></div><div id="magnify"><img src="'+i_path+'"><div id="close-popup"><i></i></div><div id="delete-popup"><p></p></div></div>');
+    	    $('#magnify').css({
+    	     left: ($(document).width() - $('#magnify').outerWidth())/2,
+    	     // top: ($(document).height() - $('#magnify').outerHeight())/2 upd: 24.10.2016
+    	            top: ($(window).height() - $('#magnify').outerHeight())/2
+    	   });
+    	    $('#overlay, #magnify').fadeIn('fast');
+    	  });
+    	  
+    	  $('body').on('click', '#close-popup, #overlay', function(event) {
+    	    event.preventDefault();
+    	    $('#overlay, #magnify').fadeOut('fast', function() {
+    	      $('#close-popup, #magnify, #overlay').remove();
+    	    });
+    	  });
+    	  $('body').on('click', '#delete-popup, #overlay', function(event) {
+      	    event.preventDefault();
+      	    $('#overlay, #magnify').fadeOut('fast', function() {
+
+      	    	$('#delete-popup, #magnify, #overlay').remove();
+      	    	
+      	    });
+      	  });
+    	});
+    </script> 
+    <script type="text/javascript">
+        $('#inputGroupFile04').on('change', function () {
+            //get the file name
+            var fileName = $(this).val();
+            // alert("file: "+fileName);
+            //replace the "Choose a file" label
+            var str = fileName.substr(12, fileName.lenght);
+            $(this).next('.custom-file-label').html(str);
+        })
+    </script>
+
+</body>
+</html>

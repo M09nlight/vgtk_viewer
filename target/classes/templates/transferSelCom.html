@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<title>Перевод</title>
+<head th:replace="commons::head">
+</head>
+
+<style>
+.col-30 {
+    -ms-flex: 0 0 30%;
+    flex: 0 0 30%;
+    max-width: 30%;
+}
+
+.col-70 {
+    -ms-flex: 0 0 70%;
+    flex: 0 0 70%;
+    max-width: 70%;
+}
+
+</style>
+
+<link rel="stylesheet" th:href="@{/css/select2_settings.css}">
+
+<body>
+
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/select2.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/ru.js}"></script>
+
+
+    <div th:replace="commons::navbar(active='messages')"></div>
+    <div th:replace="commons::navAdmission"></div>
+
+    <div class="wrapper">
+        <div class="container" style="width: 70%;">
+        
+        <!-- Вставить сообщение об успешном переводе -->
+        
+        
+        <th:block th:if = "${errors.size() != 0}" th:each="e: ${errors}">
+                    <div class="alert alert-warning" role="alert"> <th:block th:text="'Ошибка: ' + ${e}"/>
+                    </div>
+                </th:block>
+                
+                <th:block th:if = "${done != null}">
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                      <strong>Перевод прошёл успешно</strong>
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                </th:block>  
+        
+           <form action="/transferForm" accept-charset="UTF-8" method="POST">
+        
+            <div style="background-color: #bcf5bc; border-bottom: 5px solid transparent;">
+
+                <h4 style="border: 10px solid #bcf5bc; text-align: center;">Перевод абитуриента</h4>
+                <div style="width: 300px; margin: auto; text-align: left;">
+                    <select class="js-example-programmatic custom-select" name="selComId" id="selComId" style="width: 300px; ">
+                        <option disabled selected>Выберите абитуриента</option>
+                        <option th:each="selectionCommittee: ${selectionCommittees}"
+                            th:value="${selectionCommittee.id}"
+                            th:text=" ${selectionCommittee.person.surname} + ' ' + ${selectionCommittee.person.name} + ' ' + ${selectionCommittee.person.patronymic} "></option>
+                    </select>
+                </div>
+
+                <h6 style="border: 10px solid #bcf5bc; text-align: center;" id="nameOfSpecialty"></h6>
+
+                <h4 style="border: 5px solid #bcf5bc; text-align: center;">Новая специальность</h4>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend w-30">
+                        <div class="input-group-text w-100">Форма обучения*</div>
+                    </div>
+                    <select sec:authorize="hasRole('ROLE_ADMIN') || hasRole('ROLE_DIRECTOR')" required class="custom-select"
+                        name="formOfEducation" id="formOfEducation">
+                        <option th:if="${personInfo == null}" selected value="-1">Не выбрано</option>
+                        <option th:if="${personInfo != null}" th:selected="${personInfo.formOfEducation}"
+                            th:value="${personInfo.formOfEducation}" th:text="${personInfo.formOfEducation}">Форма обучения</option>
+                        <option value="Дневная">Дневная</option>
+                        <option value="Заочная">Заочная</option>
+                        <option value="Вечерняя">Вечерняя</option>
+                    </select>
+                    
+                    <select sec:authorize="hasRole('ROLE_SPPS')" required disabled class="custom-select" name="formOfEducation"
+                        id="formOfEducation">
+                        <option th:if="${personInfo == null}" selected value="-1">Не выбрано</option>
+                        <option th:if="${personInfo != null}" th:selected="${personInfo.formOfEducation}"
+                            th:value="${personInfo.formOfEducation}" th:text="${personInfo.formOfEducation}">Форма обучения</option>
+                    </select>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend w-30">
+                        <div class="input-group-text w-100">Тип образования*</div>
+                    </div>
+                    <select
+                        sec:authorize="hasRole('ROLE_ADMIN') || hasRole('ROLE_DIRECTOR')"
+                        class="custom-select" id="selGender"
+                        name="specialty1.department.departmentEducationType" required>
+                        <option th:if="${personInfo == null}" value="-1" selected>Не
+                            выбрано</option>
+                        <option th:if="${personInfo != null}" selected
+                            th:selected="${personInfo.specialty1.department.departmentEducationType}"
+                            th:text="${personInfo.specialty1.department.departmentEducationType}"
+                            th:value="${personInfo.specialty1.department.departmentEducationType}">ТИП</option>
+                        <option value="ПТО">ПТО</option>
+                        <option value="ССО">ССО</option>
+                        <option value="На основе ПТО">На основе ПТО</option>
+                    </select>
+                    
+                    <select sec:authorize="hasRole('ROLE_SPPS')" required
+                        class="custom-select" id="selGender"
+                        name="specialty1.department.departmentEducationType" disabled>
+                        <option th:if="${personInfo == null}" selected value="-1">Нет</option>
+                        <option th:if="${personInfo != null}" selected
+                            th:selected="${personInfo.specialty1.department.departmentEducationType}"
+                            th:text="${personInfo.specialty1.department.departmentEducationType}">Ваш
+                            тип SPPS</option>
+                    </select>
+
+                </div>
+                
+                    <div class="input-group mb-3">
+                    <div class="input-group-prepend w-30">
+                        <div class="input-group-text w-100">Форма образования*</div>
+                    </div>
+
+                    <select
+                        sec:authorize="hasRole('ROLE_ADMIN') || hasRole('ROLE_DIRECTOR')"
+                        class="custom-select" name="formOfEducation1" id="tuitionFee" required>
+                        <option th:if="${personInfo == null}" value="-1" selected>Не
+                            выбрано</option>
+                        <option th:if="${personInfo != null}" selected
+                            th:selected="${personInfo.formOfEducation1}"
+                            th:text="${personInfo.formOfEducation1}" disabled>ТИП</option>
+                        <option value="Бюджет">Бюджет</option>
+                        <option value="Платное">Платное</option>
+                    </select>
+
+                    <select sec:authorize="hasRole('ROLE_SPPS')" id="tuitionFee" required
+                        class="custom-select" name="formOfEducation1" disabled>
+                        <option th:if="${personInfo == null}" selected value="">Нет</option>
+                        <option th:if="${personInfo != null}" selected
+                            th:selected="${personInfo.formOfEducation1}"
+                            th:text="${personInfo.formOfEducation1}">Ваш тип SPPS</option>
+                    </select>
+                </div>
+                
+               
+               
+               
+                <div id="wrapperId">
+                    <div class="input-group mb-3" id="divSpecialty">
+                        <div class="container">
+                            <div class="row"  style="word-wrap: break-word;">
+                                <div class="col-30">
+                                    <div class="input-group-text w-100">Специальность*</div>
+                                </div>
+                                    <div class="col-70 search-class">
+                                        <select sec:authorize="hasRole('ROLE_ADMIN') || hasRole('ROLE_DIRECTOR')"
+                                            class="js-example-programmatic custom-select no-gutters" id="selSpec" name="specialty1.id"
+                                            onClick="alert('hello')" required>
+                                            <option th:if="${personInfo == null}" value="-2" selected>Не выбрано</option>
+                                            <option th:if="${personInfo != null}" selected th:selected="${personInfo.specialty1.id}"
+                                                th:value="${personInfo.specialty1.id}" th:text="${personInfo.specialty1.specialtyName}">ТИП</option>
+                                        </select> <select sec:authorize="hasRole('ROLE_SPPS')" class="js-example-programmatic custom-select" id="selSpec"
+                                            name="specialty1.id" onClick="alert('hello')" disabled>
+                                            <option th:if="${personInfo == null}" value="-2" selected>Не выбрано</option>
+                                            <option th:if="${personInfo != null}" selected th:selected="${personInfo.specialty1.id}"
+                                                th:value="${personInfo.specialty1.id}" th:text="${personInfo.specialty1.specialtyName}">ТИП</option>
+                                        </select>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="wrapperId">
+                    <div class="input-group mb-3" id="divSpecialty">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-30">
+                                    <div class="input-group-text w-100">Квалификация*</div>
+                                </div>
+                                <div class="col-70">
+                                    <ul sec:authorize="hasRole('ROLE_ADMIN') || hasRole('ROLE_DIRECTOR')" class="list-group" id="listKvId">
+                                        <li class="list-group-item" style="padding-bottom: 6px; padding-top: 6px;">Выберите специальность</li>
+                                    </ul>
+                                    <ul sec:authorize="hasRole('ROLE_SPPS')" class="list-group" id="listKvId">
+                                        <li class="list-group-item" style="padding-bottom: 6px; padding-top: 6px;">Выберите специальность</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+             <button style="font-size: 120%; width: 40%; margin: 0 auto;" type="submit" class="btn btn-primary">Добавить</button>
+                </div>
+            </div> <!-- зелёный фон -->
+            </form>
+        
+        </div>
+    </div>
+    
+    <input id="forIp" th:value="${@environment.getProperty('isServer')}" hidden> <!-- получить значение из сервера для ip из сервера -->
+    
+    <script>
+    var ipFromAppProp;
+    if(document.getElementById("forIp").value=="false"){
+    	ipFromAppProp = "127.0.0.1:8080";
+    }else{
+    	ipFromAppProp = "192.168.1.5:80"
+    }
+    console.log("new ip: "+ipFromAppProp);
+    </script>
+
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/select2.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/ru.js}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+    <script type="text/javascript" th:src="@{/js/jquery.maskedinput.min.js}"></script>
+
+
+    <script type="text/javascript">
+                    $(".livesearch").chosen();
+                </script>
+    <script type="text/javascript">
+                    $('#inputGroupFile04').on('change', function() {
+                        //get the file name
+                        var fileName = $(this).val();
+                        //replace the "Choose a file" label
+                        var str = fileName.substr(12, fileName.lenght);
+                        $(this).next('.custom-file-label').html(str);
+                    })
+                </script>
+                
+<script>
+$(document).ready(function() {
+    $('#selComId').select2({
+    maximumSelectionLength: 2,
+    language: "ru"});
+    });
+
+$("#selComId").on("change", function(e) { 
+   //alert('hhhhh')
+   console.log("РАБОТАЕТ: ");
+   getSpecialityRestForName();
+   })
+   
+$(document).ready(function() {
+    $('#selSpec').select2({
+       maximumSelectionLength: 2,
+       language: "ru"
+    });
+});
+
+$("#selSpec").on("change", function(e) { 
+    console.log("change: "+" "+$(this).Option+$("#selSpec option:selected").val());
+    getProfessionRest();
+    
+    getCountOfDocumentsSubmitted(); //сюда вставить вызов функции, которая получает количество свободных мест
+  })
+</script>
+
+<script type="text/javascript">
+
+//получить название специальности при выборе абитуриента
+ async function getCountOfDocumentsSubmitted(){
+    
+ let seletctSpecialty=document.getElementById("selSpec"); //специальность выпадающий список
+    
+ let selVal=seletctSpecialty.options[seletctSpecialty.selectedIndex].value;
+ 
+ console.log("Хочу получить количество: "+selVal);
+ 
+ let url = 'http://'+ipFromAppProp+'/getCountOfDocumentsSubmitted/?value='+selVal;
+ let response = await fetch(url);
+ let commits = await response.json(); //читаем ответ в формате JSON
+                       
+ //console.log('mm: '+(Number(commits.documentsSubmitted)+1));
+ document.getElementById("fildForDocSubmitted").value = (Number(commits.documentsSubmitted)+1);
+}
+ async function getSpecialityRestForName(){
+    
+ let selectStudent=document.getElementById("selComId");
+                       
+ let selVal=selectStudent.options[selectStudent.selectedIndex].value;
+ console.log("selVal getSpecialityRest: "+selVal);
+ let url = 'http://'+ipFromAppProp+'/specialityrestSelCom/?value='+selVal;
+ let response = await fetch(url);
+ let commits = await response.json(); //читаем ответ в формате JSON
+                       
+ document.getElementById("nameOfSpecialty").innerHTML = commits.specialtyName;
+}
+</script>
+
+    <script type="text/javascript">
+
+ let setIdVar=document.getElementById("selGender"); //тип образования 
+ let setSpecVar=document.getElementById("selSpec"); //специальность выпадающий список
+ let setFormOfEducation=document.getElementById("formOfEducation"); //тип образования 
+ let setTuitionFee=document.getElementById("tuitionFee");
+ 
+ 
+ let selVal1=setIdVar.options[setIdVar.selectedIndex].value;
+ let selVal2=setSpecVar.options[setSpecVar.selectedIndex].value;
+ let setValFormOfEducation=setFormOfEducation.options[setFormOfEducation.selectedIndex].value;
+ let setValTuitionFee=setTuitionFee.options[setTuitionFee.selectedIndex].value;
+ 
+//select 1 получить специальности после выбора ссо или пто
+ async function getSpecialityRest(){
+	
+    let selVal=setIdVar.options[setIdVar.selectedIndex].value;
+    let selFormOfEducation=setFormOfEducation.options[setFormOfEducation.selectedIndex].value;
+    let selTuitionFee=setTuitionFee.options[setTuitionFee.selectedIndex].value;
+    
+    console.log("selVal typeOfEducation getSpecialityRest: "+selVal);
+    console.log("Форма обучения value: "+setFormOfEducation.options[setFormOfEducation.selectedIndex].value);
+    console.log("Оплата value: "+setTuitionFee.options[setTuitionFee.selectedIndex].value);
+    
+    let url = 'http://'+ipFromAppProp+'/specialityrest/?typeOfEducation=' + selVal 
+            +'&formOfEducation=' + selFormOfEducation + '&tutionFee=' + selTuitionFee;
+    let response = await fetch(url)
+    
+    let commits = await response.json(); //читаем ответ в формате JSON
+    console.log("после чтения ответа")
+    
+    console.log("commits: "+commits.length)
+    
+    //if dont have speciality add options with error
+    if(commits.length==0){
+        
+         if(typeof setSpecVar.options[setSpecVar.selectedIndex] == "undefined"){
+                setSpecVar.length=1;
+            }else{
+                setSpecVar.length=0;
+            }
+         
+           var ul = document.getElementById("listKvId");
+           
+           //delete all li
+           while( ul.firstChild ){ 
+               ul.removeChild( ul.firstChild );
+           }
+           //buffer li
+           var li0=document.createElement('li')
+           ul.appendChild(li0);
+           li0.outerHTML="<li class=\"list-group-item\" style=\"padding-bottom: 6px;padding-top: 6px;\">Выберите корректные данные</li>"
+                   setSpecVar.add(new Option("Нет специальностей к выбранным данным",));   
+    }
+    else{ //if have speciality add options with speciality
+    console.log("selVal: "+selVal);
+    
+    if(typeof setSpecVar.options[setSpecVar.selectedIndex] == "undefined"){
+        setSpecVar.length=1;
+    }else{
+        setSpecVar.length=0;
+    }
+    
+    for(var i of commits){
+        setSpecVar.add(new Option(i.specialtyName,i.id));   
+    }
+    
+    if(selVal!=-1){
+         console.log("1")
+    getProfessionRest();
+         console.log("2")
+    }else{
+         var ul = document.getElementById("listKvId");
+            //delete all li
+            while( ul.firstChild ){ 
+                ul.removeChild( ul.firstChild );
+            }
+            //buffer li
+            var li0=document.createElement('li')
+            ul.appendChild(li0);
+            li0.outerHTML="<li class=\"list-group-item\" style=\"padding-bottom: 6px;padding-top: 6px;\">Выберите специальность</li>"
+                    setSpecVar.add(new Option("Не выбрано",));   
+    }
+   }
+    
+}
+ //select 2
+ async function getProfessionRest(){
+     
+    let selVal=setSpecVar.options[setSpecVar.selectedIndex].value;
+    console.log(selVal+'hello getProfessionRest');
+    
+    if(selVal==-2){
+        var ul = document.getElementById("listKvId");
+        //delete all li
+        while( ul.firstChild ){ 
+            ul.removeChild( ul.firstChild );
+        }
+        //buffer li
+        var li0=document.createElement('li')
+        ul.appendChild(li0);
+        li0.outerHTML="<li class=\"list-group-item\" style=\"padding-bottom: 6px;padding-top: 6px;\">Выберите специальность</li>"
+                setSpecVar.add(new Option("Не выбрано",));   
+    }
+    
+    if(selVal!=-2){
+        console.log("selVAL profserest: "+selVal)
+    let url = 'http://'+ipFromAppProp+'/professionrest/?value='+selVal;
+    let response = await fetch(url);
+    
+    let commits = await response.json(); //читаем ответ в формате JSON
+
+    var ul = document.getElementById("listKvId");
+    
+    //delete all li
+    while( ul.firstChild ){ 
+        ul.removeChild( ul.firstChild );
+    }
+ 
+    //buffer li
+    var li0=document.createElement('li')
+    ul.appendChild(li0);
+    li0.outerHTML="<li class=\"list-group-item\" style=\"padding-bottom: 6px;padding-top: 6px; color:red;\">Данные не получены из контроллера</li>"
+
+    var li6=document.createElement('li')
+        li6.setAttribute("class","list-group-item");
+        li6.setAttribute("style","padding-bottom: 6px;padding-top: 6px; background: #EEEEEE;");
+        
+        for(var i=0;i<commits.length;i++){
+            
+            if(i==0){
+                li6.textContent=commits[i].name
+                ul.replaceChild(li6,ul.firstElementChild);
+            }else{
+             var newli6=li6.cloneNode(true)
+             li6.textContent=commits[i].name
+             ul.appendChild(newli6)
+            }
+        }
+            var el=document.getElementsByClassName("select2-selection select2-selection--single");
+    }
+}
+ 
+setIdVar.addEventListener("change",getSpecialityRest)
+setSpecVar.addEventListener("click",getProfessionRest)
+setFormOfEducation.addEventListener("change",getSpecialityRest) //форма обучени 
+setTuitionFee.addEventListener("change",getSpecialityRest) //форма образования (платное бюджет)
+</script>
+
+<script>
+
+//добавляем данные с специальности и профессии
+      window.onload = function() {
+    
+          console.log("Форма обучения onload value: "+setFormOfEducation.options[setFormOfEducation.selectedIndex].value);
+          console.log("Оплата onload value: "+setTuitionFee.options[setTuitionFee.selectedIndex].value);
+          
+        if(selVal1!=-1){
+            getSpecialityRest()
+            console.log("получаем специальность");
+            }
+            if(selVal2!=-2){
+            getProfessionRest()
+            console.log("получаем профессии");
+            }
+          var e1 = document.getElementById("selGender");
+          var strUser = e1.options[e1.selectedIndex].text;
+          console.log("window.onload selVal getSpecialityRest text: "+setIdVar.options[setIdVar.selectedIndex].text);
+          if(selVal1!=-1){
+              getSpecialityRest()
+              console.log("получаем специальность");
+         }
+         if(selVal2!=-2){
+              getProfessionRest()
+              console.log("получаем профессии");
+         }
+  }
+</script>
+</body>
+</html>

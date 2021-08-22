@@ -1,0 +1,49 @@
+<div class="input-group mb-3">
+                    <div class="input-group-prepend w-30">
+                        <div class="input-group-text w-100">Форма обучения*</div>
+                    </div>
+                    <th:block th:if="${personInfo == null}">
+                        <select
+                            sec:authorize="hasRole('ROLE_ADMIN') || hasRole('ROLE_DIRECTOR')"
+                            required class="custom-select" name="formOfEducation"
+                            id="formOfEducation">
+                            <option selected value="-1">Не выбрано</option>
+                            <option value="Дневная">Дневная</option>
+                            <option value="Заочная">Заочная</option>
+                            <option value="Вечерняя">Вечерняя</option>
+                        </select>
+                        <select sec:authorize="hasRole('ROLE_SPPS')" required disabled
+                            class="custom-select" name="formOfEducation"
+                            id="formOfEducation">
+                            <option selected value="-1">Не выбрано</option>
+                            <option value="Дневная">Дневная</option>
+                            <option value="Заочная">Заочная</option>
+                            <option value="Вечерняя">Вечерняя</option>
+                        </select>
+                    </th:block>
+                    <th:block th:if="${personInfo != null}">
+                        <select
+                            sec:authorize="hasRole('ROLE_ADMIN') || hasRole('ROLE_DIRECTOR')"
+                            required class="custom-select" name="formOfEducation"
+                            id="formOfEducation">
+                            <option selected th:value="${personInfo.formOfEducation}">
+                                <th:block th:text="${personInfo.formOfEducation}" />
+                            </option>
+                            <option value="Дневная">Дневная</option>
+                            <option value="Заочная">Заочная</option>
+                            <option value="Вечерняя">Вечерняя</option>
+                            <option value="">Нет</option>
+                        </select>
+                        <select sec:authorize="hasRole('ROLE_SPPS')" required disabled
+                            class="custom-select" name="formOfEducation"
+                            id="formOfEducation">
+                            <option selected th:value="${personInfo.formOfEducation}">
+                                <th:block th:text="${personInfo.formOfEducation}" />
+                            </option>
+                            <option value="Дневная">Дневная</option>
+                            <option value="Заочная">Заочная</option>
+                            <option value="Вечерняя">Вечерняя</option>
+                            <option value="">Нет</option>
+                        </select>
+                    </th:block>
+                </div>

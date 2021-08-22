@@ -1,6 +1,6 @@
 .*
 !.gitignore
-target
+!target
 *.log*
 nn.bat
 *.properties
