@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<title th:text="'Общежитие №' + ${nom}">Общежитие</title>
+    <head th:replace="commons::head"></head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.min.css">
+    <body>
+        <div th:replace="commons::navbar(active='messages')"></div>
+            <div th:replace="commons::nav"></div>
+
+	<div class="wrapper">
+            <div class="container">
+                <div class="card" style="width: 100%">
+                    <div class="card-header row" style="margin-right: 0px;margin-left: 0px;"><div class="col-md-9" ><h4>Информация об общежитии № <th:block th:text="${nom}"/></h4></div>
+                    <div class="col-md-3"  style="padding-left: 115px;">
+                        
+                        <form action="/downloadWordDorm" accept-charset="UTF-8" method="POST">
+                        
+                        <input type="hidden" name="idDorm" class="form-control" id="inlineFormInputGroupUsername2" 
+                        placeholder="Введите фамилию" th:value="${dormInfo.id}" value="jjj" hidden>
+                        
+                        <button type="submit" class="btn btn-success" style="background-color: #009E5C;color: #ffffff; border-color:#009E5C">Скачать Word</button>
+                        
+                        </form>
+                    </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row row-m-0">
+                       
+                            <div class="col-md-10 pad-rl-0" style="padding-left: 10px">
+                                <!-- 130 текст -->
+                                <pre style="margin-top: 0; margin-bottom: 0rem; font-size: 130%;"><b>Адрес: </b><th:block th:text="${dormInfo.address}"/></pre>
+                                <pre style="margin-top: 0; margin-bottom: 0rem; font-size: 130%;"><b>Телефон: </b><th:block th:text="${dormInfo.phone}"/></pre>
+                                <pre style="margin-top: 0; margin-bottom: 0rem; font-size: 130%;"><b>Численность в общежитии: </b><th:block th:text="${numberOfResidents + ' '}"/><b>Свободных мест: </b><th:block th:text="${tenant - numberOfResidents + ' '}"/><b>Общее кол-во мест: </b><th:block th:text="${tenant}"/></pre>
+                                <pre style="margin-top: 0; margin-bottom: 0rem; font-size: 130%;"><b>Пол:</b>  Мужской: <th:block th:text="${mans}"/>  Женский: <th:block th:text="${womans}"/></pre>
+                                <pre style="margin-top: 0; margin-bottom: 0rem; font-size: 130%;"><b>Совершеннолетие:</b>  Совершеннолетних: <th:block th:text="${adult}"/> Не совершеннолетних: <th:block th:text="${minor}"/> </pre>
+                                <pre style="margin-top: 0; margin-bottom: 0rem; font-size: 130%;"><b>Проживающий:</b>  Учащихся: <th:block th:text="${student}"/> Работников колледжа: <th:block th:text="${collegeWorker}"/> Других: <th:block th:text="${other}"/></pre>
+                                <pre style="margin-top: 0; margin-bottom: 0rem; font-size: 130%;"><b>Тип образования:</b>  ПТО: <th:block th:text="${countPto}"/> ССО: <th:block th:text="${countSso}"/></pre>
+                                <pre style="margin-top: 0; margin-bottom: 0rem; font-size: 130%;"><b>Заведующий общежитием:</b> <th:block th:text="${dormInfo.manager}"/> </pre>
+                                <pre style="margin-top: 0; margin-bottom: 0rem; font-size: 130%;">Рабочий номер: <th:block th:text="${dormInfo.managerPhone}"/> Мобильный телефон: <th:block th:text="${dormInfo.managerPhoneNumber}"/></pre>
+                                <pre style="margin-top: 0; margin-bottom: 0rem; font-size: 130%;"><b>Воспитатели общежития:</b> <th:block th:text="${dormInfo.educator}"/></pre>
+                                <pre style="margin-top: 0; margin-bottom: 0rem; font-size: 130%;"><b>Комендант:</b> <th:block th:text="${dormInfo.commandat}"/></pre>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  <div class="container mt-4">
+  <div class="row">
+    <div class="col-sm" th:each="fl: ${flrs}">
+            <a class="card-link" th:href="@{/floor/{iddorm}/{floornum}(iddorm=${dormInfo.id}, floornum=${fl})}"><button type="button" class="btn btn-success" th:text="#{floors(${fl})}"><h5>Этаж</h5></button></a>
+    </div>
+  </div>
+</div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+    <script type="text/javascript"> $(".livesearch").chosen(); </script>
+
+</body>
+</html>

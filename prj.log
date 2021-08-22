@@ -1,0 +1,96 @@
+2021-08-22 20:46:59.488  INFO 9856 --- [main] by.vgtk.Main                             : Starting Main v1.0.0 on GIGOR with PID 9856 (D:\vgtk\vgtk_viewer\target\prj.jar started by grunt in d:\vgtk\vgtk_viewer)
+2021-08-22 20:46:59.488  INFO 9856 --- [main] by.vgtk.Main                             : No active profile set, falling back to default profiles: default
+2021-08-22 20:47:00.888  INFO 9856 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@18bc345' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-22 20:47:00.898  INFO 9856 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-22 20:47:01.758  INFO 9856 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-08-22 20:47:01.778  INFO 9856 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-22 20:47:01.778  INFO 9856 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2021-08-22 20:47:01.844  INFO 9856 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-22 20:47:01.844  INFO 9856 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2276 ms
+2021-08-22 20:47:02.298  INFO 9856 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 94e42492-89ef-4fbd-80ee-0328fb32db10
+
+2021-08-22 20:47:02.908  INFO 9856 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@30331109, org.springframework.security.web.context.SecurityContextPersistenceFilter@51751e5f, org.springframework.security.web.header.HeaderWriterFilter@783efb48, org.springframework.security.web.authentication.logout.LogoutFilter@42c2f48c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1bbae752, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@38548b19, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1bcb79c2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2571066a, org.springframework.security.web.session.SessionManagementFilter@c446b14, org.springframework.security.web.access.ExceptionTranslationFilter@73877e19, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6ceb7b5e]
+2021-08-22 20:47:02.958  INFO 9856 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'taskExecutor'
+2021-08-22 20:47:03.298  INFO 9856 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-08-22 20:47:03.618  INFO 9856 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-08-22 20:47:03.698  INFO 9856 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-08-22 20:47:03.708  INFO 9856 --- [main] by.vgtk.Main                             : Started Main in 4.907 seconds (JVM running for 5.379)
+2021-08-22 20:47:05.801  INFO 9856 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-22 20:47:05.802  INFO 9856 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-22 20:47:05.817  INFO 9856 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
+2021-08-22 20:47:36.108  INFO 14864 --- [main] by.vgtk.Main                             : Starting Main v1.0.0 on GIGOR with PID 14864 (D:\vgtk\vgtk_viewer\target\prj.jar started by grunt in d:\vgtk\vgtk_viewer)
+2021-08-22 20:47:36.118  INFO 14864 --- [main] by.vgtk.Main                             : No active profile set, falling back to default profiles: default
+2021-08-22 20:47:37.538  INFO 14864 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5cdd09b1' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-22 20:47:37.548  INFO 14864 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-22 20:47:38.491  INFO 14864 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-08-22 20:47:38.508  INFO 14864 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-22 20:47:38.508  INFO 14864 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2021-08-22 20:47:38.591  INFO 14864 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-22 20:47:38.592  INFO 14864 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2404 ms
+2021-08-22 20:47:39.139  INFO 14864 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 2542b9e7-c2a9-4235-804e-4268bc21b112
+
+2021-08-22 20:47:39.783  INFO 14864 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@57540fd0, org.springframework.security.web.context.SecurityContextPersistenceFilter@71391b3f, org.springframework.security.web.header.HeaderWriterFilter@41aaedaa, org.springframework.security.web.authentication.logout.LogoutFilter@5aae8eb5, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4455f57d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4078695f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@42c2f48c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5cf8edcf, org.springframework.security.web.session.SessionManagementFilter@1bcb79c2, org.springframework.security.web.access.ExceptionTranslationFilter@4443ef6f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@392a04e7]
+2021-08-22 20:47:39.825  INFO 14864 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'taskExecutor'
+2021-08-22 20:47:40.290  INFO 14864 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-08-22 20:47:40.576  INFO 14864 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-08-22 20:47:40.671  INFO 14864 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-08-22 20:47:40.678  INFO 14864 --- [main] by.vgtk.Main                             : Started Main in 5.222 seconds (JVM running for 5.695)
+2021-08-22 20:47:49.554  INFO 14864 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-22 20:47:49.554  INFO 14864 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-22 20:47:49.568  INFO 14864 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
+2021-08-22 20:48:21.968  INFO 18436 --- [main] by.vgtk.Main                             : Starting Main v1.0.0 on GIGOR with PID 18436 (D:\vgtk\vgtk_viewer\target\prj.jar started by grunt in d:\vgtk\vgtk_viewer)
+2021-08-22 20:48:21.978  INFO 18436 --- [main] by.vgtk.Main                             : No active profile set, falling back to default profiles: default
+2021-08-22 20:48:23.378  INFO 18436 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@4b2a01d4' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-22 20:48:23.388  INFO 18436 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-22 20:48:24.228  INFO 18436 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-08-22 20:48:24.248  INFO 18436 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-22 20:48:24.248  INFO 18436 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2021-08-22 20:48:24.308  INFO 18436 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-22 20:48:24.318  INFO 18436 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2266 ms
+2021-08-22 20:48:24.793  INFO 18436 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 7dc4ce1c-0215-49c5-9c7e-13600d850b10
+
+2021-08-22 20:48:25.318  INFO 18436 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@659925f4, org.springframework.security.web.context.SecurityContextPersistenceFilter@4bdc8b5d, org.springframework.security.web.header.HeaderWriterFilter@5560bcdf, org.springframework.security.web.authentication.logout.LogoutFilter@57b9e423, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@44f3fe83, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@726a17c4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5467eea4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4cd1c1dc, org.springframework.security.web.session.SessionManagementFilter@777c350f, org.springframework.security.web.access.ExceptionTranslationFilter@33abde31, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@42c2f48c]
+2021-08-22 20:48:25.373  INFO 18436 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'taskExecutor'
+2021-08-22 20:48:25.766  INFO 18436 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-08-22 20:48:26.108  INFO 18436 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-08-22 20:48:26.198  INFO 18436 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-08-22 20:48:26.208  INFO 18436 --- [main] by.vgtk.Main                             : Started Main in 4.863 seconds (JVM running for 5.315)
+2021-08-22 20:48:28.525  INFO 18436 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-22 20:48:28.526  INFO 18436 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-22 20:48:28.543  INFO 18436 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 15 ms
+2021-08-22 20:50:17.498  INFO 8288 --- [main] by.vgtk.Main                             : Starting Main v1.0.0 on GIGOR with PID 8288 (D:\vgtk\vgtk_viewer\target\prj.jar started by grunt in d:\vgtk\vgtk_viewer)
+2021-08-22 20:50:17.498  INFO 8288 --- [main] by.vgtk.Main                             : No active profile set, falling back to default profiles: default
+2021-08-22 20:50:19.388  INFO 8288 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-08-22 20:50:19.408  INFO 8288 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-22 20:50:19.412  INFO 8288 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2021-08-22 20:50:19.478  INFO 8288 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-22 20:50:19.478  INFO 8288 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1915 ms
+2021-08-22 20:50:19.968  INFO 8288 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'taskExecutor'
+2021-08-22 20:50:20.418  INFO 8288 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-08-22 20:50:20.693  INFO 8288 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-08-22 20:50:20.778  INFO 8288 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-08-22 20:50:20.778  INFO 8288 --- [main] by.vgtk.Main                             : Started Main in 3.897 seconds (JVM running for 4.358)
+2021-08-22 20:50:24.139  INFO 8288 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-22 20:50:24.139  INFO 8288 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-22 20:50:24.153  INFO 8288 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
+2021-08-22 20:58:31.493  INFO 16968 --- [main] by.vgtk.Main                             : Starting Main v1.0.0 on GIGOR with PID 16968 (D:\vgtk\vgtk_viewer\target\prj.jar started by grunt in d:\vgtk\vgtk_viewer)
+2021-08-22 20:58:31.498  INFO 16968 --- [main] by.vgtk.Main                             : No active profile set, falling back to default profiles: default
+2021-08-22 20:58:33.403  INFO 16968 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-08-22 20:58:33.413  INFO 16968 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-22 20:58:33.413  INFO 16968 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2021-08-22 20:58:33.488  INFO 16968 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-22 20:58:33.493  INFO 16968 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1930 ms
+2021-08-22 20:58:34.038  INFO 16968 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'taskExecutor'
+2021-08-22 20:58:34.633  INFO 16968 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-08-22 20:58:34.953  INFO 16968 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-08-22 20:58:35.023  INFO 16968 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-08-22 20:58:35.028  INFO 16968 --- [main] by.vgtk.Main                             : Started Main in 4.326 seconds (JVM running for 4.806)
+2021-08-22 20:58:52.277  INFO 16968 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-22 20:58:52.278  INFO 16968 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-22 20:58:52.292  INFO 16968 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms

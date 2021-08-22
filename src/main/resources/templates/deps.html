@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<title th:text="${deps.departmentName}"></title>
+<head th:replace="commons::head"></head>
+<body>
+    <div th:replace="commons::navbar"></div>
+    <div th:replace="commons::navEdu"></div>
+
+    <div class="wrapper">
+        <div class="container">
+            <h4 class="text-center"><th:block th:text="${deps.departmentName}"/></h4>
+             <ul class="nav nav-tabs">
+                <li class="nav-item nav-link"><a class="nav-link" id="nav-specialty-tab" data-toggle="tab" href="#nav-specialty" role="tab"
+                    aria-selected="true">Специальности</a></li>
+                <li class="nav-item nav-link"><a class="nav-link" id="nav-groups-tab" data-toggle="tab" href="#nav-groups" role="tab"
+                    aria-selected="false">Группы</a></li>
+            </ul>
+            
+            
+           
+
+            <div class="tab-content">
+                <!-- div class="row row-cols-md-2 row-m-0"-->
+                <div class="tab-pane fade show active" id="nav-specialty" role="tabpanel" aria-labelledby="nav-specialty-tab">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" th:each="spec, status : ${specialty}" >
+                            <a class="btn btn-link" data-toggle="collapse" th:href="${'#collapseOne' + status.count}" role="button" aria-expanded="false" aria-controls="collapseOne" style="text-align: left">
+                                <th:block th:text="${spec.SpecialtyName}"/>
+                            </a>
+                            <div th:id="${'collapseOne' + status.count}" class="collapse">
+                                <ul class="list-group list-group-flush">
+                                	<th:block th:if="${ spec.id != 23 && spec.id != 91  }">
+                                    <li class="list-group-item"><a th:href="@{/educational/deps/specialty?k=1&sid={specid}(specid=${spec.id})}">1 курс</a></li>
+                                   	</th:block>
+                                	<th:block th:if="${spec.id != 91 && spec.id != 79}">
+                                    <li class="list-group-item"><a th:href="@{/educational/deps/specialty?k=2&sid={specid}(specid=${spec.id})}">2 курс</a></li>
+                                   	</th:block>
+                                    <th:block th:if="${spec.id != 21&& spec.id != 4 && spec.id != 10 && spec.id != 11 && spec.id != 79}">
+                                    <li class="list-group-item"><a th:href="@{/educational/deps/specialty?k=3&sid={specid}(specid=${spec.id})}">3 курс</a></li>
+                                    </th:block>
+                                    <th:block th:if="${spec.id != 91 && spec.id != 24 && spec.id != 10 && spec.id !=21 && spec.id != 11 && spec.id != 79}">
+                                    <li class="list-group-item"><a th:href="@{/educational/deps/specialty?k=4&sid={specid}(specid=${spec.id})}">4 курс</a></li>
+                                    </th:block>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tab-pane fade show" id="nav-groups" role="tabpanel" aria-labelledby="nav-specialty-tab">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" th:each="gr, status : ${groups}">
+                            <a th:href="@{/educational/deps/specialty/group?gid={groupid}(groupid=${gr.id})}">
+                                <th:block th:text="${gr.groupName}" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js"></script>
+    <!--script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+    <script type="text/javascript">$(".livesearch").chosen();</script>
+</body>
+</html>

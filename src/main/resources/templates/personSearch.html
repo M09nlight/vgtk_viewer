@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<title>Расширенный поиск</title>
+    <head th:replace="commons::head"></head>
+    <body>
+        <div th:replace="commons::navbar(active='messages')"></div>
+            <div th:replace="commons::nav"></div>
+
+        <div class="wrapper">
+            <div class="container">
+                
+            <form action="/personAS" accept-charset="UTF-8" method="POST">
+                <p></p>
+                <p></p>
+                <h2>Расширенный поиск</h2>
+                <!-- value="Все"  -->
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Фамилия</div>
+                    </div>
+                        <input type="text" name="person.surname" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Введите фамилию">
+                </div>
+                
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Имя</div>
+                    </div>
+                        <input type="text" name="person.name" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Введите имя">
+                </div>
+                
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Отчество</div>
+                    </div>
+                        <input type="text" name="person.patronymic" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Введите отчество">
+                </div>
+                
+                <!-- type -->
+                <div class="row" style="padding-bottom: 15px;">
+                    <div class="col-md-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Тип проживающего</div>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                            <select class="custom-select" name="person.type" id="inputGroupSelect01">
+                                <option selected value="Все"> Все </option>
+                                <option value="Учащийся"> Учащийся </option>
+                                <option value="Работник колледжа"> Работник колледжа </option>
+                                <option value="Другое"> Другое </option>
+                            </select>
+
+                    </div>
+                </div>
+                
+                <!-- gender -->
+                <div class="row" style="padding-bottom: 15px;">
+                    <div class="col-md-1">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Пол</div>
+                    </div>
+                    </div>
+                    <div class="col-md-11">
+                            <select class="custom-select" name="person.gender" id="inputGroupSelect01">
+                                <option selected value="Все"> Все </option>
+                                <option value="М"> М </option>
+                                <option value="Ж"> Ж </option>
+                            </select>
+
+                    </div>
+                </div>
+                
+                <!-- Возраст от ... до ... -->
+                <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                        <div class="input-group-text">Возраст  </div>
+                    </div>
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">От</div>
+                    </div>
+                        <input type="number" value="0" name="firstNum" class="form-control" id="inlineFormInputGroupUsername2">
+
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">До</div>
+                    </div>
+                        <input type="number" value="100" name="secondNum" class="form-control" id="inlineFormInputGroupUsername2">
+                </div>
+                
+                <!-- averageScore -->
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Минимальный средний балл</div>
+                    </div>
+                        <input type="number" step="any" min="0" max="10" value="0.0" name="person.averageScore" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Введите балл от 0 до 10">
+                </div>
+
+
+                <!-- formOfEducation -->
+                <div class="row" style="padding-bottom: 15px;">
+                    <div class="col-md-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Форма обучения</div>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                            <select class="custom-select" name="person.formOfEducation" id="inputGroupSelect01">
+                                <option selected value="Все"> Все </option>
+                                <option value="Очная"> Дневная </option>
+                                <option value="Заочная"> Заочная </option>
+                                <option value="Вечерняя"> Вечерняя </option>
+                            </select>
+
+                    </div>
+                </div>
+                
+                
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Группа</div>
+                    </div>
+                        <input type="text" name="person.group" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Введите группу">
+                </div>
+                
+                <div class="row" style="padding-bottom: 15px;">
+                    <div class="col-md-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Отделение</div>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                            <select class="custom-select" name="person.otdel" id="inputGroupSelect01">
+                                <option selected value="Все"> Все </option>
+                                <option value="Профессионально-технологическое"> Профессионально-технологическое </option>
+                                <option value="Технико-технологическое"> Технико-технологическое </option>
+                                <option value="Архитектурно-строительное"> Архитектурно-строительное </option>
+                                <option value="Промышленно-технологическое"> Промышленно-технологическое </option>
+                            </select>
+
+                    </div>
+                </div>
+                
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Год поступления</div>
+                    </div>
+                        <input type="number" value="1900" name="person.yearAdmission" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Введите год поступления">
+                </div>
+                
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Год окончания</div>
+                    </div>
+                        <input type="number" value="1900" name="person.yearEnding" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Введите год окончания">
+                </div>
+                
+                
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Льготы</div>
+                    </div>
+                        <input type="text" name="person.privileges" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Введите льготы">
+                </div>
+                
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Серия и номер пасспорта</div>
+                    </div>
+                        <input type="text" name="person.passport" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Введите серию и номер пасспорта">
+                </div>
+                
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Идентификационный номер</div>
+                    </div>
+                        <input type="text" name="person.identNumber" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Введите идентификационный номер">
+                </div>
+                
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Кем выдан</div>
+                    </div>
+                        <input type="text" name="person.issuedBy" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Введите кем выдан пасспорт">
+                </div>
+                
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Адрес проживания</div>
+                    </div>
+                        <input type="text" name="person.homeAddress" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Введите адрес">
+                </div>
+                
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Мобильный номер</div>
+                    </div>
+                        <input type="text" name="person.phoneNumber" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Введите номер">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Школа</div>
+                    </div>
+                        <input type="text" name="person.school" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Введите адрес и\или дату окончания школы">
+                </div>
+
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Документ образования</div>
+                    </div>
+                        <input type="text" name="person.educationDocument" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Введите наименование документа">
+                </div>
+                
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Номер аттестата</div>
+                    </div>
+                        <input type="text" name="person.certificateNumber" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Введите номер аттестата">
+                </div>
+
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Гражданство</div>
+                    </div>
+                        <input type="text" name="person.citizenship" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Введите гражданство">
+                </div>
+
+                <button style="font-size: 120%; width: 40%; margin: 0 auto;" type="submit" class="btn btn-success">Найти</button>
+                <!-- disabled -->
+            </form>
+                
+            </div>
+        </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</body>
+</html>

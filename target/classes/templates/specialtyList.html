@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<title>Поиск специальности</title>	
+<head th:replace="commons::head"></head>
+
+<style>
+
+.select2.select2-container.select2-container--default.select2-container--below.select2-container--focus {
+    width: 100%
+}
+
+</style>
+<link rel="stylesheet" th:href="@{/css/select2_settings.css}">
+<body>
+	<div th:replace="commons::navbar"></div>
+	<div th:replace="commons::navEdu"></div>
+
+	<div class="wrapper">
+		<div class="container">
+			<div class="row">
+
+            <div class="container text-center" style="margin-bottom: 20px;">
+                
+                    <div style="background-color: #bcf5bc; border-bottom: 5px solid transparent;">
+
+                        <h4 style="border: 10px solid #bcf5bc; text-align: center">Поиск специальности</h4>
+				<form action="/educational/listSpecialtys" accept-charset="UTF-8" method="POST">
+				<div class="" style="border: 5px solid #bcf5bc; text-align: left;">
+                                <div class="row" style="margin-left: 0px; margin-right: 0px">
+                                    <select class="livesearch" name="specId" style="width: 100%;">
+                                        <th:block th:each="spec: ${specialtys}">
+                                            <option th:value="${spec.id}"  th:text="${spec.specialtyName}"/>
+                                        </th:block>
+                                    </select>
+                                </div>
+                            </div>
+                            <button style="margin: 5px 5px 5px 5px" type="submit" class="btn btn-success">Найти</button>
+                </form>
+                </div>
+                </div>
+               
+				<div class="container text-center" style="margin-top: 15px">
+					<table class="table table-light">
+						<thead>
+							<tr align="center">
+								<th scope="col">Id</th>
+								<th scope="col">Специальность</th>
+								<th scope="col">Тип</th>
+
+
+							</tr>
+						</thead>
+						<tbody>
+						<tr th:if="${specOne.id != null}">
+							<td align="center" bgcolor="#FFFFFF"><th:block
+									th:text="${specOne.id}" /></td>
+							<td align="center" bgcolor="#FFFFFF"
+								th:text="${specOne.specialtyName}"></td>
+							<td align="center" bgcolor="#FFFFFF"
+								th:text="${specOne.department.departmentEducationType}"></td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+
+
+				<div class="container text-center" style="margin-top: 15px">
+                <table class="table table-primary">
+                    <thead>
+                        <tr align="center">
+                            <th scope="col">Id группы</th>
+                            <th scope="col">Группа</th>
+                            <th scope="col">Тип</th>
+                         
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="group: ${groups}">
+                                <td align="center" bgcolor="#FFFFFF"><th:block
+                                        th:text="${group.id}" /></td>
+                                <td align="center" bgcolor="#FFFFFF" th:text="${group.groupName}"></td>
+                                 <td align="center" bgcolor="#FFFFFF" th:text="${group.groupType}"></td>
+								        
+                        </tr>
+                    </tbody>
+                </table>
+                </div> 
+                
+                <div class="container text-center" style="margin-top: 15px">
+                <table class="table table-primary">
+                    <thead>
+                        <tr align="center">
+                            <th scope="col">Id</th>
+                            <th scope="col">Квалификация</th>
+                            <th scope="col">Код</th>     
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="qualification: ${qualifications}">
+                                <td align="center" bgcolor="#FFFFFF"><th:block
+                                        th:text="${qualification.id}" /></td>
+                                <td align="center" bgcolor="#FFFFFF" th:text="${qualification.name}"></td>
+                                 <td align="center" bgcolor="#FFFFFF" th:text="${qualification.code}"></td>
+								        
+                        </tr>
+                    </tbody>
+                </table>
+                </div> 
+                
+</div>
+</div>
+</div>
+
+	<script>
+		$(document).ready(function() {
+			$('.selGroup').select2({
+				maximumSelectionLength : 2,
+				language : "ru"
+			});
+		});
+	</script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script>
+				
+ <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+    <script type="text/javascript" th:src="@{/js/jquery.maskedinput.min.js}"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/select2.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/ru.js}"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+    
+    
+        <script type="text/javascript"> $(".livesearch").chosen(); </script>
+    
+                    <script>
+                        function myFunction(imgs) {
+                            var expandImg = document
+                                    .getElementById("expandedImg");
+                            var imgText = document.getElementById("imgtext");
+                            expandImg.src = imgs.src;
+                            imgText.innerHTML = imgs.alt;
+                            expandImg.parentElement.style.display = "block";
+                        }
+                    </script>
+                    <script type="text/javascript">
+                        $('#inputGroupFile04').on('change', function() {
+                            //get the file name
+                            var fileName = $(this).val();
+                            // alert("file: "+fileName);
+                            //replace the "Choose a file" label
+                            var str = fileName.substr(12, fileName.lenght);
+                            $(this).next('.custom-file-label').html(str);
+                        })
+                    </script>
+                    <script type="text/javascript">
+                        $('#inputGroupFile03').on('change', function() {
+                            //get the file name
+                            var fileName = $(this).val();
+                            // alert("file: "+fileName);
+                            //replace the "Choose a file" label
+                            var str = fileName.substr(12, fileName.lenght);
+                            $(this).next('.custom-file-label').html(str);
+                        })
+                    </script>
+
+                    <script type="text/javascript">
+                        function editInventory(img) {
+                            var btnDone = document.getElementById("done_img"
+                                    + img.id.slice(img.id.length - 1));
+                            btnDone.removeAttribute('hidden');
+
+                            var thDocName = document.getElementById("docName"
+                                    + img.id.slice(img.id.length - 1));
+                            thDocName.removeAttribute('disabled');
+
+                            var thDate = document.getElementById("docDate"
+                                    + img.id.slice(img.id.length - 1));
+                            thDate.disabled = false;
+
+                            var thSheetNumber = document
+                                    .getElementById("sheetNumber"
+                                            + img.id.slice(img.id.length - 1));
+                            thSheetNumber.removeAttribute('disabled');
+
+                            var thNote = document.getElementById("note"
+                                    + img.id.slice(img.id.length - 1));
+                            thNote.removeAttribute('disabled');
+                            //console.log("note" + str.slice(str.length - 1));
+                            //console.log(str.length);
+                        }
+                    </script>
+                    
+                    	<!-- livesearch -->
+	<script> 
+		$(document).ready(function() {
+			$('#selSpec').select2({
+				maximumSelectionLength : 2,
+				language : "ru"
+			});
+		});
+		
+		$(document).ready(function() {
+            $('#selTypePersonSettlement').select2({
+                maximumSelectionLength : 2,
+                language : "ru"
+            });
+        });
+		
+		
+	</script>
+    
+</body>
+</html>

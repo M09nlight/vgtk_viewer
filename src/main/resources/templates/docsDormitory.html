@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<title>Документы</title>
+    <head th:replace="commons::head"></head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.min.css">
+    <body>
+        <div th:replace="commons::navbar(active='messages')"></div>
+            <div th:replace="commons::nav"></div>
+
+        <div class="wrapper">
+            <div class="container">
+                <div class="card" style="width: 100%">
+                    <div class="card-header">
+                        <h4>Документы для скачивания</h4>
+                        <form action="/senddormfile/dormitory" method="POST" enctype="multipart/form-data">
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input name="doc" type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+                                    <label class="custom-file-label" for="inputGroupFile04"></label>
+                                </div>
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon04">Загрузить</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item  list-group-item-action" th:each="file: ${files}">
+                                <a th:href="'/downWord/dormitory/' + ${file}" class="card-link"><th:block th:text="${file}"></a>
+                                <a sec:authorize="hasRole('ROLE_ADMIN') || hasRole('ROLE_DIRECTOR')" th:href="'/deleteDocx/dormitory/' + ${file}" class="card-link float-right"><th:block th:text="X"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+    <script type="text/javascript"> $(".livesearch").chosen(); </script>
+    <script type="text/javascript">
+        $('#inputGroupFile04').on('change', function () {
+            //get the file name
+            var fileName = $(this).val();
+            // alert("file: "+fileName);
+            //replace the "Choose a file" label
+            var str = fileName.substr(12, fileName.lenght);
+            $(this).next('.custom-file-label').html(str);
+        })
+    </script>
+
+</body>
+</html>

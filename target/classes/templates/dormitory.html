@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<title>Общежития</title>
+    <head th:replace="commons::head"></head>
+    <!-- link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.min.css"-->
+     <!-- link href="chosen.min.css" rel="stylesheet"-->
+     <!-- link href="chosen.css" rel="stylesheet" /-->
+     <!-- link rel="stylesheet" src="chosen.css"-->
+
+<style>
+.section {
+	flex-wrap: wrap;
+	display: flex;
+	justify-content: center;
+}
+
+.elem-group {
+	flex: 303px;
+	min-width: 303px;
+	max-width: 303px;
+	margin: 10px;
+}
+</style>
+<body>
+    <div th:replace="commons::navbar(active='messages')"></div>
+    <div th:replace="commons::nav"></div>
+
+<div class="wrapper">
+<div class="container text-center">
+
+<div class="section">
+    <div class="mt-3">
+        <div class="container text-center">
+            <div class="card-deck" style="border-left:100px solid transparent; border-right:100px solid transparent;">
+
+                <a th:href="@{/dormitoryOne?id=3&nom=1}">
+                <div class="card border-success mb-3 elem-group" style="max-width: 305px;">
+                    <img src="img/dormitory/dorm1.jpg" class="card-img-top" alt="Общежитие">
+                    <div class="card-body" style="height: 130px; padding: 0.5rem;">
+                        <h5 class="card-title text-center " style="color: #cc0000;"><b>Общежитие №1</b></h5>
+                        
+                        <p class="card-text" style="color:black; margin-bottom: 10px;">Адрес: 210024, г.Витебск, ул.Гончарная, 17.</p>
+                        <p class="card-text" style="color:black;">Телефон: 80212-35-95-89</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card text-center">
+                            <a th:href="@{/dormitoryOne?id=3&nom=1}" class="btn btn-success">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                </a>
+                
+                <!-- a th:href="@{/dormitoryOne?id=2&nom=2}" style="pointer-events: none; cursor: default; color: #999;">
+                <div class="card border-success mb-3 elem-group" style="max-width: 270px;">
+                    <img src="img/dormitory/dorm2.JPG" class="card-img-top" alt="Общежитие">
+                    <div class="card-body" style="min-height: 170px;">
+                        <h5 class="card-title text-center " style="color: #cc0000;"><b>Общежитие №2</b></h5>
+                        <p class="card-text" style="color:black;">Адрес: 210023, г.Витебск, просп.Фрунзе, 10.</p>
+                        <p class="card-text" style="color:black;">Телефон: 80212-35-92-76</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card text-center">
+                            <a th:href="@{/dormitoryOne?id=2&nom=2}" class="btn btn-success" >Перейти</a>
+                            <a th:href="@{/dormitoryOne?id=2&nom=2}" class="btn btn-success" style="pointer-events: none; cursor: default; color: #999;" >Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                </a-->
+                
+                <!-- style="pointer-events: none; -->
+                <a th:href="@{/dormitoryOne?id=1&nom=3}" >
+                <div class="card border-success mb-3 elem-group" style="max-width: 305px;">
+                    <img src="img/dormitory/dorm3.JPG" class="card-img-top" alt="Общежитие">
+                    <div class="card-body" style="height: 130px;  padding: 0.5rem;">
+                    
+                        <h5 class="card-title text-center " style="color: #cc0000;"><b>Общежитие №3</b></h5>
+                        <p class="card-text" style="color:black; margin-bottom: 10px;">Адрес: 210023, г.Витебск, ул. Лазо, 103Б.</p>
+                        <p class="card-text" style="color:black;">Телефон: 80212-66-70-87</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card text-center">
+                            <a th:href="@{/dormitoryOne?id=1&nom=3}" class="btn btn-success">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+
+    <div style="background-color: #bcf5bc; border-bottom: 5px solid transparent;">
+
+   <h4 style="border: 10px solid #bcf5bc;"> Поиск проживающего по ФИО </h4> 
+   <form action="/personInfo.html" accept-charset="UTF-8" method="POST">
+   <div class="" style="border: 5px solid #bcf5bc; text-align: left;">
+   <div class="row" style="margin-left: 0px; margin-right: 0px"> 
+        <select class="livesearch" name="idPerson" style="width: 100%;">
+
+        <div th:each="person: ${persons}">
+        <option th:value="${person.id}">
+        <th:block th:text="${person.surname}"/> <th:block th:text="${person.name}"/> <th:block th:text="${person.patronymic}"/>
+        </option>
+        </div>
+        </select>
+        </div>
+                    
+   </div>
+   <button style="margin: 5px 5px 5px 5px" type="submit" class="btn btn-success">Найти</button>
+   </form>
+   
+    <a th:href="@{/personSearch}" class="btn btn-success">Перейти на расширенный поиск</a>
+    
+    </div>
+</div>
+
+</div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+    <script type="text/javascript"> $(".livesearch").chosen(); </script>
+
+</body>
+</html>

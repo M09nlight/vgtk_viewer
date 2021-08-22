@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+    <head th:replace="commons::head"></head>
+    <style type="text/css">
+.cinemaHall {
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.seat {
+    height: 125px;
+    width: 70px;
+    margin: 4px;
+    background-color: #999999;
+    display: inline-block;
+    cursor: pointer;  /* показать курсор как ссылку */
+    border-radius: 2px;
+    font-size: 12px;
+}
+
+.notSeat {
+    height: 125px;
+    width: 70px;
+    margin: 4px;
+    background-color: #ffffff;
+    display: inline-block;
+    border-radius: 2px;
+    font-size: 12px;
+}
+
+.passageBetween {
+    height: 1px;
+    width: 100%;
+    display: block;
+}
+
+.bay {
+    background-color: red;
+}
+
+.result {
+    font-size: 10px;
+    display: inline-block;
+    width: 90px;
+    max-height: 200px;
+    overflow-y: auto;
+    margin-right: 5px;
+}
+</style>
+    <body>
+        <div th:replace="commons::navbar"></div>
+            <div th:replace="commons::nav"></div>
+
+        <div class="wrapper">
+            <div class="row row-cols-md-2 row-m-0">
+                <div class="col-5" style="max-width: 500px;">
+                    <div class="row row-cols-md-1 row-m-0">
+                        <div class="card mb-3"  style="max-width: 500px;" th:each="room: ${rooms}">
+                            <div class="card-header">Комната №<th:block th:text="${room.number}"/></div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li th:each="person: ${persons}" class="list-group-item" th:if="${person.room.id == room.id}">
+                                            <a th:href="@{/person?id={pid}(pid=${person.id})}"><th:block th:text="${person.surname}"/>
+                                            <th:block th:text="${person.name}"/>
+                                            <th:block th:text="${person.patronymic}"/></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container" style="min-width: 700px;">
+                    <div class="card mb-3" style="min-width: 750px;">
+                    
+                    <div class="card-header row" style="padding-left: 20px;margin-left: 0px;margin-right: 0px;">
+                    <div class="col-md-9">
+                        <h3>Список жильцов этажа</h3>
+                    </div>
+                    <div class="col-md-3" >
+                        
+                        <form action="/downloadWord" accept-charset="UTF-8" method="POST">
+                        
+                        <input type="hidden" name="idDorm" class="form-control" id="inlineFormInputGroupUsername2" 
+                        placeholder="Введите фамилию" th:value="${iddorm}" value="jjj" hidden>
+                        
+                        <input type="hidden" name="floorNum" class="form-control" id="inlineFormInputGroupUsername2" 
+                        placeholder="Введите фамилию" th:value="${floornum}" >
+                        
+                        <button type="submit" class="btn btn-success">Скачать Word</button>
+                        
+                        </form>
+                    </div>
+                        </div>
+                        
+            <table class="table table-light" style="font-size: 80%;">
+            <thead>
+            <tr>
+            <th scope="col">Фамилия</th>
+            <th scope="col">Имя</th>
+            <th scope="col">Отчество</th>
+            <th scope="col">Возраст</th>
+            <th scope="col">Отделение</th>
+            <th scope="col">Группа</th>
+            <th scope="col">Комната</th>
+            <th scope="col">Откуда</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="table-light" th:each="person: ${persons}">
+                <td><th:block th:text="${person.surname}"/></td>
+                <td><th:block th:text="${person.name}"/></td>
+                <td><th:block th:text="${person.patronymic}"/></td>
+                <td><th:block th:text="${T(by.vgtk.support.Functions).getAgeFromDate(person.dateOfBirth)}"/></td>
+                <td><th:block th:if="${person.department} != null" th:text="${T(by.vgtk.support.Functions).getAbbrOtdel(person.department.departmentName)}"/></td>
+                <td><th:block th:text="${person.group1.groupName}"/></td>
+                <td><th:block th:text="${person.room.number}"/></td>
+                <td><th:block th:text="${person.homeAddress}"/></td>
+
+            </tr>
+            </tbody>
+            </table>
+                            <!-- <ul class="list-group list-group-flush">
+                                <li th:each="person: ${persons}" class="list-group-item">
+                                    <th:block th:text="${person.surname}"/>
+                                    <th:block th:text="${person.name}"/>
+                                    <th:block th:text="${person.patronymic}"/>
+                                    <th:block th:text="${person.room.number}"/>
+                                    <th:block th:text="${person.type}"/>
+                                    <th:block th:text="${person.dateOfBirth}"/>
+                                </li>
+                            </ul>-->
+                        </div>
+                    <h1>Почти здесь будет схема</h1>
+
+
+				<input id="forIp" th:value="${@environment.getProperty('isServer')}" hidden>
+				<!-- получить значение из сервера для ip из сервера -->
+
+				<script>
+					var ipFromAppProp;
+					if (document.getElementById("forIp").value == "false") {
+						ipFromAppProp = "127.0.0.1:8080";
+					} else {
+						ipFromAppProp = "192.168.1.5:80"
+					}
+					console.log("new ip: " + ipFromAppProp);
+				</script>
+
+
+				<script type="text/javascript">
+					async function getEnrollmentDate() {
+
+						let selectedSpecialtyEl = document.getElementById("selSpec");
+
+						let url = 'http://' + ipFromAppProp + '/getPersonRoomForJS';
+						let response = await
+						fetch(url);
+
+						let commits = await
+						response.json(); //читаем ответ в формате JSON
+
+						for(var i=0;i<commits.length;i++){
+							  console.log("textContent: " + commits[i].number)
+						}
+
+						//document.getElementById("enrollmentDateInput").value = commits;
+
+						console.log("___commits: " + commits.length)
+
+					}
+
+					getEnrollmentDate();
+				</script>
+
+			</div>
+                </div>
+                    
+                </div>
+            </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js"></script>
+
+    </body>
+</html>

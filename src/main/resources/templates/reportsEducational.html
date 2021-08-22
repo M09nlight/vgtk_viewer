@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<title>Отчёты</title>
+<head th:replace="commons::head"></head>
+<style>
+.outer {
+    display: flex;
+    justify-content: center;
+    align-items: center; /*по вертикали*/
+}
+</style>
+<body>
+    <div th:replace="commons::navbar"></div>
+    <div th:replace="commons::navEdu"></div>
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="row row-cols-2">
+                <div class="col mb-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>
+                                <th:block th:text="'Списки студентов групп'" />
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <form action="/educational/wordgroup" accept-charset="UTF-8" method="POST">
+                                <div class="row">
+                                    <select class="livesearch" name="idGroup" style="width: 60%">
+                                        <option th:each="gr: ${groups}" th:value="${gr.id}">
+                                            <th:block th:text="${gr.groupName}" />
+                                        </option>
+                                    </select>
+                                    <button type="submit" class="btn btn-success mt-2">Скачать</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>
+                                <th:block th:text="'Справка об обучении в колледже'" />
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <form action="/educational/certfirstcourse" accept-charset="UTF-8" method="POST">
+                                <div class="row">
+                                    <select class="livesearch" name="idPerson" style="width: 60%">
+                                        <option th:each="pers: ${persons}" th:value="${pers.id}">
+                                            <th:block th:text="${pers.surname + ' ' + pers.name + ' ' + pers.patronymic}" />
+                                        </option>
+                                    </select>
+                                    <button type="submit" class="btn btn-success mt-2">Скачать</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>
+                                <th:block th:text="'Справка об обучении (военкомат)'" />
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <form action="/educational/certrecruiting" accept-charset="UTF-8" method="POST">
+                                <div class="row">
+                                    <select class="livesearch" name="idPersonRec" style="width: 60%">
+                                        <option th:each="persRec: ${personsRec}" th:value="${persRec.id}">
+                                            <th:block th:text="${persRec.surname + ' ' + persRec.name + ' ' + persRec.patronymic}" />
+                                        </option>
+                                    </select>
+                                    <button type="submit" class="btn btn-success mt-2">Скачать</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>
+                                <th:block th:text="'Справка об обучении (соц. защита)'" />
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <form action="/educational/certorphan" accept-charset="UTF-8" method="POST">
+                                <div class="row">
+                                    <select class="livesearch" name="idPersonOrp" style="width: 60%">
+                                        <option th:each="persOrp: ${personsOrp}" th:value="${persOrp.id}">
+                                            <th:block th:text="${persOrp.surname + ' ' + persOrp.name + ' ' + persOrp.patronymic}" />
+                                        </option>
+                                    </select>
+                                    <button type="submit" class="btn btn-success mt-2">Скачать</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col mb-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>
+                                <th:block th:text="'Список совершеннолетних за промежуток'" />
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <form action="/educational/adultreport" accept-charset="UTF-8" method="POST">
+                                <div class="row">
+                                    <div class="outer">
+                                        <input class="form-control" name="dateFrom" type="date" style="width: 30%">
+                                        <input class="form-control" name="dateTo" type="date" style="width: 30%">
+                                    </div>
+                                    <button type="submit" class="btn btn-success mt-2">Скачать</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js"></script>
+    <!--script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+    <script type="text/javascript">
+					$(".livesearch").chosen();
+				</script>
+</body>
+</html>
