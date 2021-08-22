@@ -1,0 +1,17 @@
+.*
+!.gitignore
+target
+*.log*
+nn.bat
+*.properties
+*.docx
+*results*.docx
+*statistic*.docx
+*search*.docx
+*Search*.docx
+*statistic*.docx
+!src/main/resources/*/*.docx
+!src/main/resources/docs/educational/*
+!src/main/resources/docx/*/*
+!/educational/*
+/bin/
