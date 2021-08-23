@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Title -->
+  <title>Tabs - Front Starter | Front - Responsive Website Template</title>
+
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../favicon.ico">
+
+  <!-- Google Fonts -->
+  <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="../assets/vendor/font-awesome/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="../assets/vendor/animate.css/animate.min.css">
+  <link rel="stylesheet" href="../assets/vendor/hs-megamenu/src/hs.megamenu.css">
+  <link rel="stylesheet" href="../assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+  <link rel="stylesheet" href="../assets/vendor/slick-carousel/slick/slick.css">
+  <link rel="stylesheet" href="../documentation/assets/vendor/jquery-ui/themes/base/jquery-ui.min.css">
+  <link rel="stylesheet" href="../documentation/assets/vendor/prism/prism.css">
+
+  <!-- CSS Front Template -->
+  <link rel="stylesheet" href="../assets/css/theme.css">
+
+  <!-- CSS Front Doc -->
+  <link rel="stylesheet" href="../documentation/assets/css/starter.css">
+</head>
+<body>
+  <!-- ========== HEADER ========== -->
+  <header id="header" class="u-header u-header--starter">
+    <nav id="logoAndNav" class="navbar navbar-light bg-light fixed-top flex-nowrap p-0">
+      <div class="col-md-3 col-xl-2 bg-md-dark navbar-brand u-header__navbar-brand u-header__navbar-brand-center mr-0 py-3">
+        <a class="u-header__navbar-brand-text-white d-flex align-items-center" href="index.html" aria-label="Front">
+          <svg class="d-none d-md-inline-block" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 46 46" xml:space="preserve" style="margin-bottom: 0;">
+            <path fill="#E1E4EA" opacity=".65" d="M23,41.1L23,41.1c-9.9,0-18-8-18-18l0,0c0-9.9,8-18,18-18h11.3c3.7,0,6.6,3,6.6,6.6v11.4C41,33,32.9,41.1,23,41.1z"/>
+            <path class="fill-white" opacity=".5" d="M28,36L28,36c-9.9,0-18-8-18-18l0,0c0-9.9,8-18,18-18h11.3C43,0.1,46,3.1,46,6.7v11.4C46,28,38,36,28,36z"/>
+            <path class="fill-white" opacity=".7" d="M18,46.1L18,46.1c-10,0-18-8-18-18l0,0c0-9.9,8-18,18-18h11.3c3.7,0,6.6,3,6.6,6.6v11.4C35.9,38.1,27.9,46.1,18,46.1z"/>
+            <path class="fill-primary" d="M17.4,34.1V18.4h10.2v2.9h-6.4v3.4H26v2.9h-4.8v6.5H17.4z"/>
+          </svg>
+          <svg class="d-md-none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 46 46" xml:space="preserve" style="margin-bottom: 0;">
+            <path fill="#3F7DE0" opacity=".65" d="M23,41L23,41c-9.9,0-18-8-18-18v0c0-9.9,8-18,18-18h11.3C38,5,41,8,41,11.7V23C41,32.9,32.9,41,23,41z"/>
+            <path class="fill-info" opacity=".5" d="M28,35.9L28,35.9c-9.9,0-18-8-18-18v0c0-9.9,8-18,18-18l11.3,0C43,0,46,3,46,6.6V18C46,27.9,38,35.9,28,35.9z"/>
+            <path class="fill-primary" opacity=".7" d="M18,46L18,46C8,46,0,38,0,28v0c0-9.9,8-18,18-18h11.3c3.7,0,6.6,3,6.6,6.6V28C35.9,38,27.9,46,18,46z"/>
+            <path class="fill-white" d="M17.4,34V18.3h10.2v2.9h-6.4v3.4h4.8v2.9h-4.8V34H17.4z"/>
+          </svg>
+          <span class="u-header__navbar-brand-text">Front</span>
+        </a>
+        <a class="small ml-3" href="../documentation/getting-started/changelog.html">
+          <span class="badge badge-white u-header--starter__badge">v2.9</span>
+        </a>
+      </div>
+
+      <!-- Header Search -->
+      <form class="form-inline input-group input-group-sm d-none d-md-flex mr-auto ml-md-4" style="max-width: 500px;">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="docsSearch">
+            <span class="fas fa-search"></span>
+          </span>
+        </div>
+        <input class="js-hs-docs-search form-control" type="text" placeholder="Search..." aria-label="Search..." aria-describedby="docsSearch" data-url="../documentation/assets/ajax/autocomplete-data-for-starter-search.json">
+      </form>
+      <!-- End Header Search -->
+
+      <!-- Header Links -->
+      <ul class="navbar-nav u-header--starter text-nowrap flex-row align-items-center px-3 ml-0 ml-sm-3">
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#" title="Video Tuts" target="_blank">
+            <span class="fab fa-youtube mr-sm-1"></span>
+            <span class="d-none d-lg-inline-block">Video Tuts</span>
+          </a>
+        </li> -->
+        <li class="nav-item ml-4">
+          <a class="nav-link" href="../documentation/index.html" title="Documentation">
+            <span class="fas fa-laptop-code mr-sm-1"></span>
+            <span class="d-none d-lg-inline-block">Documentation</span>
+          </a>
+        </li>
+        <li class="nav-item ml-3 ml-sm-5">
+          <a class="btn btn-sm btn-dark" href="../html/home/index.html" title="Live Preview">
+            <span class="far fa-eye mr-sm-1"></span>
+            Live Preview
+          </a>
+        </li>
+      </ul>
+      <!-- End Header Links -->
+    </nav>
+  </header>
+  <!-- ========== END HEADER ========== -->
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <nav class="col-md-3 col-xl-2 bg-dark hs-sidebar navbar-expand-md">
+        <div class="d-flex d-md-none justify-content-between mb-3">
+          <!-- Sidebar Search -->
+          <form class="col form-inline input-group-sm">
+            <input class="js-hs-docs-search form-control form-control-sm w-100" type="text" placeholder="Search..." data-url="../documentation/assets/include/ajax/autocomplete-data-for-starter-search.json">
+          </form>
+          <!-- End Sidebar Search -->
+
+          <!-- Responsive Toggle Button -->
+          <button class="btn btn-link pl-0" type="button" data-toggle="collapse" data-target="#sidebar-nav" aria-controls="sidebar-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 30 30" width="30" height="30" focusable="false">
+              <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/>
+            </svg>
+          </button>
+          <!-- End Responsive Toggle Button -->
+        </div>
+
+        <!-- Sidebar Nav -->
+        <div class="collapse navbar-collapse" id="sidebar-nav">
+          <div class="js-scrollbar hs-sidebar-sticky">
+            <ul id="sidebarNav" class="hs-sidebar__nav">
+              <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="index.html">Introduction</a></li>
+              <li class="hs-sidebar__item">
+                <a class="hs-sidebar__link dropdown-toggle dropdown-toggle-collapse" href="javascript:;" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarNav1Collapse" data-target="#sidebarNav1Collapse">Clients</a>
+
+                <ul id="sidebarNav1Collapse" class="collapse list-unstyled ml-2" data-parent="#sidebarNav">
+                  <li><a class="hs-sidebar__link" href="clients.html">Static</a></li>
+                  <li><a class="hs-sidebar__link" href="clients-with-carousel.html">With Carousel</a></li>
+                </ul>
+              </li>
+              <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="collapse.html">Collapse</a></li>
+              <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="cta.html">Call-to-action (CTA)</a></li>
+              <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="datatables.html">Datatables</a></li>
+              <li class="hs-sidebar__item">
+                <a class="hs-sidebar__link dropdown-toggle dropdown-toggle-collapse" href="javascript:;" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarNav2Collapse" data-target="#sidebarNav2Collapse">Footers</a>
+
+                <ul id="sidebarNav2Collapse" class="collapse list-unstyled ml-2" data-parent="#sidebarNav">
+                  <li><a class="hs-sidebar__link" href="footers.html">Default (White background)</a></li>
+                  <li><a class="hs-sidebar__link" href="footers-dark.html">Dark background</a></li>
+                  <li><a class="hs-sidebar__link" href="footers-primary.html">Primary background</a></li>
+                </ul>
+              </li>
+              <li class="hs-sidebar__item">
+                <a class="hs-sidebar__link dropdown-toggle dropdown-toggle-collapse" href="javascript:;" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarNav3Collapse" data-target="#sidebarNav3Collapse">Form layouts</a>
+
+                <ul id="sidebarNav3Collapse" class="collapse list-unstyled ml-2" data-parent="#sidebarNav">
+                  <li><a class="hs-sidebar__link" href="form-layouts-authentication-forms.html">Authentication forms</a></li>
+                  <li><a class="hs-sidebar__link" href="form-layouts-contact-forms.html">Contact and Feedback forms</a></li>
+                  <li><a class="hs-sidebar__link" href="form-layouts-search-forms.html">Search forms</a></li>
+                  <li><a class="hs-sidebar__link" href="form-layouts-checkbox-forms.html">Checkbox forms</a></li>
+                  <li><a class="hs-sidebar__link" href="form-layouts-file-attachement-forms.html">File attachment forms</a></li>
+                  <li><a class="hs-sidebar__link" href="form-layouts-toggle-and-switch-forms.html">Toggle and Switch forms</a></li>
+                </ul>
+              </li>
+              <li class="hs-sidebar__item">
+                <a class="hs-sidebar__link dropdown-toggle dropdown-toggle-collapse" href="javascript:;" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarNav4Collapse" data-target="#sidebarNav4Collapse">Gallery</a>
+
+                <ul id="sidebarNav4Collapse" class="collapse list-unstyled ml-2" data-parent="#sidebarNav">
+                  <li><a class="hs-sidebar__link" href="gallery-grid.html">Grid</a></li>
+                  <li><a class="hs-sidebar__link" href="gallery-masonry.html">Masonry</a></li>
+                  <li><a class="hs-sidebar__link" href="gallery-with-carousel.html">With carousel</a></li>
+                </ul>
+              </li>
+              <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="header-layouts.html">Header layouts</a></li>
+              <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="hero.html">Hero</a></li>
+              <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="hero-products.html">Hero products</a></li>
+              <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="hero-subscribe.html">Hero subscribe</a></li>
+              <li class="hs-sidebar__item">
+                <a class="hs-sidebar__link dropdown-toggle dropdown-toggle-collapse" href="javascript:;" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarNav5Collapse" data-target="#sidebarNav5Collapse">Icon blocks</a>
+
+                <ul id="sidebarNav5Collapse" class="collapse list-unstyled ml-2" data-parent="#sidebarNav">
+                  <li><a class="hs-sidebar__link" href="icon-blocks-center-aligned.html">Center aligned</a></li>
+                  <li><a class="hs-sidebar__link" href="icon-blocks-left-aligned.html">Left aligned</a></li>
+                </ul>
+              </li>
+              <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="indicators.html">Indicators</a></li>
+              <li class="hs-sidebar__item">
+                <a class="hs-sidebar__link dropdown-toggle dropdown-toggle-collapse" href="javascript:;" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarNav6Collapse" data-target="#sidebarNav6Collapse">Info</a>
+
+                <ul id="sidebarNav6Collapse" class="collapse list-unstyled ml-2" data-parent="#sidebarNav">
+                  <li><a class="hs-sidebar__link" href="info-colorful-blocks.html">Colorful blocks</a></li>
+                  <li><a class="hs-sidebar__link" href="info-sections.html">Sections</a></li>
+                  <li><a class="hs-sidebar__link" href="info-grid.html">Grid</a></li>
+                  <li><a class="hs-sidebar__link" href="info-list.html">List</a></li>
+                </ul>
+              </li>
+              <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="media-objects.html">Media Objects</a></li>
+              <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="modal-window.html">Modal Window</a></li>
+              <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="notification.html">Notification</a></li>
+              <li class="hs-sidebar__item">
+                <a class="hs-sidebar__link dropdown-toggle dropdown-toggle-collapse" href="javascript:;" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarNav7Collapse" data-target="#sidebarNav7Collapse">News Blogs</a>
+
+                <ul id="sidebarNav7Collapse" class="collapse list-unstyled ml-2" data-parent="#sidebarNav">
+                  <li><a class="hs-sidebar__link" href="news-blogs-grid.html">Grid</a></li>
+                  <li><a class="hs-sidebar__link" href="news-blogs-list.html">List</a></li>
+                  <li><a class="hs-sidebar__link" href="news-blogs-masonry.html">Masonry</a></li>
+                </ul>
+              </li>
+              <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="pagination.html">Pagination</a></li>
+              <li class="hs-sidebar__item">
+                <a class="hs-sidebar__link dropdown-toggle dropdown-toggle-collapse" href="javascript:;" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarNav8Collapse" data-target="#sidebarNav8Collapse">Pricing</a>
+
+                <ul id="sidebarNav8Collapse" class="collapse list-unstyled ml-2" data-parent="#sidebarNav">
+                  <li><a class="hs-sidebar__link" href="pricing.html">Static</a></li>
+                  <li><a class="hs-sidebar__link" href="pricing-interactive.html">Interactive</a></li>
+                </ul>
+              </li>
+              <li class="hs-sidebar__item">
+                <a class="hs-sidebar__link dropdown-toggle dropdown-toggle-collapse" href="javascript:;" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarNav9Collapse" data-target="#sidebarNav9Collapse">Products</a>
+
+                <ul id="sidebarNav9Collapse" class="collapse list-unstyled ml-2" data-parent="#sidebarNav">
+                  <li><a class="hs-sidebar__link" href="products-grid.html">Grid</a></li>
+                  <li><a class="hs-sidebar__link" href="products-list.html">List</a></li>
+                </ul>
+              </li>
+              <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="sidebar-examples.html">Sidebar examples</a></li>
+              <li class="hs-sidebar__item">
+                <a class="hs-sidebar__link dropdown-toggle dropdown-toggle-collapse" href="javascript:;" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarNav10Collapse" data-target="#sidebarNav10Collapse">Stats</a>
+
+                <ul id="sidebarNav10Collapse" class="collapse list-unstyled ml-2" data-parent="#sidebarNav">
+                  <li><a class="hs-sidebar__link" href="stats.html">Static</a></li>
+                  <li><a class="hs-sidebar__link" href="stats-interactive.html">Interactive (e.g. Charts, Animations)</a></li>
+                </ul>
+              </li>
+              <li class="hs-sidebar__item active"><a class="hs-sidebar__link" href="tabs.html">Tabs</a></li>
+              <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="tables.html">Tables</a></li>
+              <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="team.html">Team</a></li>
+              <li class="hs-sidebar__item">
+                <a class="hs-sidebar__link dropdown-toggle dropdown-toggle-collapse" href="javascript:;" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarNav12Collapse" data-target="#sidebarNav12Collapse">Testimonials</a>
+
+                <ul id="sidebarNav12Collapse" class="collapse list-unstyled ml-2" data-parent="#sidebarNav">
+                  <li><a class="hs-sidebar__link" href="testimonials.html">Static</a></li>
+                  <li><a class="hs-sidebar__link" href="testimonials-with-carousel.html">With Carousel</a></li>
+                </ul>
+              </li>
+              <li class="hs-sidebar__item">
+                <a class="hs-sidebar__link dropdown-toggle dropdown-toggle-collapse" href="javascript:;" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarNav13Collapse" data-target="#sidebarNav13Collapse">Video Player</a>
+
+                <ul id="sidebarNav13Collapse" class="collapse list-unstyled ml-2" data-parent="#sidebarNav">
+                  <li><a class="hs-sidebar__link" href="video-player-inline.html">Inline</a></li>
+                  <li><a class="hs-sidebar__link" href="video-player-popup.html">Popup (Lightbox)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- End Sidebar Nav -->
+      </nav>
+      <!-- End Sidebar -->
+
+      <main class="col-md-9 col-xl-10 px-lg-10 pt-md-11 pb-7 ml-md-auto">
+        <div class="hs-docs-content-divider">
+          <h1 class="h3 font-weight-semi-bold">Tabs</h1>
+          <p>Dynamic tabbed interfaces.</p>
+        </div>
+
+        <!-- Component Block -->
+        <div id="tabs-1" class="hs-docs-content-divider">
+          <h2 class="hs-docs-heading h5">Tabs #1 <a class="anchorjs-link" href="#tabs-1" data-anchorjs-icon="#"></a></h2>
+
+          <!-- Tab Wrapper -->
+          <div class="tab-wrapper">
+            <!-- Nav Classic -->
+            <ul class="nav nav-classic" id="pills-tab-1" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="pills-result-tab-1" data-toggle="pill" href="#pills-result-1" role="tab" aria-controls="pills-result-1" aria-selected="true">Result</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="pills-html-tab-1" data-toggle="pill" href="#pills-html-1" role="tab" aria-controls="pills-html-1" aria-selected="false">HTML</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="pills-js-tab-1" data-toggle="pill" href="#pills-js-1" role="tab" aria-controls="pills-js-1" aria-selected="false">JS</a>
+              </li>
+            </ul>
+            <!-- End Nav Classic -->
+
+            <!-- Tab Content -->
+            <div class="tab-content" id="pills-tabContent-1">
+              <div class="tab-pane fade show active" id="pills-result-1" role="tabpanel" aria-labelledby="pills-result-tab-1">
+                <!-- Features Section -->
+                <div id="SVGmockupBg" class="svg-preloader container space-2">
+                  <!-- Nav Classic -->
+                  <div class="position-relative w-lg-85 bg-white text-center z-index-2 mx-lg-auto">
+                    <ul class="nav nav-classic nav-rounded nav-shadow nav-justified" id="pills-tab" role="tablist">
+                      <li class="nav-item">
+                        <a class="nav-link font-weight-medium active" id="pills-one-example1-tab" data-toggle="pill" href="#pills-one-example1" role="tab" aria-controls="pills-one-example1" aria-selected="true">
+                          <div class="d-md-flex justify-content-md-center align-items-md-center">
+                            <figure class="ie-height-40 d-none d-md-block w-100 max-width-6 mr-3">
+                              <img class="js-svg-injector" src="../assets/svg/icons/icon-14.svg" alt="SVG"
+                                   data-parent="#SVGmockupBg">
+                            </figure>
+                            Priority
+                          </div>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link font-weight-medium" id="pills-two-example1-tab" data-toggle="pill" href="#pills-two-example1" role="tab" aria-controls="pills-two-example1" aria-selected="false">
+                          <div class="d-md-flex justify-content-md-center align-items-md-center">
+                            <figure class="ie-height-40 d-none d-md-block w-100 max-width-6 mr-3">
+                              <img class="js-svg-injector" src="../assets/svg/icons/icon-21.svg" alt="SVG"
+                                   data-parent="#SVGmockupBg">
+                            </figure>
+                            Achieve
+                          </div>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link font-weight-medium" id="pills-three-example1-tab" data-toggle="pill" href="#pills-three-example1" role="tab" aria-controls="pills-three-example1" aria-selected="false">
+                          <div class="d-md-flex justify-content-md-center align-items-md-center">
+                            <figure class="ie-height-40 d-none d-md-block w-100 max-width-6 mr-3">
+                              <img class="js-svg-injector" src="../assets/svg/icons/icon-5.svg" alt="SVG"
+                                   data-parent="#SVGmockupBg">
+                            </figure>
+                            Performance
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- End Nav Classic -->
+
+                  <!-- Tab Content -->
+                  <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade pt-9 pb-3 px-3 show active" id="pills-one-example1" role="tabpanel" aria-labelledby="pills-one-example1-tab">
+                      <!-- Mockup Block -->
+                      <div class="row justify-content-lg-between align-items-lg-center">
+                        <div class="col-lg-4 mb-9 mb-lg-0">
+                          <!-- Info -->
+                          <div class="mb-5">
+                            <h3 class="h4 font-weight-semi-bold">Set your priorities and align your teams</h3>
+                            <p>This is where we sit down, grab a cup of coffee and dial in the details.</p>
+                          </div>
+
+                          <ul class="list-unstyled text-secondary font-size-1">
+                            <li class="media my-3">
+                              <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                              <span class="media-body">
+                                Understanding who you are
+                              </span>
+                            </li>
+                            <li class="media my-3">
+                              <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                              <span class="media-body">
+                                Whether it's branding, print, UI + UX
+                              </span>
+                            </li>
+                            <li class="media my-3">
+                              <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                              <span class="media-body">
+                                We've got your front end and back end needs covered
+                              </span>
+                            </li>
+                          </ul>
+                          <!-- End Info -->
+                        </div>
+
+                        <div class="col-lg-7 position-relative">
+                          <div class="pl-md-9">
+                            <img class="img-fluid shadow rounded" src="../assets/img/700x525/img1.jpg" alt="Image Description">
+                          </div>
+
+                          <!-- SVG Component -->
+                          <div class="position-absolute bottom-0 left-0 w-75 z-index-n1">
+                            <figure class="ie-abstract-shapes-2">
+                              <img class="js-svg-injector" src="../assets/svg/components/abstract-shapes-2.svg" alt="Image Description"
+                                   data-parent="#SVGmockupBg">
+                            </figure>
+                          </div>
+                          <!-- End SVG Component -->
+                        </div>
+                      </div>
+                      <!-- End Mockup Block -->
+                    </div>
+                    <div class="tab-pane fade pt-9 pb-3 px-3" id="pills-two-example1" role="tabpanel" aria-labelledby="pills-two-example1-tab">
+                      <!-- Mockup Block -->
+                      <div class="row justify-content-lg-between align-items-lg-center">
+                        <div class="col-lg-4 mb-9 mb-lg-0">
+                          <!-- Info -->
+                          <div class="mb-5">
+                            <h3 class="h4 font-weight-semi-bold">Focus on achieving measurable outcomes</h3>
+                            <p>Now that we've aligned the details, it's time to get things mapped out and organized.</p>
+                          </div>
+
+                          <ul class="list-unstyled text-secondary font-size-1">
+                            <li class="media my-3">
+                              <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                              <span class="media-body">
+                                We aim high at being focused on building relationships
+                              </span>
+                            </li>
+                            <li class="media my-3">
+                              <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                              <span class="media-body">
+                                Working together on the daily requires each individual
+                              </span>
+                            </li>
+                            <li class="media my-3">
+                              <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                              <span class="media-body">
+                                It's important to stay detail oriented with every project we tackle
+                              </span>
+                            </li>
+                          </ul>
+                          <!-- End Info -->
+                        </div>
+
+                        <div class="col-lg-7 position-relative">
+                          <div class="pl-md-9">
+                            <img class="img-fluid shadow-sm rounded" src="../assets/img/700x525/img2.jpg" alt="Image Description">
+                          </div>
+
+                          <!-- SVG Component -->
+                          <div class="position-absolute bottom-0 left-0 w-75 z-index-n1">
+                            <figure class="ie-abstract-shapes-4">
+                              <img class="js-svg-injector" src="../assets/svg/components/abstract-shapes-4.svg" alt="Image Description"
+                                   data-parent="#SVGmockupBg">
+                            </figure>
+                          </div>
+                          <!-- End SVG Component -->
+                        </div>
+                      </div>
+                      <!-- End Mockup Block -->
+                    </div>
+                    <div class="tab-pane fade pt-9 pb-3 px-3" id="pills-three-example1" role="tabpanel" aria-labelledby="pills-three-example1-tab">
+                      <!-- Mockup Block -->
+                      <div class="row justify-content-lg-between align-items-lg-center">
+                        <div class="col-lg-4 mb-9 mb-lg-0">
+                          <!-- Info -->
+                          <div class="mb-5">
+                            <h3 class="h4 font-weight-semi-bold">Review performance and improve strategy</h3>
+                            <p>The time has come to bring those ideas and plans to life.</p>
+                          </div>
+
+                          <ul class="list-unstyled text-secondary font-size-1">
+                            <li class="media my-3">
+                              <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                              <span class="media-body">
+                                Whether through commerce or just an experience
+                              </span>
+                            </li>
+                            <li class="media my-3">
+                              <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                              <span class="media-body">
+                                Now that your brand is all dressed up
+                              </span>
+                            </li>
+                            <li class="media my-3">
+                              <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                              <span class="media-body">
+                                This part is really crucial in keeping the project
+                              </span>
+                            </li>
+                          </ul>
+                          <!-- End Info -->
+                        </div>
+
+                        <div class="col-lg-7 position-relative">
+                          <div class="pl-md-9">
+                            <img class="img-fluid shadow-sm rounded" src="../assets/img/700x525/img3.jpg" alt="Image Description">
+                          </div>
+
+                          <!-- SVG Component -->
+                          <div class="position-absolute bottom-0 left-0 w-75 z-index-n1">
+                            <figure class="ie-abstract-shapes-3">
+                              <img class="js-svg-injector" src="../assets/svg/components/abstract-shapes-3.svg" alt="Image Description"
+                                   data-parent="#SVGmockupBg">
+                            </figure>
+                          </div>
+                          <!-- End SVG Component -->
+                        </div>
+                      </div>
+                      <!-- End Mockup Block -->
+                    </div>
+                  </div>
+                  <!-- End Tab Content -->
+                </div>
+                <!-- End Features Section -->
+              </div>
+              <div class="tab-pane fade" id="pills-html-1" role="tabpanel" aria-labelledby="pills-html-tab-1">
+                <pre>
+                  <code class="language-html" data-lang="html">
+                    &lt;!-- Features Section --&gt;
+                    &lt;div id="SVGmockupBg" class="svg-preloader container space-2"&gt;
+                      &lt;!-- Nav Classic --&gt;
+                      &lt;div class="position-relative w-lg-85 bg-white text-center z-index-2 mx-lg-auto"&gt;
+                        &lt;ul class="nav nav-classic nav-rounded nav-shadow nav-justified" id="pills-tab" role="tablist"&gt;
+                          &lt;li class="nav-item"&gt;
+                            &lt;a class="nav-link font-weight-medium active" id="pills-one-example1-tab" data-toggle="pill" href="#pills-one-example1" role="tab" aria-controls="pills-one-example1" aria-selected="true"&gt;
+                              &lt;div class="d-md-flex justify-content-md-center align-items-md-center"&gt;
+                                &lt;figure class="ie-height-40 d-none d-md-block w-100 max-width-6 mr-3"&gt;
+                                  &lt;img class="js-svg-injector" src="../../assets/svg/icons/icon-14.svg" alt="SVG"
+                                       data-parent="#SVGmockupBg"&gt;
+                                &lt;/figure&gt;
+                                Priority
+                              &lt;/div&gt;
+                            &lt;/a&gt;
+                          &lt;/li&gt;
+                          &lt;li class="nav-item"&gt;
+                            &lt;a class="nav-link font-weight-medium" id="pills-two-example1-tab" data-toggle="pill" href="#pills-two-example1" role="tab" aria-controls="pills-two-example1" aria-selected="false"&gt;
+                              &lt;div class="d-md-flex justify-content-md-center align-items-md-center"&gt;
+                                &lt;figure class="ie-height-40 d-none d-md-block w-100 max-width-6 mr-3"&gt;
+                                  &lt;img class="js-svg-injector" src="../../assets/svg/icons/icon-21.svg" alt="SVG"
+                                       data-parent="#SVGmockupBg"&gt;
+                                &lt;/figure&gt;
+                                Achieve
+                              &lt;/div&gt;
+                            &lt;/a&gt;
+                          &lt;/li&gt;
+                          &lt;li class="nav-item"&gt;
+                            &lt;a class="nav-link font-weight-medium" id="pills-three-example1-tab" data-toggle="pill" href="#pills-three-example1" role="tab" aria-controls="pills-three-example1" aria-selected="false"&gt;
+                              &lt;div class="d-md-flex justify-content-md-center align-items-md-center"&gt;
+                                &lt;figure class="ie-height-40 d-none d-md-block w-100 max-width-6 mr-3"&gt;
+                                  &lt;img class="js-svg-injector" src="../../assets/svg/icons/icon-5.svg" alt="SVG"
+                                       data-parent="#SVGmockupBg"&gt;
+                                &lt;/figure&gt;
+                                Performance
+                              &lt;/div&gt;
+                            &lt;/a&gt;
+                          &lt;/li&gt;
+                        &lt;/ul&gt;
+                      &lt;/div&gt;
+                      &lt;!-- End Nav Classic --&gt;
+
+                      &lt;!-- Tab Content --&gt;
+                      &lt;div class="tab-content" id="pills-tabContent"&gt;
+                        &lt;div class="tab-pane fade pt-9 show active" id="pills-one-example1" role="tabpanel" aria-labelledby="pills-one-example1-tab"&gt;
+                          &lt;!-- Mockup Block --&gt;
+                          &lt;div class="row justify-content-lg-between align-items-lg-center"&gt;
+                            &lt;div class="col-lg-4 mb-9 mb-lg-0"&gt;
+                              &lt;!-- Info --&gt;
+                              &lt;div class="mb-5"&gt;
+                                &lt;h3 class="h4 font-weight-semi-bold"&gt;Set your priorities and align your teams&lt;/h3&gt;
+                                &lt;p&gt;This is where we sit down, grab a cup of coffee and dial in the details.&lt;/p&gt;
+                              &lt;/div&gt;
+
+                              &lt;ul class="list-unstyled text-secondary font-size-1"&gt;
+                                &lt;li class="media my-3"&gt;
+                                  &lt;span class="fas fa-check text-primary mt-1 mr-3"&gt;&lt;/span&gt;
+                                  &lt;span class="media-body"&gt;
+                                    Understanding who you are
+                                  &lt;/span&gt;
+                                &lt;/li&gt;
+                                &lt;li class="media my-3"&gt;
+                                  &lt;span class="fas fa-check text-primary mt-1 mr-3"&gt;&lt;/span&gt;
+                                  &lt;span class="media-body"&gt;
+                                    Whether it's branding, print, UI + UX
+                                  &lt;/span&gt;
+                                &lt;/li&gt;
+                                &lt;li class="media my-3"&gt;
+                                  &lt;span class="fas fa-check text-primary mt-1 mr-3"&gt;&lt;/span&gt;
+                                  &lt;span class="media-body"&gt;
+                                    We've got your front end and back end needs covered
+                                  &lt;/span&gt;
+                                &lt;/li&gt;
+                              &lt;/ul&gt;
+                              &lt;!-- End Info --&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class="col-lg-7 position-relative"&gt;
+                              &lt;div class="pl-md-9"&gt;
+                                &lt;img class="img-fluid shadow rounded" src="../../assets/img/700x525/img1.jpg" alt="Image Description"&gt;
+                              &lt;/div&gt;
+
+                              &lt;!-- SVG Component --&gt;
+                              &lt;div class="position-absolute bottom-0 left-0 w-75 z-index-n1"&gt;
+                                &lt;figure class="ie-abstract-shapes-2"&gt;
+                                  &lt;img class="js-svg-injector" src="../../assets/svg/components/abstract-shapes-2.svg" alt="Image Description"
+                                       data-parent="#SVGmockupBg"&gt;
+                                &lt;/figure&gt;
+                              &lt;/div&gt;
+                              &lt;!-- End SVG Component --&gt;
+                            &lt;/div&gt;
+                          &lt;/div&gt;
+                          &lt;!-- End Mockup Block --&gt;
+                        &lt;/div&gt;
+                        &lt;div class="tab-pane fade pt-9" id="pills-two-example1" role="tabpanel" aria-labelledby="pills-two-example1-tab"&gt;
+                          &lt;!-- Mockup Block --&gt;
+                          &lt;div class="row justify-content-lg-between align-items-lg-center"&gt;
+                            &lt;div class="col-lg-4 mb-9 mb-lg-0"&gt;
+                              &lt;!-- Info --&gt;
+                              &lt;div class="mb-5"&gt;
+                                &lt;h3 class="h4 font-weight-semi-bold"&gt;Focus on achieving measurable outcomes&lt;/h3&gt;
+                                &lt;p&gt;Now that we've aligned the details, it's time to get things mapped out and organized.&lt;/p&gt;
+                              &lt;/div&gt;
+
+                              &lt;ul class="list-unstyled text-secondary font-size-1"&gt;
+                                &lt;li class="media my-3"&gt;
+                                  &lt;span class="fas fa-check text-primary mt-1 mr-3"&gt;&lt;/span&gt;
+                                  &lt;span class="media-body"&gt;
+                                    We aim high at being focused on building relationships
+                                  &lt;/span&gt;
+                                &lt;/li&gt;
+                                &lt;li class="media my-3"&gt;
+                                  &lt;span class="fas fa-check text-primary mt-1 mr-3"&gt;&lt;/span&gt;
+                                  &lt;span class="media-body"&gt;
+                                    Working together on the daily requires each individual
+                                  &lt;/span&gt;
+                                &lt;/li&gt;
+                                &lt;li class="media my-3"&gt;
+                                  &lt;span class="fas fa-check text-primary mt-1 mr-3"&gt;&lt;/span&gt;
+                                  &lt;span class="media-body"&gt;
+                                    It's important to stay detail oriented with every project we tackle
+                                  &lt;/span&gt;
+                                &lt;/li&gt;
+                              &lt;/ul&gt;
+                              &lt;!-- End Info --&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class="col-lg-7 position-relative"&gt;
+                              &lt;div class="pl-md-9"&gt;
+                                &lt;img class="img-fluid shadow-sm rounded" src="../../assets/img/700x525/img2.jpg" alt="Image Description"&gt;
+                              &lt;/div&gt;
+
+                              &lt;!-- SVG Component --&gt;
+                              &lt;div class="position-absolute bottom-0 left-0 w-75 z-index-n1"&gt;
+                                &lt;figure class="ie-abstract-shapes-4"&gt;
+                                  &lt;img class="js-svg-injector" src="../../assets/svg/components/abstract-shapes-4.svg" alt="Image Description"
+                                       data-parent="#SVGmockupBg"&gt;
+                                &lt;/figure&gt;
+                              &lt;/div&gt;
+                              &lt;!-- End SVG Component --&gt;
+                            &lt;/div&gt;
+                          &lt;/div&gt;
+                          &lt;!-- End Mockup Block --&gt;
+                        &lt;/div&gt;
+                        &lt;div class="tab-pane fade pt-9" id="pills-three-example1" role="tabpanel" aria-labelledby="pills-three-example1-tab"&gt;
+                          &lt;!-- Mockup Block --&gt;
+                          &lt;div class="row justify-content-lg-between align-items-lg-center"&gt;
+                            &lt;div class="col-lg-4 mb-9 mb-lg-0"&gt;
+                              &lt;!-- Info --&gt;
+                              &lt;div class="mb-5"&gt;
+                                &lt;h3 class="h4 font-weight-semi-bold"&gt;Review performance and improve strategy&lt;/h3&gt;
+                                &lt;p&gt;The time has come to bring those ideas and plans to life.&lt;/p&gt;
+                              &lt;/div&gt;
+
+                              &lt;ul class="list-unstyled text-secondary font-size-1"&gt;
+                                &lt;li class="media my-3"&gt;
+                                  &lt;span class="fas fa-check text-primary mt-1 mr-3"&gt;&lt;/span&gt;
+                                  &lt;span class="media-body"&gt;
+                                    Whether through commerce or just an experience
+                                  &lt;/span&gt;
+                                &lt;/li&gt;
+                                &lt;li class="media my-3"&gt;
+                                  &lt;span class="fas fa-check text-primary mt-1 mr-3"&gt;&lt;/span&gt;
+                                  &lt;span class="media-body"&gt;
+                                    Now that your brand is all dressed up
+                                  &lt;/span&gt;
+                                &lt;/li&gt;
+                                &lt;li class="media my-3"&gt;
+                                  &lt;span class="fas fa-check text-primary mt-1 mr-3"&gt;&lt;/span&gt;
+                                  &lt;span class="media-body"&gt;
+                                    This part is really crucial in keeping the project
+                                  &lt;/span&gt;
+                                &lt;/li&gt;
+                              &lt;/ul&gt;
+                              &lt;!-- End Info --&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class="col-lg-7 position-relative"&gt;
+                              &lt;div class="pl-md-9"&gt;
+                                &lt;img class="img-fluid shadow-sm rounded" src="../../assets/img/700x525/img3.jpg" alt="Image Description"&gt;
+                              &lt;/div&gt;
+
+                              &lt;!-- SVG Component --&gt;
+                              &lt;div class="position-absolute bottom-0 left-0 w-75 z-index-n1"&gt;
+                                &lt;figure class="ie-abstract-shapes-3"&gt;
+                                  &lt;img class="js-svg-injector" src="../../assets/svg/components/abstract-shapes-3.svg" alt="Image Description"
+                                       data-parent="#SVGmockupBg"&gt;
+                                &lt;/figure&gt;
+                              &lt;/div&gt;
+                              &lt;!-- End SVG Component --&gt;
+                            &lt;/div&gt;
+                          &lt;/div&gt;
+                          &lt;!-- End Mockup Block --&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                      &lt;!-- End Tab Content --&gt;
+                    &lt;/div&gt;
+                    &lt;!-- End Features Section --&gt;
+                  </code>
+                </pre>
+              </div>
+              <div class="tab-pane fade" id="pills-js-1" role="tabpanel" aria-labelledby="pills-js-tab-1">
+                <pre>
+                  <code class="language-html" data-lang="html">
+                    &lt;!-- JS Implementing Plugins --&gt;
+                    &lt;script src="../../assets/vendor/svg-injector/dist/svg-injector.min.js"&gt;&lt;/script&gt;
+
+                    &lt;!-- JS Front --&gt;
+                    &lt;script src="../../assets/js/components/hs.svg-injector.js"&gt;&lt;/script&gt;
+
+                    &lt;!-- JS Plugins Init. --&gt;
+                    &lt;script&gt;
+                      $(window).on('load', function () {
+                        // initialization of svg injector module
+                        $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+                      });
+                    &lt;/script&gt;
+                  </code>
+                </pre>
+              </div>
+            </div>
+            <!-- End Tab Content -->
+          </div>
+          <!-- End Tab Wrapper -->
+        </div>
+        <!-- End Component Block -->
+
+        <!-- Component Block -->
+        <div id="tabs-2" class="hs-docs-content-divider">
+          <h2 class="hs-docs-heading h5">Tabs #2 <a class="anchorjs-link" href="#tabs-2" data-anchorjs-icon="#"></a></h2>
+
+          <!-- Tab Wrapper -->
+          <div class="tab-wrapper">
+            <!-- Nav Classic -->
+            <ul class="nav nav-classic" id="pills-tab-2" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="pills-result-tab-2" data-toggle="pill" href="#pills-result-2" role="tab" aria-controls="pills-result-2" aria-selected="true">Result</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="pills-html-tab-2" data-toggle="pill" href="#pills-html-2" role="tab" aria-controls="pills-html-2" aria-selected="false">HTML</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="pills-js-tab-2" data-toggle="pill" href="#pills-js-2" role="tab" aria-controls="pills-js-2" aria-selected="false">JS</a>
+              </li>
+            </ul>
+            <!-- End Nav Classic -->
+
+            <!-- Tab Content -->
+            <div class="tab-content" id="pills-tabContent-2">
+              <div class="tab-pane fade p-4 show active" id="pills-result-2" role="tabpanel" aria-labelledby="pills-result-tab-2">
+                <!-- Nav Classic -->
+                <ul id="SVGnavIcons" class="svg-preloader nav nav-classic nav-rounded nav-shadow nav-justified border" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link font-weight-medium active" id="pills-one-example2-tab" data-toggle="pill" href="#pills-one-example2" role="tab" aria-controls="pills-one-example2" aria-selected="true">
+                      <div class="d-md-flex justify-content-md-center align-items-md-center">
+                        <figure class="ie-height-40 d-none d-md-block w-100 max-width-6 mr-3">
+                          <img class="js-svg-injector" src="../assets/svg/icons/icon-13.svg" alt="SVG"
+                               data-parent="#SVGnavIcons">
+                        </figure>
+                        Property details
+                      </div>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link font-weight-medium" id="pills-two-example2-tab" data-toggle="pill" href="#pills-two-example2" role="tab" aria-controls="pills-two-example2" aria-selected="false">
+                      <div class="d-md-flex justify-content-md-center align-items-md-center">
+                        <figure class="ie-height-40 d-none d-md-block w-100 max-width-6 mr-3">
+                          <img class="js-svg-injector" src="../assets/svg/icons/icon-63.svg" alt="SVG"
+                               data-parent="#SVGnavIcons">
+                        </figure>
+                        Floorplan
+                      </div>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link font-weight-medium" id="pills-three-example2-tab" data-toggle="pill" href="#pills-three-example2" role="tab" aria-controls="pills-three-example2" aria-selected="false">
+                      <div class="d-md-flex justify-content-md-center align-items-md-center">
+                        <figure class="ie-height-40 d-none d-md-block w-100 max-width-6 mr-3">
+                          <img class="js-svg-injector" src="../assets/svg/icons/icon-5.svg" alt="SVG"
+                               data-parent="#SVGnavIcons">
+                        </figure>
+                        Market stats
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+                <!-- End Nav Classic -->
+
+                <!-- Tab Content -->
+                <div class="tab-content">
+                  <div class="tab-pane fade pt-6 show active" id="pills-one-example2" role="tabpanel" aria-labelledby="pills-one-example2-tab">
+                    <!-- Title -->
+                    <div class="mb-3">
+                      <h2 class="h5">Key facts</h2>
+                    </div>
+                    <!-- End Title -->
+
+                    <!-- Key Facts -->
+                    <div class="row">
+                      <div class="col-md-6">
+                        <!-- Fact List -->
+                        <ul class="list-unstyled font-size-1 mb-0">
+                          <li class="d-sm-flex justify-content-sm-between py-1">
+                            <span class="font-weight-medium">Property ID:</span>
+                            <span class="text-secondary">HG328e91UA</span>
+                          </li>
+
+                          <li class="d-sm-flex justify-content-sm-between py-1">
+                            <span class="font-weight-medium">Property type:</span>
+                            <span class="text-secondary">Studio, House</span>
+                          </li>
+
+                          <li class="d-sm-flex justify-content-sm-between py-1">
+                            <span class="font-weight-medium">Year built:</span>
+                            <span class="text-secondary">2015</span>
+                          </li>
+
+                          <li class="d-sm-flex justify-content-sm-between py-1">
+                            <span class="font-weight-medium">Lot size:</span>
+                            <span class="text-secondary">1,328 sq.m.</span>
+                          </li>
+                        </ul>
+                        <!-- End Fact List -->
+                      </div>
+
+                      <div class="col-md-6">
+                        <!-- Fact List -->
+                        <ul class="list-unstyled font-size-1 mb-0">
+                          <li class="d-sm-flex justify-content-sm-between py-1">
+                            <span class="font-weight-medium">Bedrooms:</span>
+                            <span class="text-secondary">2</span>
+                          </li>
+
+                          <li class="d-sm-flex justify-content-sm-between py-1">
+                            <span class="font-weight-medium">Bathrooms:</span>
+                            <span class="text-secondary">1.5</span>
+                          </li>
+
+                          <li class="d-sm-flex justify-content-sm-between py-1">
+                            <span class="font-weight-medium">Kitchen:</span>
+                            <span class="text-secondary">1</span>
+                          </li>
+
+                          <li class="d-sm-flex justify-content-sm-between py-1">
+                            <span class="font-weight-medium">Living room:</span>
+                            <span class="text-secondary">3</span>
+                          </li>
+                        </ul>
+                        <!-- End Fact List -->
+                      </div>
+                    </div>
+                    <!-- End Key Facts -->
+
+                    <!-- View Info -->
+                    <div class="border-top border-bottom py-4 my-6">
+                      <div class="row justify-content-sm-between">
+                        <div class="col-sm-6 text-sm-right u-ver-divider u-ver-divider--none-sm mb-2 mb-sm-0">
+                          <div class="pr-md-4">
+                            <span class="text-secondary">Last 30 days:</span>
+                            <strong class="text-dark">920 page views</strong>
+                          </div>
+                        </div>
+                        <div class="col-sm-6 ">
+                          <div class="pl-md-4">
+                            <span class="text-secondary">Since listed:</span>
+                            <strong class="text-dark">471 page views</strong>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End View Info -->
+                  </div>
+
+                  <div class="tab-pane fade pt-6" id="pills-two-example2" role="tabpanel" aria-labelledby="pills-two-example2-tab">
+                    This extremely spacious two/three bedroom duplex apartment occupies a desirable position to the South-West of Harrogate's town centre and offers a huge amount of scope to update and re-model to suit the individual including a large eaves storage room ripe for conversion into a second bathroom.
+                  </div>
+
+                  <div class="tab-pane fade pt-6" id="pills-three-example2" role="tabpanel" aria-labelledby="pills-three-example2-tab">
+                    Accessed via a communal hall up to the first floor, the apartment opens into a split level hall. To the front elevation there is a lovely, light and airy lounge with far reaching views towards the town centre and countryside beyond. Adjoining there is a well proportioned double bedroom with a fitted wardrobe.
+                  </div>
+                </div>
+                <!-- End Tab Content -->
+              </div>
+              <div class="tab-pane fade" id="pills-html-2" role="tabpanel" aria-labelledby="pills-html-tab-2">
+                <pre>
+                  <code class="language-html" data-lang="html">
+                    &lt;!-- Nav Classic --&gt;
+                    &lt;ul id="SVGnavIcons" class="svg-preloader nav nav-classic nav-rounded nav-shadow nav-justified border" role="tablist"&gt;
+                      &lt;li class="nav-item"&gt;
+                        &lt;a class="nav-link font-weight-medium active" id="pills-one-example2-tab" data-toggle="pill" href="#pills-one-example2" role="tab" aria-controls="pills-one-example2" aria-selected="true"&gt;
+                          &lt;div class="d-md-flex justify-content-md-center align-items-md-center"&gt;
+                            &lt;figure class="ie-height-40 d-none d-md-block w-100 max-width-6 mr-3"&gt;
+                              &lt;img class="js-svg-injector" src="../../assets/svg/icons/icon-13.svg" alt="SVG"
+                                   data-parent="#SVGnavIcons"&gt;
+                            &lt;/figure&gt;
+                            Property details
+                          &lt;/div&gt;
+                        &lt;/a&gt;
+                      &lt;/li&gt;
+                      &lt;li class="nav-item"&gt;
+                        &lt;a class="nav-link font-weight-medium" id="pills-two-example2-tab" data-toggle="pill" href="#pills-two-example2" role="tab" aria-controls="pills-two-example2" aria-selected="false"&gt;
+                          &lt;div class="d-md-flex justify-content-md-center align-items-md-center"&gt;
+                            &lt;figure class="ie-height-40 d-none d-md-block w-100 max-width-6 mr-3"&gt;
+                              &lt;img class="js-svg-injector" src="../../assets/svg/icons/icon-63.svg" alt="SVG"
+                                   data-parent="#SVGnavIcons"&gt;
+                            &lt;/figure&gt;
+                            Floorplan
+                          &lt;/div&gt;
+                        &lt;/a&gt;
+                      &lt;/li&gt;
+                      &lt;li class="nav-item"&gt;
+                        &lt;a class="nav-link font-weight-medium" id="pills-three-example2-tab" data-toggle="pill" href="#pills-three-example2" role="tab" aria-controls="pills-three-example2" aria-selected="false"&gt;
+                          &lt;div class="d-md-flex justify-content-md-center align-items-md-center"&gt;
+                            &lt;figure class="ie-height-40 d-none d-md-block w-100 max-width-6 mr-3"&gt;
+                              &lt;img class="js-svg-injector" src="../../assets/svg/icons/icon-5.svg" alt="SVG"
+                                   data-parent="#SVGnavIcons"&gt;
+                            &lt;/figure&gt;
+                            Market stats
+                          &lt;/div&gt;
+                        &lt;/a&gt;
+                      &lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;!-- End Nav Classic --&gt;
+
+                    &lt;!-- Tab Content --&gt;
+                    &lt;div class="tab-content"&gt;
+                      &lt;div class="tab-pane fade pt-6 show active" id="pills-one-example2" role="tabpanel" aria-labelledby="pills-one-example2-tab"&gt;
+                        &lt;!-- Title --&gt;
+                        &lt;div class="mb-3"&gt;
+                          &lt;h2 class="h5"&gt;Key facts&lt;/h2&gt;
+                        &lt;/div&gt;
+                        &lt;!-- End Title --&gt;
+
+                        &lt;!-- Key Facts --&gt;
+                        &lt;div class="row"&gt;
+                          &lt;div class="col-md-6"&gt;
+                            &lt;!-- Fact List --&gt;
+                            &lt;ul class="list-unstyled font-size-1 mb-0"&gt;
+                              &lt;li class="d-sm-flex justify-content-sm-between py-1"&gt;
+                                &lt;span class="font-weight-medium"&gt;Property ID:&lt;/span&gt;
+                                &lt;span class="text-secondary"&gt;HG328e91UA&lt;/span&gt;
+                              &lt;/li&gt;
+
+                              &lt;li class="d-sm-flex justify-content-sm-between py-1"&gt;
+                                &lt;span class="font-weight-medium"&gt;Property type:&lt;/span&gt;
+                                &lt;span class="text-secondary"&gt;Studio, House&lt;/span&gt;
+                              &lt;/li&gt;
+
+                              &lt;li class="d-sm-flex justify-content-sm-between py-1"&gt;
+                                &lt;span class="font-weight-medium"&gt;Year built:&lt;/span&gt;
+                                &lt;span class="text-secondary"&gt;2015&lt;/span&gt;
+                              &lt;/li&gt;
+
+                              &lt;li class="d-sm-flex justify-content-sm-between py-1"&gt;
+                                &lt;span class="font-weight-medium"&gt;Lot size:&lt;/span&gt;
+                                &lt;span class="text-secondary"&gt;1,328 sq.m.&lt;/span&gt;
+                              &lt;/li&gt;
+                            &lt;/ul&gt;
+                            &lt;!-- End Fact List --&gt;
+                          &lt;/div&gt;
+
+                          &lt;div class="col-md-6"&gt;
+                            &lt;!-- Fact List --&gt;
+                            &lt;ul class="list-unstyled font-size-1 mb-0"&gt;
+                              &lt;li class="d-sm-flex justify-content-sm-between py-1"&gt;
+                                &lt;span class="font-weight-medium"&gt;Bedrooms:&lt;/span&gt;
+                                &lt;span class="text-secondary"&gt;2&lt;/span&gt;
+                              &lt;/li&gt;
+
+                              &lt;li class="d-sm-flex justify-content-sm-between py-1"&gt;
+                                &lt;span class="font-weight-medium"&gt;Bathrooms:&lt;/span&gt;
+                                &lt;span class="text-secondary"&gt;1.5&lt;/span&gt;
+                              &lt;/li&gt;
+
+                              &lt;li class="d-sm-flex justify-content-sm-between py-1"&gt;
+                                &lt;span class="font-weight-medium"&gt;Kitchen:&lt;/span&gt;
+                                &lt;span class="text-secondary"&gt;1&lt;/span&gt;
+                              &lt;/li&gt;
+
+                              &lt;li class="d-sm-flex justify-content-sm-between py-1"&gt;
+                                &lt;span class="font-weight-medium"&gt;Living room:&lt;/span&gt;
+                                &lt;span class="text-secondary"&gt;3&lt;/span&gt;
+                              &lt;/li&gt;
+                            &lt;/ul&gt;
+                            &lt;!-- End Fact List --&gt;
+                          &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;!-- End Key Facts --&gt;
+
+                        &lt;!-- View Info --&gt;
+                        &lt;div class="border-top border-bottom py-4 my-6"&gt;
+                          &lt;div class="row justify-content-sm-between"&gt;
+                            &lt;div class="col-sm-6 text-sm-right u-ver-divider u-ver-divider--none-sm mb-2 mb-sm-0"&gt;
+                              &lt;div class="pr-md-4"&gt;
+                                &lt;span class="text-secondary"&gt;Last 30 days:&lt;/span&gt;
+                                &lt;strong class="text-dark"&gt;920 page views&lt;/strong&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="col-sm-6 "&gt;
+                              &lt;div class="pl-md-4"&gt;
+                                &lt;span class="text-secondary"&gt;Since listed:&lt;/span&gt;
+                                &lt;strong class="text-dark"&gt;471 page views&lt;/strong&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+                          &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;!-- End View Info --&gt;
+                      &lt;/div&gt;
+
+                      &lt;div class="tab-pane fade pt-6" id="pills-two-example2" role="tabpanel" aria-labelledby="pills-two-example2-tab"&gt;
+                        This extremely spacious two/three bedroom duplex apartment occupies a desirable position to the South-West of Harrogate's town centre and offers a huge amount of scope to update and re-model to suit the individual including a large eaves storage room ripe for conversion into a second bathroom.
+                      &lt;/div&gt;
+
+                      &lt;div class="tab-pane fade pt-6" id="pills-three-example2" role="tabpanel" aria-labelledby="pills-three-example2-tab"&gt;
+                        Accessed via a communal hall up to the first floor, the apartment opens into a split level hall. To the front elevation there is a lovely, light and airy lounge with far reaching views towards the town centre and countryside beyond. Adjoining there is a well proportioned double bedroom with a fitted wardrobe.
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;!-- End Tab Content --&gt;
+                  </code>
+                </pre>
+              </div>
+              <div class="tab-pane fade" id="pills-js-2" role="tabpanel" aria-labelledby="pills-js-tab-2">
+                <pre>
+                  <code class="language-html" data-lang="html">
+                    &lt;!-- JS Implementing Plugins --&gt;
+                    &lt;script src="../../assets/vendor/svg-injector/dist/svg-injector.min.js"&gt;&lt;/script&gt;
+
+                    &lt;!-- JS Front --&gt;
+                    &lt;script src="../../assets/js/components/hs.svg-injector.js"&gt;&lt;/script&gt;
+
+                    &lt;!-- JS Plugins Init. --&gt;
+                    &lt;script&gt;
+                      $(window).on('load', function () {
+                        // initialization of svg injector module
+                        $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+                      });
+                    &lt;/script&gt;
+                  </code>
+                </pre>
+              </div>
+            </div>
+            <!-- End Tab Content -->
+          </div>
+          <!-- End Tab Wrapper -->
+        </div>
+        <!-- End Component Block -->
+
+        <!-- Component Block -->
+        <div id="tabs-3" class="hs-docs-content-divider">
+          <h2 class="hs-docs-heading h5">Tabs #3 <a class="anchorjs-link" href="#tabs-3" data-anchorjs-icon="#"></a></h2>
+
+          <!-- Tab Wrapper -->
+          <div class="tab-wrapper">
+            <!-- Nav Classic -->
+            <ul class="nav nav-classic" id="pills-tab-3" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="pills-result-tab-3" data-toggle="pill" href="#pills-result-3" role="tab" aria-controls="pills-result-3" aria-selected="true">Result</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="pills-html-tab-3" data-toggle="pill" href="#pills-html-3" role="tab" aria-controls="pills-html-3" aria-selected="false">HTML</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="pills-js-tab-3" data-toggle="pill" href="#pills-js-3" role="tab" aria-controls="pills-js-3" aria-selected="false">JS</a>
+              </li>
+            </ul>
+            <!-- End Nav Classic -->
+
+            <!-- Tab Content -->
+            <div class="tab-content" id="pills-tabContent-3">
+              <div class="tab-pane fade show active" id="pills-result-3" role="tabpanel" aria-labelledby="pills-result-tab-3">
+                <!-- SVG Top Shape -->
+                <figure>
+                  <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="64px"
+                       viewBox="0 0 1921 273" style="margin-bottom: -8px; enable-background:new 0 0 1921 273;" xml:space="preserve">
+                    <polygon class="fill-gray-100" points="0,273 1921,273 1921,0 "/>
+                  </svg>
+                </figure>
+                <!-- End SVG Top Shape -->
+
+                <!-- Features Section -->
+                <div class="bg-light">
+                  <div class="container space-2 space-lg-3">
+                    <!-- Title -->
+                    <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-9">
+                      <span class="d-block text-secondary font-size-1 font-weight-medium text-uppercase mb-2">Our Features</span>
+                      <h2 class="font-weight-medium">Front makes designing easy and performance fast</h2>
+                    </div>
+                    <!-- End Title -->
+
+                    <div class="row">
+                      <div class="col-lg-5 order-lg-2 mb-7 mb-lg-0">
+                        <!-- Nav -->
+                        <ul class="nav nav-box" role="tablist">
+                          <li class="nav-item w-100 mx-0 mb-3">
+                            <a class="nav-link p-4 active" id="pills-one-code-features-tab" data-toggle="pill" href="#pills-one-code-features" role="tab" aria-controls="pills-one-code-features" aria-selected="true">
+                              <div class="media">
+                                <figure id="icon45" class="svg-preloader ie-height-56 w-100 max-width-8 mt-2 mr-4">
+                                  <img class="js-svg-injector" src="../assets/svg/icons/icon-45.svg" alt="SVG"
+                                       data-parent="#icon45">
+                                </figure>
+                                <div class="media-body">
+                                  <h3 class="h6">Easy &amp; fast designing</h3>
+                                  <p class="mb-0">You can work with your existing website or create new pages on Front.</p>
+                                </div>
+                              </div>
+                            </a>
+                          </li>
+
+                          <li class="nav-item w-100 mx-0 mb-3">
+                            <a class="nav-link p-4" id="pills-two-code-features-tab" data-toggle="pill" href="#pills-two-code-features" role="tab" aria-controls="pills-two-code-features" aria-selected="false">
+                              <div class="media">
+                                <figure id="icon23" class="svg-preloader ie-height-56 w-100 max-width-8 mt-2 mr-4">
+                                  <img class="js-svg-injector" src="../assets/svg/icons/icon-23.svg" alt="SVG"
+                                       data-parent="#icon23">
+                                </figure>
+                                <div class="media-body">
+                                  <h4 class="h6">Powerful features</h4>
+                                  <p class="mb-0">Easily draft, change, customize and launch new course pages.</p>
+                                </div>
+                              </div>
+                            </a>
+                          </li>
+
+                          <li class="nav-item w-100 mx-0">
+                            <a class="nav-link p-4" id="pills-three-code-features-tab" data-toggle="pill" href="#pills-three-code-features" role="tab" aria-controls="pills-three-code-features" aria-selected="false">
+                              <div class="media">
+                                <figure id="icon44" class="svg-preloader ie-height-56 w-100 max-width-8 mt-2 mr-4">
+                                  <img class="js-svg-injector" src="../assets/svg/icons/icon-44.svg" alt="SVG"
+                                       data-parent="#icon44">
+                                </figure>
+                                <div class="media-body">
+                                  <h4 class="h6">Advanced HTML/CSS editing</h4>
+                                  <p class="mb-0">With Front, you or your team can modify any aspect of your website.</p>
+                                </div>
+                              </div>
+                            </a>
+                          </li>
+                        </ul>
+                        <!-- End Nav -->
+                      </div>
+
+                      <div class="col-lg-7 order-lg-1 align-self-lg-end">
+                        <!-- Tab Content -->
+                        <div class="tab-content pr-lg-4">
+                          <div class="tab-pane fade show active" id="pills-one-code-features" role="tabpanel" aria-labelledby="pills-one-code-features-tab">
+                            <!-- SVG Mockups -->
+                            <figure id="SVGlaptopAndIphoneID1" class="svg-preloader ie-laptop-and-iphone">
+                              <img class="js-svg-injector" src="../assets/svg/components/laptop-and-iphone.svg" alt="Image Description"
+                                   data-img-paths='[
+                                     {"targetId": "#SVGlaptopAndIphoneImg1", "newPath": "../assets/img/1618x1010/img2.jpg"},
+                                     {"targetId": "#SVGlaptopAndIphoneImg2", "newPath": "../assets/img/282x500/img8.jpg"}
+                                   ]'
+                                   data-parent="#SVGlaptopAndIphoneID1">
+                            </figure>
+                            <!-- End SVG Mockups -->
+                          </div>
+
+                          <div class="tab-pane fade" id="pills-two-code-features" role="tabpanel" aria-labelledby="pills-two-code-features-tab">
+                            <div class="shadow-sm rounded">
+                              <img class="img-fluid rounded-lg" src="../assets/img/1618x1010/img3.jpg" alt="Image Description">
+                            </div>
+                          </div>
+
+                          <div class="tab-pane fade" id="pills-three-code-features" role="tabpanel" aria-labelledby="pills-three-code-features-tab">
+                            <!-- SVG Laptop Mockup -->
+                            <figure id="SVGlaptopAndIphoneID2" class="svg-preloader ie-laptop-and-iphone">
+                              <img class="js-svg-injector" src="../assets/svg/components/laptop-and-iphone.svg" alt="Image Description"
+                                   data-img-paths='[
+                                     {"targetId": "#SVGlaptopAndIphoneImg1", "newPath": "../assets/img/1618x1010/img1.jpg"},
+                                     {"targetId": "#SVGlaptopAndIphoneImg2", "newPath": "../assets/img/282x500/img7.jpg"}
+                                   ]'
+                                   data-parent="#SVGlaptopAndIphoneID2">
+                            </figure>
+                            <!-- SVG Laptop Mockup -->
+                          </div>
+                        </div>
+                        <!-- End Tab Content -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Features Section -->
+
+                <!-- SVG Bottom Shape -->
+                <figure>
+                  <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="64px"
+                       viewBox="0 0 1921 273" style="margin-bottom: -8px; enable-background:new 0 0 1921 273;" xml:space="preserve">
+                    <polygon class="fill-gray-100" points="1921,0 0,0 0,273 "/>
+                  </svg>
+                </figure>
+                <!-- End SVG Bottom Shape -->
+              </div>
+              <div class="tab-pane fade" id="pills-html-3" role="tabpanel" aria-labelledby="pills-html-tab-3">
+                <pre>
+                  <code class="language-html" data-lang="html">
+                    &lt;!-- SVG Top Shape --&gt;
+                    &lt;figure&gt;
+                      &lt;svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="64px"
+                           viewBox="0 0 1921 273" style="margin-bottom: -8px; enable-background:new 0 0 1921 273;" xml:space="preserve"&gt;
+                        &lt;polygon class="fill-gray-100" points="0,273 1921,273 1921,0 "/&gt;
+                      &lt;/svg&gt;
+                    &lt;/figure&gt;
+                    &lt;!-- End SVG Top Shape --&gt;
+
+                    &lt;!-- Features Section --&gt;
+                    &lt;div class="bg-light"&gt;
+                      &lt;div class="container space-2 space-lg-3"&gt;
+                        &lt;!-- Title --&gt;
+                        &lt;div class="w-md-80 w-lg-50 text-center mx-md-auto mb-9"&gt;
+                          &lt;span class="d-block text-secondary font-size-1 font-weight-medium text-uppercase mb-2"&gt;Our Features&lt;/span&gt;
+                          &lt;h2 class="font-weight-medium"&gt;Front makes designing easy and performance fast&lt;/h2&gt;
+                        &lt;/div&gt;
+                        &lt;!-- End Title --&gt;
+
+                        &lt;div class="row"&gt;
+                          &lt;div class="col-lg-5 order-lg-2 mb-7 mb-lg-0"&gt;
+                            &lt;!-- Nav --&gt;
+                            &lt;ul class="nav nav-box" role="tablist"&gt;
+                              &lt;li class="nav-item w-100 mx-0 mb-3"&gt;
+                                &lt;a class="nav-link p-4 active" id="pills-one-code-features-tab" data-toggle="pill" href="#pills-one-code-features" role="tab" aria-controls="pills-one-code-features" aria-selected="true"&gt;
+                                  &lt;div class="media"&gt;
+                                    &lt;figure id="icon45" class="svg-preloader ie-height-56 w-100 max-width-8 mt-2 mr-4"&gt;
+                                      &lt;img class="js-svg-injector" src="../../assets/svg/icons/icon-45.svg" alt="SVG"
+                                           data-parent="#icon45"&gt;
+                                    &lt;/figure&gt;
+                                    &lt;div class="media-body"&gt;
+                                      &lt;h3 class="h6"&gt;Easy &amp; fast designing&lt;/h3&gt;
+                                      &lt;p class="mb-0"&gt;You can work with your existing website or create new pages on Front.&lt;/p&gt;
+                                    &lt;/div&gt;
+                                  &lt;/div&gt;
+                                &lt;/a&gt;
+                              &lt;/li&gt;
+
+                              &lt;li class="nav-item w-100 mx-0 mb-3"&gt;
+                                &lt;a class="nav-link p-4" id="pills-two-code-features-tab" data-toggle="pill" href="#pills-two-code-features" role="tab" aria-controls="pills-two-code-features" aria-selected="false"&gt;
+                                  &lt;div class="media"&gt;
+                                    &lt;figure id="icon23" class="svg-preloader ie-height-56 w-100 max-width-8 mt-2 mr-4"&gt;
+                                      &lt;img class="js-svg-injector" src="../../assets/svg/icons/icon-23.svg" alt="SVG"
+                                           data-parent="#icon23"&gt;
+                                    &lt;/figure&gt;
+                                    &lt;div class="media-body"&gt;
+                                      &lt;h4 class="h6"&gt;Powerful features&lt;/h4&gt;
+                                      &lt;p class="mb-0"&gt;Easily draft, change, customize and launch new course pages.&lt;/p&gt;
+                                    &lt;/div&gt;
+                                  &lt;/div&gt;
+                                &lt;/a&gt;
+                              &lt;/li&gt;
+
+                              &lt;li class="nav-item w-100 mx-0"&gt;
+                                &lt;a class="nav-link p-4" id="pills-three-code-features-tab" data-toggle="pill" href="#pills-three-code-features" role="tab" aria-controls="pills-three-code-features" aria-selected="false"&gt;
+                                  &lt;div class="media"&gt;
+                                    &lt;figure id="icon44" class="svg-preloader ie-height-56 w-100 max-width-8 mt-2 mr-4"&gt;
+                                      &lt;img class="js-svg-injector" src="../../assets/svg/icons/icon-44.svg" alt="SVG"
+                                           data-parent="#icon44"&gt;
+                                    &lt;/figure&gt;
+                                    &lt;div class="media-body"&gt;
+                                      &lt;h4 class="h6"&gt;Advanced HTML/CSS editing&lt;/h4&gt;
+                                      &lt;p class="mb-0"&gt;With Front, you or your team can modify any aspect of your website.&lt;/p&gt;
+                                    &lt;/div&gt;
+                                  &lt;/div&gt;
+                                &lt;/a&gt;
+                              &lt;/li&gt;
+                            &lt;/ul&gt;
+                            &lt;!-- End Nav --&gt;
+                          &lt;/div&gt;
+
+                          &lt;div class="col-lg-7 order-lg-1 align-self-lg-end"&gt;
+                            &lt;!-- Tab Content --&gt;
+                            &lt;div class="tab-content pr-lg-4"&gt;
+                              &lt;div class="tab-pane fade show active" id="pills-one-code-features" role="tabpanel" aria-labelledby="pills-one-code-features-tab"&gt;
+                                &lt;!-- SVG Mockups --&gt;
+                                &lt;figure id="SVGlaptopAndIphoneID1" class="svg-preloader ie-laptop-and-iphone"&gt;
+                                  &lt;img class="js-svg-injector" src="../../assets/svg/components/laptop-and-iphone.svg" alt="Image Description"
+                                       data-img-paths='[
+                                         {"targetId": "#SVGlaptopAndIphoneImg1", "newPath": "../../assets/img/1618x1010/img2.jpg"},
+                                         {"targetId": "#SVGlaptopAndIphoneImg2", "newPath": "../../assets/img/282x500/img8.jpg"}
+                                       ]'
+                                       data-parent="#SVGlaptopAndIphoneID1"&gt;
+                                &lt;/figure&gt;
+                                &lt;!-- End SVG Mockups --&gt;
+                              &lt;/div&gt;
+
+                              &lt;div class="tab-pane fade" id="pills-two-code-features" role="tabpanel" aria-labelledby="pills-two-code-features-tab"&gt;
+                                &lt;div class="shadow-sm rounded"&gt;
+                                  &lt;img class="img-fluid rounded-lg" src="../../assets/img/1618x1010/img3.jpg" alt="Image Description"&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;
+
+                              &lt;div class="tab-pane fade" id="pills-three-code-features" role="tabpanel" aria-labelledby="pills-three-code-features-tab"&gt;
+                                &lt;!-- SVG Laptop Mockup --&gt;
+                                &lt;figure id="SVGlaptopAndIphoneID2" class="svg-preloader ie-laptop-and-iphone"&gt;
+                                  &lt;img class="js-svg-injector" src="../../assets/svg/components/laptop-and-iphone.svg" alt="Image Description"
+                                       data-img-paths='[
+                                         {"targetId": "#SVGlaptopAndIphoneImg1", "newPath": "../../assets/img/1618x1010/img1.jpg"},
+                                         {"targetId": "#SVGlaptopAndIphoneImg2", "newPath": "../../assets/img/282x500/img7.jpg"}
+                                       ]'
+                                       data-parent="#SVGlaptopAndIphoneID2"&gt;
+                                &lt;/figure&gt;
+                                &lt;!-- SVG Laptop Mockup --&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;!-- End Tab Content --&gt;
+                          &lt;/div&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;!-- End Features Section --&gt;
+
+                    &lt;!-- SVG Bottom Shape --&gt;
+                    &lt;figure&gt;
+                      &lt;svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="64px"
+                           viewBox="0 0 1921 273" style="margin-bottom: -8px; enable-background:new 0 0 1921 273;" xml:space="preserve"&gt;
+                        &lt;polygon class="fill-gray-100" points="1921,0 0,0 0,273 "/&gt;
+                      &lt;/svg&gt;
+                    &lt;/figure&gt;
+                    &lt;!-- End SVG Bottom Shape --&gt;
+                  </code>
+                </pre>
+              </div>
+              <div class="tab-pane fade" id="pills-js-3" role="tabpanel" aria-labelledby="pills-js-tab-3">
+                <pre>
+                  <code class="language-html" data-lang="html">
+                    &lt;!-- JS Implementing Plugins --&gt;
+                    &lt;script src="../../assets/vendor/svg-injector/dist/svg-injector.min.js"&gt;&lt;/script&gt;
+
+                    &lt;!-- JS Front --&gt;
+                    &lt;script src="../../assets/js/components/hs.svg-injector.js"&gt;&lt;/script&gt;
+
+                    &lt;!-- JS Plugins Init. --&gt;
+                    &lt;script&gt;
+                      $(window).on('load', function () {
+                        // initialization of svg injector module
+                        $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+                      });
+                    &lt;/script&gt;
+                  </code>
+                </pre>
+              </div>
+            </div>
+            <!-- End Tab Content -->
+          </div>
+          <!-- End Tab Wrapper -->
+        </div>
+        <!-- End Component Block -->
+
+        <!-- Component Block -->
+        <div id="tabs-4" class="hs-docs-content-divider">
+          <h2 class="hs-docs-heading h5">Tabs #4 <a class="anchorjs-link" href="#tabs-4" data-anchorjs-icon="#"></a></h2>
+
+          <!-- Tab Wrapper -->
+          <div class="tab-wrapper">
+            <!-- Nav Classic -->
+            <ul class="nav nav-classic" id="pills-tab-4" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="pills-result-tab-4" data-toggle="pill" href="#pills-result-4" role="tab" aria-controls="pills-result-4" aria-selected="true">Result</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="pills-html-tab-4" data-toggle="pill" href="#pills-html-4" role="tab" aria-controls="pills-html-4" aria-selected="false">HTML</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="pills-js-tab-4" data-toggle="pill" href="#pills-js-4" role="tab" aria-controls="pills-js-4" aria-selected="false">JS</a>
+              </li>
+            </ul>
+            <!-- End Nav Classic -->
+
+            <!-- Tab Content -->
+            <div class="tab-content" id="pills-tabContent-4">
+              <div class="tab-pane fade p-4 show active" id="pills-result-4" role="tabpanel" aria-labelledby="pills-result-tab-4">
+                <!-- Features Section -->
+                <div class="container space-2 space-lg-3">
+                  <div class="row align-items-lg-center">
+                    <div class="col-lg-7 order-lg-2 mb-7 mb-lg-0">
+                      <div class="pr-lg-5">
+                        <div class="bg-dark rounded min-height-450 p-5">
+                          <!-- Nav -->
+                          <ul class="nav nav-pills nav-white nav-justified font-weight-medium" role="tablist">
+                            <li class="nav-item">
+                              <a class="nav-link active" id="pills-one-code-sample-tab" data-toggle="pill" href="#pills-one-code-sample" role="tab" aria-controls="pills-one-code-sample" aria-selected="true">
+                                JS
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" id="pills-two-code-sample-tab" data-toggle="pill" href="#pills-two-code-sample" role="tab" aria-controls="pills-two-code-sample" aria-selected="false">
+                                PHP
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" id="pills-three-code-sample-tab" data-toggle="pill" href="#pills-three-code-sample" role="tab" aria-controls="pills-three-code-sample" aria-selected="false">
+                                Ruby
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" id="pills-four-code-sample-tab" data-toggle="pill" href="#pills-four-code-sample" role="tab" aria-controls="pills-four-code-sample" aria-selected="false">
+                                C++
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" id="pills-five-code-sample-tab" data-toggle="pill" href="#pills-five-code-sample" role="tab" aria-controls="pills-five-code-sample" aria-selected="false">
+                                Python
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" id="pills-six-code-sample-tab" data-toggle="pill" href="#pills-six-code-sample" role="tab" aria-controls="pills-six-code-sample" aria-selected="false">
+                                Java
+                              </a>
+                            </li>
+                          </ul>
+                          <!-- End Nav -->
+
+                          <!-- Tab Content -->
+                          <div class="tab-content">
+                            <div class="tab-pane fade pt-5 show active" id="pills-one-code-sample" role="tabpanel" aria-labelledby="pills-one-code-sample-tab">
+                              <!-- Code Sample -->
+                              <div class="text-monospace font-size-1">
+                                <div class="mb-4">
+                                  <span class="text-danger pr-2">public class</span>
+                                  <span class="text-white-70">AppInheritanceTest {</span>
+                                </div>
+                                <div class="pl-3 mb-1">
+                                  <span class="text-danger pr-2">public static void</span>
+                                  <span class="text-white-70">main(String[] args) {</span>
+                                </div>
+                                <div class="pl-6 mb-4">
+                                  <span class="text-white-70">Front</span>
+                                  <span class="text-danger">front</span>
+                                  <span class="text-white-70">=</span>
+                                  <span class="text-danger">new</span>
+                                  <span class="text-white-70">Front(</span><span class="text-danger">true</span><span class="text-white-70">,</span>
+                                  <span class="text-primary">"theme"</span><span class="text-white-70">,</span> <span class="text-danger">4</span><span class="text-white-70">);</span>
+                                </div>
+                                <div class="pl-6 mb-1">
+                                  <span class="text-white-70">System.</span><span class="text-primary"><em>out</em></span><span class="text-white-70">.println(</span><span class="text-primary">"Is Front Responsive?"</span>
+                                  <span class="text-white-70">+</span>
+                                  <span class="text-danger">front</span><span class="text-white-70">.isResponsive());</span>
+                                </div>
+                                <div class="pl-6 mb-1">
+                                  <span class="text-white-70">System.</span><span class="text-primary"><em>out</em></span><span class="text-white-70">.println(</span><span class="text-primary">"Front HTML "</span>
+                                  <span class="text-white-70">+</span>
+                                  <span class="text-danger">front</span><span class="text-white-70">.getHTML());</span>
+                                </div>
+                                <div class="pl-6 mb-1">
+                                  <span class="text-white-70">System.</span><span class="text-primary"><em>out</em></span><span class="text-white-70">.println(</span><span class="text-primary">"Front has "</span>
+                                  <span class="text-white-70">+</span>
+                                  <span class="text-danger">front</span><span class="text-white-70">.getDemos()</span>
+                                  <span class="text-white-70">+</span>
+                                  <span class="text-primary">" demos."</span><span class="text-white-70">);</span>
+                                </div>
+                                <div class="pl-3 mb-1">
+                                  <span class="text-white-70">}</span>
+                                </div>
+                                <div class="mb-1">
+                                  <span class="text-white-70">}</span>
+                                </div>
+                              </div>
+                              <!-- End Code Sample -->
+                            </div>
+
+                            <div class="tab-pane fade text-white-70 pt-5" id="pills-two-code-sample" role="tabpanel" aria-labelledby="pills-two-code-sample-tab">
+                              Coming soon...
+                            </div>
+
+                            <div class="tab-pane fade text-white-70 pt-5" id="pills-three-code-sample" role="tabpanel" aria-labelledby="pills-three-code-sample-tab">
+                              Coming soon...
+                            </div>
+
+                            <div class="tab-pane fade text-white-70 pt-5" id="pills-four-code-sample" role="tabpanel" aria-labelledby="pills-four-code-sample-tab">
+                              Coming soon...
+                            </div>
+
+                            <div class="tab-pane fade text-white-70 pt-5" id="pills-five-code-sample" role="tabpanel" aria-labelledby="pills-five-code-sample-tab">
+                              Coming soon...
+                            </div>
+
+                            <div class="tab-pane fade text-white-70 pt-5" id="pills-six-code-sample" role="tabpanel" aria-labelledby="pills-six-code-sample-tab">
+                              Coming soon...
+                            </div>
+                          </div>
+                          <!-- End Tab Content -->
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-5 order-lg-1">
+                      <div class="mb-5">
+                        <h2 class="font-weight-medium">Dedicated app development platform</h2>
+                        <p>From open source to premium services, Front makes app creation lightning fast.</p>
+                      </div>
+
+                      <!-- List -->
+                      <div class="row mb-4">
+                        <div class="col-6">
+                          <div class="media align-items-center text-secondary mb-3">
+                            <img class="mr-2" src="../assets/svg/components/checked-icon.svg" alt="Icon" width="16" height="16">
+                            <div class="media-body">
+                              Mobile devops
+                            </div>
+                          </div>
+                          <div class="media align-items-center text-secondary mb-3">
+                            <img class="mr-2" src="../assets/svg/components/checked-icon.svg" alt="Icon" width="16" height="16">
+                            <div class="media-body">
+                              App builder
+                            </div>
+                          </div>
+                          <div class="media align-items-center text-secondary mb-3">
+                            <img class="mr-2" src="../assets/svg/components/checked-icon.svg" alt="Icon" width="16" height="16">
+                            <div class="media-body">
+                              Subscriptions <span class="badge badge-secondary badge-pill ml-1">Beta</span>
+                            </div>
+                          </div>
+                          <div class="media align-items-center text-secondary mb-3">
+                            <img class="mr-2" src="../assets/svg/components/checked-icon.svg" alt="Icon" width="16" height="16">
+                            <div class="media-body">
+                              Integrations
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-6">
+                          <div class="media align-items-center text-secondary mb-3">
+                            <img class="mr-2" src="../assets/svg/components/checked-icon.svg" alt="Icon" width="16" height="16">
+                            <div class="media-body">
+                              Reporting
+                            </div>
+                          </div>
+                          <div class="media align-items-center text-secondary mb-3">
+                            <img class="mr-2" src="../assets/svg/components/checked-icon.svg" alt="Icon" width="16" height="16">
+                            <div class="media-body">
+                              Dashboard
+                            </div>
+                          </div>
+                          <div class="media align-items-center text-secondary mb-3">
+                            <img class="mr-2" src="../assets/svg/components/checked-icon.svg" alt="Icon" width="16" height="16">
+                            <div class="media-body">
+                              Feedback
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- End List -->
+
+                      <a class="btn btn-primary transition-3d-hover" href="#">Full API reference <small class="fas fa-arrow-right ml-1"></small></a>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Features Section -->
+              </div>
+              <div class="tab-pane fade" id="pills-html-4" role="tabpanel" aria-labelledby="pills-html-tab-4">
+                <pre>
+                  <code class="language-html" data-lang="html">
+                    &lt;!-- Features Section --&gt;
+                    &lt;div class="container space-2 space-lg-3"&gt;
+                      &lt;div class="row align-items-lg-center"&gt;
+                        &lt;div class="col-lg-7 order-lg-2 mb-7 mb-lg-0"&gt;
+                          &lt;div class="pr-lg-5"&gt;
+                            &lt;div class="bg-dark rounded min-height-450 p-5"&gt;
+                              &lt;!-- Nav --&gt;
+                              &lt;ul class="nav nav-pills nav-white nav-justified font-weight-medium" role="tablist"&gt;
+                                &lt;li class="nav-item"&gt;
+                                  &lt;a class="nav-link active" id="pills-one-code-sample-tab" data-toggle="pill" href="#pills-one-code-sample" role="tab" aria-controls="pills-one-code-sample" aria-selected="true"&gt;
+                                    JS
+                                  &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li class="nav-item"&gt;
+                                  &lt;a class="nav-link" id="pills-two-code-sample-tab" data-toggle="pill" href="#pills-two-code-sample" role="tab" aria-controls="pills-two-code-sample" aria-selected="false"&gt;
+                                    PHP
+                                  &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li class="nav-item"&gt;
+                                  &lt;a class="nav-link" id="pills-three-code-sample-tab" data-toggle="pill" href="#pills-three-code-sample" role="tab" aria-controls="pills-three-code-sample" aria-selected="false"&gt;
+                                    Ruby
+                                  &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li class="nav-item"&gt;
+                                  &lt;a class="nav-link" id="pills-four-code-sample-tab" data-toggle="pill" href="#pills-four-code-sample" role="tab" aria-controls="pills-four-code-sample" aria-selected="false"&gt;
+                                    C++
+                                  &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li class="nav-item"&gt;
+                                  &lt;a class="nav-link" id="pills-five-code-sample-tab" data-toggle="pill" href="#pills-five-code-sample" role="tab" aria-controls="pills-five-code-sample" aria-selected="false"&gt;
+                                    Python
+                                  &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li class="nav-item"&gt;
+                                  &lt;a class="nav-link" id="pills-six-code-sample-tab" data-toggle="pill" href="#pills-six-code-sample" role="tab" aria-controls="pills-six-code-sample" aria-selected="false"&gt;
+                                    Java
+                                  &lt;/a&gt;
+                                &lt;/li&gt;
+                              &lt;/ul&gt;
+                              &lt;!-- End Nav --&gt;
+
+                              &lt;!-- Tab Content --&gt;
+                              &lt;div class="tab-content"&gt;
+                                &lt;div class="tab-pane fade pt-5 show active" id="pills-one-code-sample" role="tabpanel" aria-labelledby="pills-one-code-sample-tab"&gt;
+                                  &lt;!-- Code Sample --&gt;
+                                  &lt;div class="text-monospace font-size-1"&gt;
+                                    &lt;div class="mb-4"&gt;
+                                      &lt;span class="text-danger pr-2"&gt;public class&lt;/span&gt;
+                                      &lt;span class="text-white-70"&gt;AppInheritanceTest {&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="pl-3 mb-1"&gt;
+                                      &lt;span class="text-danger pr-2"&gt;public static void&lt;/span&gt;
+                                      &lt;span class="text-white-70"&gt;main(String[] args) {&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="pl-6 mb-4"&gt;
+                                      &lt;span class="text-white-70"&gt;Front&lt;/span&gt;
+                                      &lt;span class="text-danger"&gt;front&lt;/span&gt;
+                                      &lt;span class="text-white-70"&gt;=&lt;/span&gt;
+                                      &lt;span class="text-danger"&gt;new&lt;/span&gt;
+                                      &lt;span class="text-white-70"&gt;Front(&lt;/span&gt;&lt;span class="text-danger"&gt;true&lt;/span&gt;&lt;span class="text-white-70"&gt;,&lt;/span&gt;
+                                      &lt;span class="text-primary"&gt;"theme"&lt;/span&gt;&lt;span class="text-white-70"&gt;,&lt;/span&gt; &lt;span class="text-danger"&gt;4&lt;/span&gt;&lt;span class="text-white-70"&gt;);&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="pl-6 mb-1"&gt;
+                                      &lt;span class="text-white-70"&gt;System.&lt;/span&gt;&lt;span class="text-primary"&gt;&lt;em&gt;out&lt;/em&gt;&lt;/span&gt;&lt;span class="text-white-70"&gt;.println(&lt;/span&gt;&lt;span class="text-primary"&gt;"Is Front Responsive?"&lt;/span&gt;
+                                      &lt;span class="text-white-70"&gt;+&lt;/span&gt;
+                                      &lt;span class="text-danger"&gt;front&lt;/span&gt;&lt;span class="text-white-70"&gt;.isResponsive());&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="pl-6 mb-1"&gt;
+                                      &lt;span class="text-white-70"&gt;System.&lt;/span&gt;&lt;span class="text-primary"&gt;&lt;em&gt;out&lt;/em&gt;&lt;/span&gt;&lt;span class="text-white-70"&gt;.println(&lt;/span&gt;&lt;span class="text-primary"&gt;"Front HTML "&lt;/span&gt;
+                                      &lt;span class="text-white-70"&gt;+&lt;/span&gt;
+                                      &lt;span class="text-danger"&gt;front&lt;/span&gt;&lt;span class="text-white-70"&gt;.getHTML());&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="pl-6 mb-1"&gt;
+                                      &lt;span class="text-white-70"&gt;System.&lt;/span&gt;&lt;span class="text-primary"&gt;&lt;em&gt;out&lt;/em&gt;&lt;/span&gt;&lt;span class="text-white-70"&gt;.println(&lt;/span&gt;&lt;span class="text-primary"&gt;"Front has "&lt;/span&gt;
+                                      &lt;span class="text-white-70"&gt;+&lt;/span&gt;
+                                      &lt;span class="text-danger"&gt;front&lt;/span&gt;&lt;span class="text-white-70"&gt;.getDemos()&lt;/span&gt;
+                                      &lt;span class="text-white-70"&gt;+&lt;/span&gt;
+                                      &lt;span class="text-primary"&gt;" demos."&lt;/span&gt;&lt;span class="text-white-70"&gt;);&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="pl-3 mb-1"&gt;
+                                      &lt;span class="text-white-70"&gt;}&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="mb-1"&gt;
+                                      &lt;span class="text-white-70"&gt;}&lt;/span&gt;
+                                    &lt;/div&gt;
+                                  &lt;/div&gt;
+                                  &lt;!-- End Code Sample --&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class="tab-pane fade text-white-70 pt-5" id="pills-two-code-sample" role="tabpanel" aria-labelledby="pills-two-code-sample-tab"&gt;
+                                  Coming soon...
+                                &lt;/div&gt;
+
+                                &lt;div class="tab-pane fade text-white-70 pt-5" id="pills-three-code-sample" role="tabpanel" aria-labelledby="pills-three-code-sample-tab"&gt;
+                                  Coming soon...
+                                &lt;/div&gt;
+
+                                &lt;div class="tab-pane fade text-white-70 pt-5" id="pills-four-code-sample" role="tabpanel" aria-labelledby="pills-four-code-sample-tab"&gt;
+                                  Coming soon...
+                                &lt;/div&gt;
+
+                                &lt;div class="tab-pane fade text-white-70 pt-5" id="pills-five-code-sample" role="tabpanel" aria-labelledby="pills-five-code-sample-tab"&gt;
+                                  Coming soon...
+                                &lt;/div&gt;
+
+                                &lt;div class="tab-pane fade text-white-70 pt-5" id="pills-six-code-sample" role="tabpanel" aria-labelledby="pills-six-code-sample-tab"&gt;
+                                  Coming soon...
+                                &lt;/div&gt;
+                              &lt;/div&gt;
+                              &lt;!-- End Tab Content --&gt;
+                            &lt;/div&gt;
+                          &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class="col-lg-5 order-lg-1"&gt;
+                          &lt;div class="mb-5"&gt;
+                            &lt;h2 class="font-weight-medium"&gt;Dedicated app development platform&lt;/h2&gt;
+                            &lt;p&gt;From open source to premium services, Front makes app creation lightning fast.&lt;/p&gt;
+                          &lt;/div&gt;
+
+                          &lt;!-- List --&gt;
+                          &lt;div class="row mb-4"&gt;
+                            &lt;div class="col-6"&gt;
+                              &lt;div class="media align-items-center text-secondary mb-3"&gt;
+                                &lt;img class="mr-2" src="../../assets/svg/components/checked-icon.svg" alt="Icon" width="16" height="16"&gt;
+                                &lt;div class="media-body"&gt;
+                                  Mobile devops
+                                &lt;/div&gt;
+                              &lt;/div&gt;
+                              &lt;div class="media align-items-center text-secondary mb-3"&gt;
+                                &lt;img class="mr-2" src="../../assets/svg/components/checked-icon.svg" alt="Icon" width="16" height="16"&gt;
+                                &lt;div class="media-body"&gt;
+                                  App builder
+                                &lt;/div&gt;
+                              &lt;/div&gt;
+                              &lt;div class="media align-items-center text-secondary mb-3"&gt;
+                                &lt;img class="mr-2" src="../../assets/svg/components/checked-icon.svg" alt="Icon" width="16" height="16"&gt;
+                                &lt;div class="media-body"&gt;
+                                  Subscriptions &lt;span class="badge badge-secondary badge-pill ml-1"&gt;Beta&lt;/span&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;
+                              &lt;div class="media align-items-center text-secondary mb-3"&gt;
+                                &lt;img class="mr-2" src="../../assets/svg/components/checked-icon.svg" alt="Icon" width="16" height="16"&gt;
+                                &lt;div class="media-body"&gt;
+                                  Integrations
+                                &lt;/div&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class="col-6"&gt;
+                              &lt;div class="media align-items-center text-secondary mb-3"&gt;
+                                &lt;img class="mr-2" src="../../assets/svg/components/checked-icon.svg" alt="Icon" width="16" height="16"&gt;
+                                &lt;div class="media-body"&gt;
+                                  Reporting
+                                &lt;/div&gt;
+                              &lt;/div&gt;
+                              &lt;div class="media align-items-center text-secondary mb-3"&gt;
+                                &lt;img class="mr-2" src="../../assets/svg/components/checked-icon.svg" alt="Icon" width="16" height="16"&gt;
+                                &lt;div class="media-body"&gt;
+                                  Dashboard
+                                &lt;/div&gt;
+                              &lt;/div&gt;
+                              &lt;div class="media align-items-center text-secondary mb-3"&gt;
+                                &lt;img class="mr-2" src="../../assets/svg/components/checked-icon.svg" alt="Icon" width="16" height="16"&gt;
+                                &lt;div class="media-body"&gt;
+                                  Feedback
+                                &lt;/div&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+                          &lt;/div&gt;
+                          &lt;!-- End List --&gt;
+
+                          &lt;a class="btn btn-primary transition-3d-hover" href="#"&gt;Full API reference &lt;small class="fas fa-arrow-right ml-1"&gt;&lt;/small&gt;&lt;/a&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;!-- End Features Section --&gt;
+                  </code>
+                </pre>
+              </div>
+              <div class="tab-pane fade" id="pills-js-4" role="tabpanel" aria-labelledby="pills-js-tab-4">
+                <pre>
+                  <code class="language-html" data-lang="html">
+                    &lt;!-- JS Implementing Plugins --&gt;
+                    &lt;script src="../../assets/vendor/svg-injector/dist/svg-injector.min.js"&gt;&lt;/script&gt;
+
+                    &lt;!-- JS Front --&gt;
+                    &lt;script src="../../assets/js/components/hs.svg-injector.js"&gt;&lt;/script&gt;
+
+                    &lt;!-- JS Plugins Init. --&gt;
+                    &lt;script&gt;
+                      $(window).on('load', function () {
+                        // initialization of svg injector module
+                        $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+                      });
+                    &lt;/script&gt;
+                  </code>
+                </pre>
+              </div>
+            </div>
+            <!-- End Tab Content -->
+          </div>
+          <!-- End Tab Wrapper -->
+        </div>
+        <!-- End Component Block -->
+      </main>
+    </div>
+  </div>
+  <!-- ========== END MAIN CONTENT ========== -->
+
+  <!-- JS Global Compulsory -->
+  <script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="../assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+  <script src="../assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+  <script src="../assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+  <!-- JS Implementing Plugins -->
+  <script src="../assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+  <script src="../assets/vendor/svg-injector/dist/svg-injector.min.js"></script>
+  <script src="../assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../documentation/assets/vendor/jquery-ui/jquery-ui.core.min.js"></script>
+  <script src="../documentation/assets/vendor/jquery-ui/ui/widgets/menu.js"></script>
+  <script src="../documentation/assets/vendor/jquery-ui/ui/widgets/mouse.js"></script>
+  <script src="../documentation/assets/vendor/jquery-ui/ui/widgets/autocomplete.js"></script>
+  <script src="../documentation/assets/vendor/prism/prism.js"></script>
+
+  <!-- JS Front -->
+  <script src="../assets/js/hs.core.js"></script>
+  <script src="../assets/js/components/hs.header.js"></script>
+  <script src="../assets/js/components/hs.focus-state.js"></script>
+  <script src="../assets/js/components/hs.go-to.js"></script>
+  <script src="../assets/js/components/hs.malihu-scrollbar.js"></script>
+  <script src="../assets/js/components/hs.show-animation.js"></script>
+  <script src="../assets/js/components/hs.svg-injector.js"></script>
+  <script src="../documentation/assets/js/components/hs.autocomplete-local-search.js"></script>
+
+  <!-- JS Plugins Init. -->
+  <script>
+    $(document).on('ready', function () {
+      // initialization of header
+      $.HSCore.components.HSHeader.init($('#header'));
+
+      // initialization of focus state
+      $.HSCore.components.HSFocusState.init();
+
+      // initialization of go to
+      $.HSCore.components.HSGoTo.init('.js-go-to');
+
+      // initialization of malihu scrollbar
+      var $scrollbar = $('.js-scrollbar');
+      $.HSCore.components.HSMalihuScrollBar.init($scrollbar);
+      $($scrollbar).mCustomScrollbar('scrollTo', '.js-scrollbar .hs-sidebar__item.active');
+    });
+
+    $(window).on('load', function () {
+      // initialization of HSMegaMenu component
+      $('.js-mega-menu').HSMegaMenu({
+        event: 'hover',
+        pageContainer: $('.container'),
+        breakpoint: 1199.98,
+        hideTimeOut: 0
+      });
+
+      // initialization of svg injector module
+      $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+
+      // initialization of autocomplet
+      $.HSCore.components.HSLocalSearchAutocomplete.init('.js-hs-docs-search');
+    });
+  </script>
+</body>
+</html>

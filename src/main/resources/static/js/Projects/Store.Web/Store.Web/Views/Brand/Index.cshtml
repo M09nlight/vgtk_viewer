@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Store.Data.Entity.Brand>
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary"> Brands </h2>
+        </div>
+        <div class="col-6">
+            Create Brand
+        </div>
+     </div>
+    <br />
+
+    @if(Model.Count() > 0)
+            {
+                <table class="table table-bordered" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th> BrandName</th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        @foreach(var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @item.BrandName
+                        </td>
+                    </tr>
+                }
+                    </tbody>
+                </table>
+            }
+
+</div>

@@ -1,0 +1,273 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <!-- Required Meta Tags Always Come First -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../favicon.ico">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="../assets/vendor/font-awesome/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../assets/vendor/animate.css/animate.min.css">
+    <link rel="stylesheet" href="../assets/vendor/hs-megamenu/src/hs.megamenu.css">
+    <link rel="stylesheet" href="../assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="../documentation/assets/vendor/jquery-ui/themes/base/jquery-ui.min.css">
+    <link rel="stylesheet" href="../documentation/assets/vendor/prism/prism.css">
+
+    <!-- CSS Front Template -->
+    <link rel="stylesheet" href="../assets/css/theme.css">
+
+    <!-- CSS Front Doc -->
+    <link rel="stylesheet" href="../documentation/assets/css/docs.css">
+
+</head>
+<body>
+    <!-- ========== HEADER ========== -->
+    <header id="header" class="u-header u-header--starter">
+        <nav id="logoAndNav" class="navbar navbar-dark fixed-top bg-primary flex-nowrap p-0">
+            <div class="col-md-3 col-xl-2 bg-md-primary-darker navbar-brand u-header__navbar-brand u-header__navbar-brand-center mr-0 py-3">
+                <a class="u-header__navbar-brand-text-white d-flex" href="index.html" aria-label="Front">
+
+                    <span class="u-header__navbar-brand-center">
+                        <img src="~/images/logo/logo-store-white-small.png" />
+                    </span>
+                </a>
+                <a class="small ml-3" href="getting-started/changelog.html">
+                    <span class="badge badge-white">v2.1</span>
+                </a>
+            </div>
+
+            <!-- Header Search -->
+            <!-- End Header Search -->
+            <!-- Header Links -->
+            <ul class="navbar-nav u-header--starter text-nowrap flex-row align-items-center px-3 ml-0 ml-sm-3">
+
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
+                    </li>
+                    <li class="nav-item">
+                        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                            <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+                        </form>
+                    </li>
+                }
+                <li class="nav-item ml-3 ml-sm-5">
+
+                    <a class="btn btn-sm btn-light text-primary" asp-controller="Home" asp-action="Dashboard">
+                        <span class="far fa-eye mr-sm-1"></span>
+                        Dashboard
+                    </a>
+                </li>
+            </ul>
+            <!-- End Header Links -->
+        </nav>
+    </header>
+    <!-- ========== END HEADER ========== -->
+    <!-- ========== MAIN CONTENT ========== -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-3 col-xl-2 bg-light hs-sidebar navbar-expand-md">
+                <div class="d-flex d-md-none justify-content-between mb-3">
+                    <!-- Sidebar Search -->
+                    <form class="col form-inline input-group-sm">
+                        <input class="js-hs-docs-search form-control form-control-sm w-100" type="text" placeholder="Search..." data-url="assets/ajax/autocomplete-data-for-documentation-search.json">
+                    </form>
+                    <!-- End Sidebar Search -->
+                    <!-- Responsive Toggle Button -->
+                    <button class="btn btn-link pl-0" type="button" data-toggle="collapse" data-target="#sidebar-nav" aria-controls="sidebar-nav" aria-expanded="false" aria-label="Toggle navigation">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 30 30" width="30" height="30" focusable="false">
+                            <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22" />
+                        </svg>
+                    </button>
+                    <!-- End Responsive Toggle Button -->
+                </div>
+
+                <!-- Sidebar Nav -->
+                <div class="collapse navbar-collapse" id="sidebar-nav">
+                    <div id="sidebarNav" class="js-scrollbar hs-sidebar-sticky">
+                        <h5 class="hs-sidebar__heading">Getting started</h5>
+                        <ul class="hs-sidebar__nav">
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link active" href='@Url.Action("Dashboard","Home")'>Dashboard</a></li>
+                            @*<li class="hs-sidebar__item"><a class="hs-sidebar__link" href="getting-started/file-structures.html">File structures</a></li>
+                                <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="getting-started/gulp.html">Gulp</a></li>
+                                <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="getting-started/customization.html">Customization</a></li>
+                                <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="getting-started/credits.html">Credits</a></li>
+                                <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="getting-started/changelog.html">Changelog</a></li>*@
+                        </ul>
+
+                        <h5 class="hs-sidebar__heading">Masters</h5>
+                        <ul class="hs-sidebar__nav">
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href='@Url.Action("CustomerList","Customer")'>Customers</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href='@Url.Action("SupplierList","Supplier")'>Supplier</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href='@Url.Action("EmployeeList","Employee")'>Employee</a></li>
+
+                            <li class="hs-sidebar__item">
+                                <span class="hs-sidebar__link">Products:</span>
+                                <ul class="hs-sidebar__nav ml-2">
+                                    <li class="hs-sidebar__item"><a class="hs-sidebar__link" href='@Url.Action("BrandList","Brand")'>Brands</a></li>
+                                    <li class="hs-sidebar__item"><a class="hs-sidebar__link" href='@Url.Action("CategoryList","Category")'>Categories</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <h5 class="hs-sidebar__heading">Transactions</h5>
+                        <ul class="hs-sidebar__nav">
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="components/alerts.html">Alerts</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="components/avatars.html">Avatars</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="components/badge.html">Badge</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="components/breadcrumb.html">Breadcrumb</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="components/buttons.html">Buttons</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="components/cards.html">Cards</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="components/collapse.html">Collapse</a></li>
+                            <li class="hs-sidebar__item">
+                                <span class="hs-sidebar__link">Dividers:</span>
+                                <ul class="hs-sidebar__nav ml-2 mb-0">
+                                    <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="components/css-divider.html">CSS divider</a></li>
+                                    <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="components/svg-divider.html">SVG divider</a></li>
+                                </ul>
+                            </li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="components/forms.html">Forms</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="components/list-group.html">List group</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="components/navs.html">Navs</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="components/pagination.html">Pagination</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="components/progress.html">Progress</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="components/spinners.html">Spinners</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="components/sticky-footer.html">Sticky footer</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="components/tables.html">Tables</a></li>
+                        </ul>
+
+                        <h5 class="hs-sidebar__heading">Utilities</h5>
+                        <ul class="hs-sidebar__nav">
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="utilities/borders.html">Borders</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="utilities/colors.html">Colors</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="utilities/content-alignments.html">Content alignments (with position)</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="utilities/links.html">Links</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="utilities/position.html">Position</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="utilities/shadows.html">Shadows</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="utilities/sizing.html">Sizing</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="utilities/spacing.html">Spacing</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="utilities/transform.html">Transform</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="utilities/transitions.html">Transitions</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="utilities/others.html">Others</a></li>
+                        </ul>
+
+                        <h5 class="hs-sidebar__heading">Reports</h5>
+                        <ul class="hs-sidebar__nav">
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="hs-libraries/background-video.html">Background video</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="hs-libraries/unfold.html">Unfold (Dropdown and others)</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="hs-libraries/file-attach.html">File attach</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="hs-libraries/go-to.html">Go-to</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="hs-libraries/headers.html">Headers</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="hs-libraries/header-mega-menu.html">Header mega menu</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="hs-libraries/header-fullscreen.html">Header fullscreen</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="hs-libraries/header-searches.html">Header searches</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="hs-libraries/page-preloader.html">Page preloader</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="hs-libraries/scroll-effect.html">Scroll effect</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="hs-libraries/scroll-nav.html">Scroll nav</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="hs-libraries/show-animation.html">Show animation</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="hs-libraries/step-form.html">Step form (Wizards)</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="hs-libraries/sticky-block.html">Sticky block</a></li>
+                            <li class="hs-sidebar__item"><a class="hs-sidebar__link" href="hs-libraries/toggle-state.html">Toggle state</a></li>
+                        </ul>
+
+
+                    </div>
+                </div>
+                <!-- End Sidebar Nav -->
+            </nav>
+            <!-- End Sidebar -->
+
+            <main class="col-md-9 col-xl-10 px-4 pt-0 pt-md-11 pb-7 ml-md-auto">
+                <div>
+                    @RenderBody()
+                </div>
+
+            </main>
+        </div>
+    </div>
+    <!-- ========== END MAIN CONTENT ========== -->
+    <!-- Contact Us -->
+    @*<div class="position-fixed bottom-0 right-0 bg-white p-3 m-1">
+            <a class="btn btn-sm btn-outline-primary transition-3d-hover" target="_blank" href="https://htmlstream.com/contact-us">
+                <span class="media align-items-center">
+                    <span class="far fa-envelope mr-2"></span>
+                    <span class="media-body">
+                        Contact Us
+                    </span>
+                </span>
+            </a>
+        </div>*@
+    <!-- End Contact Us -->
+    <!-- JS Global Compulsory -->
+    <script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+    <script src="../assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+    <!-- JS Implementing Plugins -->
+    <script src="../assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+    <script src="../assets/vendor/svg-injector/dist/svg-injector.min.js"></script>
+    <script src="../assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../documentation/assets/vendor/jquery-ui/jquery-ui.core.min.js"></script>
+    <script src="../documentation/assets/vendor/jquery-ui/ui/widgets/menu.js"></script>
+    <script src="../documentation/assets/vendor/jquery-ui/ui/widgets/mouse.js"></script>
+    <script src="../documentation/assets/vendor/jquery-ui/ui/widgets/autocomplete.js"></script>
+    <script src="../documentation/assets/vendor/prism/prism.js"></script>
+
+    <!-- JS Front -->
+    <script src="../assets/js/hs.core.js"></script>
+    <script src="../assets/js/components/hs.header.js"></script>
+    <script src="../assets/js/components/hs.malihu-scrollbar.js"></script>
+    <script src="../assets/js/components/hs.scroll-nav.js"></script>
+    <script src="../assets/js/components/hs.svg-injector.js"></script>
+    <script src="../documentation/assets/js/components/hs.autocomplete-local-search.js"></script>
+
+    <!-- JS Plugins Init. -->
+    <script>
+    $(document).on('ready', function () {
+            // initialization of header
+            $.HSCore.components.HSHeader.init($('#header'));
+
+            // initialization of svg injector module
+            $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+
+            // initialization of malihu scrollbar
+            var $scrollbar = $('.js-scrollbar');
+            $.HSCore.components.HSMalihuScrollBar.init($scrollbar);
+            $($scrollbar).mCustomScrollbar('scrollTo', '.js-scrollbar .hs-sidebar__link.active');
+        });
+
+        $(window).on('load', function () {
+            // initialization of HSMegaMenu component
+            $('.js-mega-menu').HSMegaMenu({
+                event: 'hover',
+                pageContainer: $('.container'),
+                breakpoint: 991.98,
+                hideTimeOut: 0
+            });
+
+            // initialization of autocomplet
+            $.HSCore.components.HSLocalSearchAutocomplete.init('.js-hs-docs-search');
+
+            // initialization of HSScrollNav component
+            var offsetTop = $('#logoAndNav').outerHeight();
+
+            $.HSCore.components.HSScrollNav.init($('.js-scroll-nav'), {
+                duration: 400,
+                customOffsetTop: 0
+            });
+        });</script>
+
+</body>
+</html>

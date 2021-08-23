@@ -1,0 +1,122 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+<h1>@ViewData["Title"]</h1>
+
+
+<div class="row">
+    <!-- Section Nav -->
+    <div class="col-xl-2 order-xl-2 d-none d-xl-inline-block">
+        <ul class="js-scroll-nav hd-doc-section-nav">
+            <li class="hd-doc-section-nav-item active"><a href="#quick-start">Quick start</a></li>
+            <li class="hd-doc-section-nav-item"><a href="#starter-template">Starter template</a></li>
+            <li class="hd-doc-section-nav-item"><a href="#responsive-meta-tag">Responsive meta tag</a></li>
+        </ul>
+    </div>
+    <!-- End Section Nav -->
+
+    <div class="col-xl-10 order-xl-1">
+        <div class="hs-docs-content-divider">
+            
+            <p class="lead">Get started with Front, Responsive Website Template for building responsive, mobile-first sites, with Bootstrap and a template starter page.</p>
+        </div>
+
+        <blockquote class="callout callout-danger">
+            <p id="front-is-a-static-template" class="callout-title">Front is a Static HTML Template</p>
+            <p>For the time being, we do <strong>NOT</strong> offer any tutorials or any other materials on how to integrate Front with any CMS, Web Application framework (including Angular JS, Ruby on Rails and others) or any other similar technology. However, since <strong>Front is a static HTML/CSS and JS template</strong>, then it <em>should be compatible</em> with any backend technology.</p>
+        </blockquote>
+
+        <div id="quick-start" class="hs-docs-content-divider">
+            <h2 class="hs-docs-heading h4">Quick start <a class="anchorjs-link" href="#quick-start" aria-label="Anchor" data-anchorjs-icon="#"></a></h2>
+
+            <p>There are two ways to run any GetBootstrap Themes on your device:</p>
+
+            <ol class="text-secondary">
+                <li><a href="getting-started/gulp.html">Gulp</a> - this is the most recommended way of using GetBootstrap templates.</li>
+                <li>
+                    <p>Localhost - Using a localhost server is extremely vital in any HTML template, as it boosts the page load. For this reason, any template or website might work slowly or may not even work at all without localhost. Opening Front in localhost server should not give you any problems.</p>
+
+                    <p>In computer networking, localhost is a hostname that means this computer. It is used to access the network services that are running on the host via its loopback network interface. Using the loopback interface bypasses any local network interface hardware.</p>
+
+                    <p>The local loopback mechanism is useful for testing software during development, independently of any networking configurations. For example, if a computer has been configured to provide a website, directing a locally running web browser to <a href="http://localhost">http://localhost</a> may display its home page.</p>
+
+                    <p>Just so you know, Ajax also does not work without a localhost server. The whole point of Ajax request is to fetch data from one of these computers, which has to be listening in for specific network packages.</p>
+                </li>
+            </ol>
+        </div>
+
+        <div id="starter-template" class="hs-docs-content-divider">
+            <h2 class="hs-docs-heading h4">Starter template <a class="anchorjs-link" href="#starter-template" data-anchorjs-icon="#"></a></h2>
+            <p>Be sure to have your pages set up with the latest design and development standards. That means using an HTML5 doctype and including a viewport meta tag for proper responsive behaviors. Put it all together and your pages should look like this:</p>
+
+            <pre>
+            <code class="language-html" data-lang="html">
+                  &lt;!doctype html&gt;
+                  &lt;html lang="en"&gt;
+                  &lt;head&gt;
+                    &lt;!-- Title --&gt;
+                    &lt;title&gt;Hello, world!&lt;/title&gt;
+
+                    &lt;!-- Favicon --&gt;
+                    &lt;link rel="shortcut icon" href="favicon.ico"&gt;
+
+                    &lt;!-- Required meta tags --&gt;
+                    &lt;meta charset="utf-8"&gt;
+                    &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
+
+                    &lt;!-- CSS Front Template --&gt;
+                    &lt;link rel="stylesheet" href="../assets/css/theme.css"&gt;
+                  &lt;/head&gt;
+
+                  &lt;body&gt;
+                    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+
+                    &lt;!-- JS Global Compulsory --&gt;
+                    &lt;script src="../assets/vendor/jquery/dist/jquery.min.js"&gt;&lt;/script&gt;
+                    &lt;script src="../assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"&gt;&lt;/script&gt;
+                    &lt;script src="../assets/vendor/popper.js/dist/umd/popper.min.js"&gt;&lt;/script&gt;
+                    &lt;script src="../assets/vendor/bootstrap/bootstrap.min.js"&gt;&lt;/script&gt;
+
+                    &lt;!-- JS Front --&gt;
+                    &lt;script src="../assets/js/hs.core.js"&gt;&lt;/script&gt;
+                  &lt;/body&gt;
+                  &lt;/html&gt;
+                </code>
+              </pre>
+
+            <p>That's all you need for overall page requirements. Visit the <a href="https://getbootstrap.com/docs/4.1/layout/overview/">Bootstrap's Layout docs</a> our official examples to start laying out your site's content and components.</p>
+        </div>
+
+        <div id="responsive-meta-tag" class="hs-docs-content-divider">
+            <h2 class="hs-docs-heading h4">Responsive meta tag <a class="anchorjs-link" href="#responsive-meta-tag" data-anchorjs-icon="#"></a></h2>
+            <p>Front is developed <em>mobile first</em>, a strategy in which we optimize code for mobile devices first and then scale up components as necessary using CSS media queries. To ensure proper rendering and touch zooming for all devices, <span class="text-dark font-weight-semi-bold">add the responsive viewport meta tag</span> to your <code class="highlighter-rouge">&lt;head&gt;</code>.</p>
+
+            <pre>
+            <code class="language-html" data-lang="html">
+                  &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
+                </code>
+              </pre>
+
+            <p>You can see an example of this in action in the <a href="#starter-template">starter template</a>.</p>
+        </div>
+
+        <!-- Pager Nav -->
+        <div class="row">
+            <div class="col-sm-12">
+                <a class="card shadow p-4 transition-3d-hover" href="getting-started/file-structures.html">
+                    <span class="media align-items-center">
+                        <span class="media-body">
+                            <span class="d-block text-secondary">Previous</span>
+                            <span class="d-block font-weight-semi-bold">File structures</span>
+                        </span>
+                        <span class="fas fa-arrow-right ml-2"></span>
+                    </span>
+                </a>
+            </div>
+        </div>
+        <!-- End Pager Nav -->
+    </div>
+
+
+
+</div>
