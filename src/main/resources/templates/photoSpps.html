@@ -4,7 +4,15 @@
     <head th:replace="commons::head"></head>
     
     <style>
-    .imgL { position: absolute;  visibility: none;/* other styles, BG img etc */ }
+    .imgL { position: absolute;  visibility: none;/* other styles, BG img etc */     }
+    
+    
+    body {
+    background-image: url(/img/background.jpg); /* Путь к фоновому изображению */
+   background-position: contain;
+    background-size: cover;   
+   }
+    
     </style>
    <!-- CSS Implementing Plugins -->
   <link rel="stylesheet" th:href="@{/js/Projects/Store.Web/Store.Web/wwwroot/assets/vendor/font-awesome/css/fontawesome-all.min.css}">
@@ -68,12 +76,12 @@
                   <div class="row">
                     <div class="col-sm-4 mb-3">
                       <a class="js-fancybox u-media-viewer" href="javascript:;"
-                         data-src="https://demo2.madrasthemes.com/bookworm-html/redesigned-octo-fiesta/documentation/assets/img/img41.jpg"
+                         th:data-src="@{https://demo2.madrasthemes.com/bookworm-html/redesigned-octo-fiesta/documentation/assets/img/img41.jpg}" 
                          data-fancybox="fancyboxGallery9"
                          data-speed="100"
                          data-is-slideshow-auto-start="true"
                          >
-                        <img class="img-fluid rounded" src="/img/foldersImages/folderWorldSkills.png" alt="Image Description">
+                        <img class="img-fluid rounded" src="/img/foldersImages/worldskillsImage.png" alt="Image Description">
                       </a>
                     </div>
 
