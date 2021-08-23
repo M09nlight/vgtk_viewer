@@ -26,4 +26,10 @@ public class IndexController {
         
 		return "index";
 	}
+    
+    
+    @GetMapping("/photoSpps")
+    public String photo(Model model) {
+        return "photoSpps";
+    }
 }

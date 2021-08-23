@@ -10,22 +10,15 @@
     <link rel="stylesheet" th:href="@{/js/fancybox/jquery.fancybox.min.css}">
     
     <body>
-        <div th:replace="commons::navbar"></div>
-            <div th:replace="commons::navSpps"></div>
+    
+    
+    
 
         <div class="wrapper">
             <div class="container text-center">
-                <form action="/sendSppsPhoto" method="POST" enctype="multipart/form-data">
-                    <div class="input-group">
-                        <div class="custom-file">
-                            <input name="ph" type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" required="required">
-                            <label class="custom-file-label" for="inputGroupFile04"></label>
-                        </div>
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon04">Загрузить</button>
-                        </div>
-                    </div>
-                </form>
+            
+    <h1>За Беларусь</h1>         
+            <!-- 
 			<table class="table table-primary" align="center">
 				<thead th:each="photo, status: ${photos}">
 					<tr align="center">
@@ -36,8 +29,37 @@
 					</tr>
 				</thead>
 			</table>
+			th:src="${photos.size() < 1 ? '/img/dormitory/dorm1.jpg' : 'data:image/jpeg;base64,' + photos[0]}"
+			-->
+			
+			
+			
+			<table class="table table-primary" align="center">
+				<thead>
+					<tr align="center">
+					<a data-fancybox="gallery" href="/img/foldersImages/img11.JPG" id="fancybox">
+						<img  hspace="5" vspace="5"  src="/img/foldersImages/folderWorldSkills.png"
+							width="240" class="m1" >  
+					</a>
+					</tr>
+					<tr align="center">
+					<a data-fancybox="gallery" href="/img/dormitory/dorm2.JPG" hidden>
+						<img  hspace="5" vspace="5"  src="/img/dormitory/dorm2.JPG"
+							width="240" class="m1" >  
+					</a>
+					</tr>
+				</thead>
+			</table>
 
-<!-- img backet -->
+
+			<div th:each="i : ${#numbers.sequence(1, 10)}">
+				<a data-fancybox="gallery" href="/img/foldersImages/img11.JPG">
+                        <img  hspace="5" vspace="5"  src="/img/foldersImages/folderWorldSkills.png"
+                            width="240" class="m1" >  
+                    </a>
+			</div>
+
+			<!-- img backet -->
 			<!-- div class="delImgs"> 
 				<a class="hreff" href="http://vk.com"> <img src="/img/delete_logo_with_border.png" width="24" height="24"
 					class="imgL" id='loading1' /> <br>
@@ -45,6 +67,9 @@
 			</div-->
 
 			<br>
+			
+			
+		
 				
 
 <script type="text/javascript">
