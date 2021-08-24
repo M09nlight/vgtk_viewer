@@ -10,7 +10,7 @@
     body {
     background-image: url(/img/background.jpg); /* Путь к фоновому изображению */
    background-position: contain;
-    background-size: contain;   
+    background-size: cover;   
     overflow: hidden;
    }
     ::-webkit-scrollbar { /* chrome based */
@@ -95,17 +95,15 @@
               <!-- Nav Classic -->
 
               <!-- Tab Content -->
-                  <div class="row" style="width: 100%;">
-                    <div class="col-sm-4 mb-3" style="margin-left: 630px; margin-top: 470px; ">
                       <a class="js-fancybox u-media-viewer" href="javascript:;"
                          th:data-src="@{/img/mainImages/WorldSkills/1.jpg}" 
                          data-fancybox="fancyboxGallery9"
                          data-speed="100"
                          data-is-slideshow-auto-start="true"
+                         style="margin-left: 900px; margin-top: 640px;"
                          >
-                        <img class="img-fluid rounded" src="/img/foldersImages/worldskillsImage.png" alt="Image Description">
+                        <img class="img-fluid rounded" src="/img/foldersImages/worldskillsImage.png" alt="Image Description" style="height: 150px;filter: alpha(Opacity=70);  opacity: 0.70;">
                       </a>
-                    </div>
 
 
 					<div th:each="i : ${#numbers.sequence(2, 20)}">
@@ -123,7 +121,6 @@
                     </div>
                     
 
-                  </div>
               <!-- End Tab Content -->
           <!-- End autoplay -->
 
