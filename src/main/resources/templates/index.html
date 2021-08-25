@@ -50,10 +50,9 @@
     <h1 th:text="${dirAndSize.listOfNumbers[2]}">fff</h1>
      -->
     
-    <!-- 
-    <img th:src="@{/img/mainImages/{dirName}/{img}(img=${dirAndSize.listOfNumbers[2]}+'.jpg')}" style="height: 200px">
-     -->
+<!-- All -->
 
+<!-- 
 	<div th:each="entry: ${listOfMaps[0]}">
 		<span th:text="${entry.value}"></span> <a class="js-fancybox u-media-viewer" href="javascript:;"
 			th:data-src="@{'/img/mainImages/WorldSkills/' + ${entry.value} +'.jpg'}" data-fancybox="fancyboxGallery0"
@@ -65,10 +64,7 @@
 		</a>
 	</div>
 
-     <!-- All -->
-
 	<div th:each="i : ${#numbers.sequence(2, #lists.size(listOfMaps)-1)}">
-
 		<div th:each="entry: ${listOfMaps[i]}">
 			<div class="col-sm-4 mb-3" hidden>
 				<a class="js-fancybox u-media-viewer" 
@@ -79,11 +75,9 @@
 					alt="Image Description">
 				</a>
 			</div>
-
 		</div>
-		<!-- entry -->
 	</div>
-	<!-- each -->
+	 -->
 
 
 	<!-- WorldSkills -->
