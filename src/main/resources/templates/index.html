@@ -43,6 +43,14 @@
             display: flex;
             justify-content: center;
         }
+        
+    .img-fluid{
+    transition: 1s;
+   }
+   
+   .img-fluid:hover{
+    transform: scale(1.2);
+   }
 
 </style>
 <body>
@@ -59,106 +67,11 @@
     
     
     <div class="container-fluid">
-    <div class="row">
-      <!-- Sidebar -->
-    
-      <!-- End Sidebar -->
 
-      <main class="col-md-9 col-xl-10 px-4 pt-0 pt-md-11 pb-7 ml-md-auto">
-        <div class="row">
-          <!-- Section Nav -->
-        
-          <!-- End Section Nav -->
+     <img class="img-fluid rounded" src="https://demo2.madrasthemes.com/bookworm-html/redesigned-octo-fiesta/documentation/assets/img/img41.jpg" alt="Image Description">
 
 
-          <div id="autoplay" class="hs-docs-content-divider">
-            <h2 class="hs-docs-heading h4">Autoplay <a class="anchorjs-link" href="#autoplay" aria-label="Anchor" data-anchorjs-icon="#"></a></h2>
-            <p>Add <code class="highlighter-rouge">data-is-slideshow-auto-start="true"</code> to enable autoplay slideshow feature.</p>
-
-            <div class="mb-3">
-              <!-- Nav Classic -->
-              <ul class="nav nav-classic nav-borderless" id="pills-tab-10" role="tablist">
-                <li class="nav-item">
-                  <a class="nav-link active" id="pills-result-tab-10" data-toggle="pill" href="#pills-result-10" role="tab" aria-controls="pills-result-10" aria-selected="true">Result</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="pills-html-tab-10" data-toggle="pill" href="#pills-html-10" role="tab" aria-controls="pills-html-10" aria-selected="false">HTML</a>
-                </li>
-              </ul>
-              <!-- End Nav Classic -->
-
-              <!-- Tab Content -->
-              <div class="tab-content bg-light" id="pills-tabContent-10">
-                <div class="tab-pane fade p-4 show active" id="pills-result-10" role="tabpanel" aria-labelledby="pills-result-tab-10">
-                  <div class="row">
-                    <div class="col-sm-4 mb-3">
-                      <a class="js-fancybox u-media-viewer" href="javascript:;"
-                         data-src="https://demo2.madrasthemes.com/bookworm-html/redesigned-octo-fiesta/documentation/assets/img/img41.jpg"
-                         data-fancybox="fancyboxGallery9"
-                         data-caption="Front in frames - image #01"
-                         data-speed="100"
-                         data-is-slideshow-auto-start="true">
-                        <img class="img-fluid rounded" src="https://demo2.madrasthemes.com/bookworm-html/redesigned-octo-fiesta/documentation/assets/img/img41.jpg" alt="Image Description">
-
-                        <span class="u-media-viewer__container">
-                          <span class="u-media-viewer__icon">
-                            <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                          </span>
-                        </span>
-                      </a>
-                    </div>
-
-                    <div class="col-sm-4 mb-3">
-                      <a class="js-fancybox u-media-viewer" href="javascript:;"
-                         data-src="https://demo2.madrasthemes.com/bookworm-html/redesigned-octo-fiesta/documentation/assets/img/img41.jpg"
-                         data-fancybox="fancyboxGallery9"
-                         data-caption="Front in frames - image #02"
-                         data-speed="300"
-                         data-is-slideshow-auto-start="true">
-                        <img class="img-fluid rounded" src="https://demo2.madrasthemes.com/bookworm-html/redesigned-octo-fiesta/documentation/assets/img/img41.jpg" alt="Image Description">
-
-                        <span class="u-media-viewer__container">
-                          <span class="u-media-viewer__icon">
-                            <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                          </span>
-                        </span>
-                      </a>
-                    </div>
-
-                    <div class="col-sm-4 mb-3">
-                      <a class="js-fancybox u-media-viewer" href="javascript:;"
-                         data-src="https://demo2.madrasthemes.com/bookworm-html/redesigned-octo-fiesta/documentation/assets/img/img41.jpg"
-                         data-fancybox="fancyboxGallery9"
-                         data-caption="Front in frames - image #03"
-                         data-speed="300"
-                         data-is-slideshow-auto-start="true">
-                        <img class="img-fluid rounded" src="https://demo2.madrasthemes.com/bookworm-html/redesigned-octo-fiesta/documentation/assets/img/img41.jpg" alt="Image Description">
-
-                        <span class="u-media-viewer__container">
-                          <span class="u-media-viewer__icon">
-                            <span class="fas fa-plus u-media-viewer__icon-inner"></span>
-                          </span>
-                        </span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-pane fade" id="pills-html-10" role="tabpanel" aria-labelledby="pills-html-tab-10">
-                  <pre>
-                    <code class="language-markup" data-lang="html">
-                    </code>
-                  </pre>
-                </div>
-              </div>
-              <!-- End Tab Content -->
-            </div>
-          </div>
-
-          </div>
-          </main>
-
-          </div>
-          </div>
+    </div>
     
 <!-- JS Global Compulsory -->
   <script th:src="@{/js/Projects/Store.Web/Store.Web/wwwroot/assets/vendor/jquery/dist/jquery.min.js}"></script>

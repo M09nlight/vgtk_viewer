@@ -6,22 +6,21 @@
     <style>
     .imgL { position: absolute;  visibility: none;/* other styles, BG img etc */     }
     
-    
     body {
     background-image: url(/img/background.jpg); /* Путь к фоновому изображению */
    background-position: contain;
     background-size: cover;   
-    overflow: hidden;
+   /* overflow: hidden; */
    }
     ::-webkit-scrollbar { /* chrome based */
     width: 0px;  /* ширина scrollbar'a */
     background: transparent;  /* опционально */
+}
     
     html {
     -ms-overflow-style: none;  /* IE 10+ */
-    scrollbar-width: none; /* Firefox */
-    overflow:  hidden;
-}
+    /* scrollbar-width: none;  */
+   /* overflow:  hidden; */
 }
     </style>
     
@@ -37,8 +36,16 @@
     right: 15px; /* Положение от правого края */
     line-height: 1px;
    }
+   
+   .img-fluid{
+    transition: 1s;
+   }
+   
+   .img-fluid:hover{
+    transform: scale(1.1);
+   }
+   
   </style>
-    
     
    <!-- CSS Implementing Plugins -->
   <link rel="stylesheet" th:href="@{/js/Projects/Store.Web/Store.Web/wwwroot/assets/vendor/font-awesome/css/fontawesome-all.min.css}">
@@ -53,97 +60,209 @@
     
     <body style="padding: 0px">
     
-
-            
-            <!-- 
-			<table class="table table-primary" align="center">
-				<thead th:each="photo, status: ${photos}">
-					<tr align="center">
-					<a data-fancybox="gallery" th:href="${'data:image/jpeg;base64,' + photo}">
-						<img  hspace="5" vspace="5" th:name="${pids[status.index]}" th:src="${'data:image/jpeg;base64,' + photo}"
-							width="240" class="m1" >  
-						</a>
-					</tr>
-				</thead>
-			</table>
-			th:src="${photos.size() < 1 ? '/img/dormitory/dorm1.jpg' : 'data:image/jpeg;base64,' + photos[0]}"
-			-->
-			
-			
-			<!-- 
-			<table class="table table-primary" align="center">
-				<thead>
-					<tr align="center">
-					<a data-fancybox="gallery" href="/img/foldersImages/img11.JPG" class="fancybox" >
-						<img  hspace="5" vspace="5"  src="/img/foldersImages/folderWorldSkills.png"
-							width="240" class="m1" >  
-					</a>
-					</tr>
-					<tr align="center">
-					<a data-fancybox="gallery" href="/img/dormitory/dorm2.JPG" hidden class="fancybox" >
-						<img  hspace="5" vspace="5"  src="/img/dormitory/dorm2.JPG"
-							width="240" class="m1" >  
-					</a>
-					</tr>
-				</thead>
-			</table>
-			 -->
-			
-			
-			
-            <div class="mb-3">
-              <!-- Nav Classic -->
-
-              <!-- Tab Content -->
-                      <a class="js-fancybox u-media-viewer" href="javascript:;"
+              <!-- WorldSkills -->
+                      <a class="js-fancybox u-media-viewer"  href="javascript:;"
                          th:data-src="@{/img/mainImages/WorldSkills/1.jpg}" 
-                         data-fancybox="fancyboxGallery9"
+                         data-fancybox="fancyboxGallery1"
                          data-speed="100"
                          data-is-slideshow-auto-start="true"
-                         style="margin-left: 900px; margin-top: 640px;"
-                         >
-                        <img class="img-fluid rounded" src="/img/foldersImages/worldskillsImage.png" alt="Image Description" style="height: 150px;filter: alpha(Opacity=70);  opacity: 0.70;">
+                         data-slideshow-speed = "800"
+                         style="left: 1135px;top: 760px;width: 270px;position: absolute;">
+                        <img class="img-fluid rounded" src="/img/foldersImages/WorldSkills.png" alt="Image Description" style="height: 295px;filter: alpha(Opacity=100);  opacity: 1.00;">
                       </a>
 
-
-					<div th:each="i : ${#numbers.sequence(2, 20)}">
-					<div class="col-sm-4 mb-3" hidden>
-                      <a class="js-fancybox u-media-viewer" href="javascript:;"
+					<div th:each="i : ${#numbers.sequence(2, 30)}">
+					   <div class="col-sm-4 mb-3" hidden>
+                        <a class="js-fancybox u-media-viewer"
                          th:data-src="@{/img/mainImages/WorldSkills/{img}(img=${i}+'.jpg')}" 
-                         
-                         data-fancybox="fancyboxGallery9"
-                         data-speed="300"
+                         data-fancybox="fancyboxGallery1"
+                         data-speed="100"
+                          data-slideshow-speed = "800"
                          data-is-slideshow-auto-start="true"
                          hidden>
                         <img class="img-fluid rounded" src="https://demo2.madrasthemes.com/bookworm-html/redesigned-octo-fiesta/documentation/assets/img/img41.jpg" alt="Image Description">
-                      </a>
-                    </div>
+                        </a>
+                       </div>
                     </div>
                     
+              <!-- Military -->
+                      <a class="js-fancybox u-media-viewer" href="javascript:;"
+                         th:data-src="@{/img/mainImages/military/1.jpg}" 
+                         data-fancybox="fancyboxGallery2"
+                         data-speed="100"
+                          data-slideshow-speed = "800"
+                         data-is-slideshow-auto-start="true"
+                         style="top: 260px;left: 10px;width: 325px;position: absolute;">
+                        <img class="img-fluid rounded" src="/img/foldersImages/military.png" alt="Image Description" style="height: 185px;filter: alpha(Opacity=100);  opacity: 1.00;">
+                      </a>
 
-              <!-- End Tab Content -->
-          <!-- End autoplay -->
+					<div th:each="i : ${#numbers.sequence(2, 20)}">
+					   <div class="col-sm-4 mb-3" hidden>
+                        <a class="js-fancybox u-media-viewer"
+                         th:data-src="@{/img/mainImages/military/{img}(img=${i}+'.jpg')}" 
+                         data-fancybox="fancyboxGallery2"
+                         data-speed="300"
+                          data-slideshow-speed = "800"
+                         data-is-slideshow-auto-start="true"
+                         hidden>
+                        <img class="img-fluid rounded" src="https://demo2.madrasthemes.com/bookworm-html/redesigned-octo-fiesta/documentation/assets/img/img41.jpg" alt="Image Description">
+                        </a>
+                       </div>
+                    </div>
+                    
+              <!-- Achievements -->
+                      <a class="js-fancybox u-media-viewer" href="javascript:;"
+                         th:data-src="@{/img/mainImages/achievements/1.jpg}" 
+                         data-fancybox="fancyboxGallery3"
+                         data-speed="100"
+                          data-slideshow-speed = "800"
+                         data-is-slideshow-auto-start="true"
+                         style="top: 780px;left: 530px;width: 305px;position: absolute;">
+                        <img class="img-fluid rounded" src="/img/foldersImages/achievements.png" alt="Image Description" style="height: 270px;filter: alpha(Opacity=100);  opacity: 1.00;">
+                      </a>
 
-			<!-- div th:each="i : ${#numbers.sequence(1, 10)}">
-				<a data-fancybox="gallery" href="/img/foldersImages/img11.JPG">
-                        <img  hspace="5" vspace="5"  src="/img/foldersImages/folderWorldSkills.png"
-                            width="240" class="m1" >  
-                    </a>
-			</div-->
+					<div th:each="i : ${#numbers.sequence(2, 21)}">
+					   <div class="col-sm-4 mb-3" hidden>
+                        <a class="js-fancybox u-media-viewer" 
+                         th:data-src="@{/img/mainImages/achievements/{img}(img=${i}+'.jpg')}" 
+                         data-fancybox="fancyboxGallery3"
+                         data-speed="100"
+                         data-slideshow-speed = "800"
+                         data-is-slideshow-auto-start="true"
+                         hidden>
+                        <img class="img-fluid rounded" src="https://demo2.madrasthemes.com/bookworm-html/redesigned-octo-fiesta/documentation/assets/img/img41.jpg" alt="Image Description">
+                        </a>
+                       </div>
+                    </div>
+                    
+                    <!-- Ideological -->
+                      <a class="js-fancybox u-media-viewer" href="javascript:;"
+                         th:data-src="@{/img/mainImages/ideological/1.jpg}" 
+                         data-fancybox="fancyboxGallery4"
+                         data-speed="100"
+                         data-slideshow-speed = "800"
+                         data-is-slideshow-auto-start="true"
+                         style="top: 210px;left: 1540px;width: 375px;position: absolute;">
+                        <img class="img-fluid rounded" src="/img/foldersImages/ideological.png" alt="Image Description" style="height: 260px;filter: alpha(Opacity=100);  opacity: 1.00;">
+                      </a>
 
-			<!-- img backet -->
-			<!-- div class="delImgs"> 
-				<a class="hreff" href="http://vk.com"> <img src="/img/delete_logo_with_border.png" width="24" height="24"
-					class="imgL" id='loading1' /> <br>
-				</a>
-			</div-->
+                    <div th:each="i : ${#numbers.sequence(2, 44)}">
+                       <div class="col-sm-4 mb-3" hidden>
+                        <a class="js-fancybox u-media-viewer" 
+                         th:data-src="@{/img/mainImages/ideological/{img}(img=${i}+'.jpg')}" 
+                         data-fancybox="fancyboxGallery4"
+                         data-speed="100"
+                         data-slideshow-speed = "800"
+                         data-is-slideshow-auto-start="true"
+                         hidden>
+                        <img class="img-fluid rounded" src="https://demo2.madrasthemes.com/bookworm-html/redesigned-octo-fiesta/documentation/assets/img/img41.jpg" alt="Image Description">
+                        </a>
+                       </div>
+                    </div>
+                    
+                    <!-- BRSM -->
+                      <a class="js-fancybox u-media-viewer" href="javascript:;"
+                         th:data-src="@{/img/mainImages/brsm/1.jpg}" 
+                         data-fancybox="fancyboxGallery5"
+                         data-speed="100"
+                         data-slideshow-speed = "800"
+                         data-is-slideshow-auto-start="true"
+                         style="top: 510px;left: 1470px;width: 405px;position: absolute;">
+                        <img class="img-fluid rounded" src="/img/foldersImages/brsm.png" alt="Image Description" style="height: 290px;filter: alpha(Opacity=100);  opacity: 1.00;">
+                      </a>
 
-			<br>
-			
-			
-			
-				
+                    <div th:each="i : ${#numbers.sequence(2, 16)}">
+                       <div class="col-sm-4 mb-3" hidden>
+                        <a class="js-fancybox u-media-viewer" 
+                         th:data-src="@{/img/mainImages/brsm/{img}(img=${i}+'.jpg')}" 
+                         data-fancybox="fancyboxGallery5"
+                         data-speed="100"
+                         data-slideshow-speed = "800"
+                         data-is-slideshow-auto-start="true"
+                         hidden>
+                        <img class="img-fluid rounded" src="https://demo2.madrasthemes.com/bookworm-html/redesigned-octo-fiesta/documentation/assets/img/img41.jpg" alt="Image Description">
+                        </a>
+                       </div>
+                    </div>
+                    
+                    <!-- Сonstruction -->
+                      <a class="js-fancybox u-media-viewer" href="javascript:;"
+                         th:data-src="@{/img/mainImages/construction/1.jpg}" 
+                         data-fancybox="fancyboxGallery6"
+                         data-speed="100"
+                         data-slideshow-speed = "800"
+                         data-is-slideshow-auto-start="true"
+                         style="top: 15px;left: 1290px;width: 445px;position: absolute;">
+                        <img class="img-fluid rounded" src="/img/foldersImages/construction.png" alt="Image Description" style="height: 290px;filter: alpha(Opacity=100);  opacity: 1.00;">
+                      </a>
 
+                    <div th:each="i : ${#numbers.sequence(2, 28)}">
+                       <div class="col-sm-4 mb-3" hidden>
+                        <a class="js-fancybox u-media-viewer" 
+                         th:data-src="@{/img/mainImages/construction/{img}(img=${i}+'.jpg')}" 
+                         data-fancybox="fancyboxGallery6"
+                         data-speed="100"
+                         data-slideshow-speed = "800"
+                         data-is-slideshow-auto-start="true"
+                         hidden>
+                        <img class="img-fluid rounded" src="https://demo2.madrasthemes.com/bookworm-html/redesigned-octo-fiesta/documentation/assets/img/img41.jpg" alt="Image Description">
+                        </a>
+                       </div>
+                    </div>
+                    
+                    <!-- sport -->
+                      <a class="js-fancybox u-media-viewer" href="javascript:;"
+                         th:data-src="@{/img/mainImages/sport/1.jpg}" 
+                         data-fancybox="fancyboxGallery7"
+                         data-speed="100"
+                         data-slideshow-speed = "800"
+                         data-is-slideshow-auto-start="true"
+                         style="top: 480px;left: 50px;width: 405px;position: absolute;">
+                        <img class="img-fluid rounded" src="/img/foldersImages/sport.png" alt="Image Description" style="height: 290px;filter: alpha(Opacity=100);  opacity: 1.00;">
+                      </a>
+
+                    <div th:each="i : ${#numbers.sequence(2, 38)}">
+                       <div class="col-sm-4 mb-3" hidden>
+                        <a class="js-fancybox u-media-viewer" 
+                         th:data-src="@{/img/mainImages/sport/{img}(img=${i}+'.jpg')}" 
+                         data-fancybox="fancyboxGallery7"
+                         data-speed="100"
+                         data-slideshow-speed = "800"
+                         data-is-slideshow-auto-start="true"
+                         hidden>
+                        <img class="img-fluid rounded" src="https://demo2.madrasthemes.com/bookworm-html/redesigned-octo-fiesta/documentation/assets/img/img41.jpg" alt="Image Description">
+                        </a>
+                       </div>
+                    </div>
+                    
+                    <!-- MKC -->
+                      <a class="js-fancybox u-media-viewer" href="javascript:;"
+                         th:data-src="@{/img/mainImages/mkc/1.jpg}" 
+                         data-fancybox="fancyboxGallery8"
+                         data-speed="100"
+                         data-slideshow-speed = "800"
+                         data-is-slideshow-auto-start="true"
+                         data-is-infinite = "true"
+                         style="top: 85px;left: 300px;width: 305px;position: absolute;">
+                        <img class="img-fluid rounded" src="/img/foldersImages/mkc.png" alt="Image Description" style="height: 185px;filter: alpha(Opacity=100);  opacity: 1.00;">
+                      </a>
+
+                    <div th:each="i : ${#numbers.sequence(2, 27)}"> <!-- 28 -->
+                       <div class="col-sm-4 mb-3" hidden>
+                        <a class="js-fancybox u-media-viewer" 
+                         th:data-src="@{/img/mainImages/mkc/{img}(img=${i}+'.jpg')}" 
+                         data-fancybox="fancyboxGallery8"
+                         data-speed="100"
+                         data-slideshow-speed = "800"
+                         data-is-slideshow-auto-start="true"
+                         data-is-infinite = "true"
+                         hidden>
+                        <img class="img-fluid rounded" src="https://demo2.madrasthemes.com/bookworm-html/redesigned-octo-fiesta/documentation/assets/img/img41.jpg" alt="Image Description">
+                        </a>
+                       </div>
+                    </div>
+                    
+                    
 <script type="text/javascript">
 			
 var counterHref=0;
@@ -165,17 +284,12 @@ $('.m1').each(function(i,elem) {
 });
 </script>
 			
-
-
-<!-- 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
- -->
     
+    <!-- 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js"></script>
-    
+     -->
     
     <!-- JS Global Compulsory -->
   <script th:src="@{/js/Projects/Store.Web/Store.Web/wwwroot/assets/vendor/jquery/dist/jquery.min.js}"></script>
@@ -259,8 +373,5 @@ $('.m1').each(function(i,elem) {
             $(this).next('.custom-file-label').html(str);
         })
     </script>
-
-
-    
 </body>
 </html>
