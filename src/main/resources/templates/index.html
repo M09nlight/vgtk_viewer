@@ -78,6 +78,35 @@
 		</div>
 	</div>
 	 -->
+	 
+	 
+	 
+	 <!-- Main -->
+                      <a class="js-fancybox u-media-viewer"  href="javascript:;"
+                         th:data-src="@{/img/mainImages/main/1.jpg}" 
+                         data-fancybox="fancyboxGallery1"
+                         data-speed="100"
+                         data-is-slideshow-auto-start="true"
+                         data-slideshow-speed = "1400"
+                         style="left: 599px;top: 30px;/* width: 270px; */position: absolute;height: 337px;">
+                        <img class="img-fluid rounded" src="/img/foldersImages/main.png" alt="Image Description" style="height: 455px;filter: alpha(Opacity=100);  opacity: 1.00;">
+                      </a>
+
+ 
+                    <div th:each="i : ${#numbers.sequence(2, 34)}">
+                       <div class="col-sm-4 mb-3" hidden>
+                        <a class="js-fancybox u-media-viewer"
+                         th:data-src="@{/img/mainImages/main/{img}(img=${i}+'.jpg')}" 
+                         data-fancybox="fancyboxGallery1"
+                         data-speed="100"
+                          data-slideshow-speed = "1400"
+                         data-is-slideshow-auto-start="true"
+                         hidden>
+                        <img class="img-fluid rounded" src="https://demo2.madrasthemes.com/bookworm-html/redesigned-octo-fiesta/documentation/assets/img/img41.jpg" alt="Image Description">
+                        </a>
+                       </div>
+                    </div>
+ 
 
 
 	<!-- WorldSkills -->
@@ -87,8 +116,8 @@
                          data-speed="100"
                          data-is-slideshow-auto-start="true"
                          data-slideshow-speed = "1400"
-                         style="left: 1135px;top: 760px;width: 270px;position: absolute;">
-                        <img class="img-fluid rounded" src="/img/foldersImages/WorldSkills.png" alt="Image Description" style="height: 295px;filter: alpha(Opacity=100);  opacity: 1.00;">
+                         style="top: 240px;left: 1620px;width: 205px;position: absolute;">
+                        <img class="img-fluid rounded" src="/img/foldersImages/WorldSkills.png" alt="Image Description" style="height: 218px;filter: alpha(Opacity=100);  opacity: 1.00;">
                       </a>
 
 					<div th:each="i : ${#numbers.sequence(2, 30)}">
@@ -116,7 +145,7 @@
                         <img class="img-fluid rounded" src="/img/foldersImages/military.png" alt="Image Description" style="height: 185px;filter: alpha(Opacity=100);  opacity: 1.00;">
                       </a>
 
-					<div th:each="i : ${#numbers.sequence(2, 20)}">
+					<div th:each="i : ${#numbers.sequence(2, 25)}">
 					   <div class="col-sm-4 mb-3" hidden>
                         <a class="js-fancybox u-media-viewer"
                          th:data-src="@{/img/mainImages/military/{img}(img=${i}+'.jpg')}" 
@@ -137,11 +166,11 @@
                          data-speed="100"
                           data-slideshow-speed = "1400"
                          data-is-slideshow-auto-start="true"
-                         style="top: 780px;left: 530px;width: 305px;position: absolute;">
+                         style="top: 785px;left: 1130px;width: 305px;position: absolute;">
                         <img class="img-fluid rounded" src="/img/foldersImages/achievements.png" alt="Image Description" style="height: 270px;filter: alpha(Opacity=100);  opacity: 1.00;">
                       </a>
 
-					<div th:each="i : ${#numbers.sequence(2, 21)}">
+					<div th:each="i : ${#numbers.sequence(2, 30)}">
 					   <div class="col-sm-4 mb-3" hidden>
                         <a class="js-fancybox u-media-viewer" 
                          th:data-src="@{/img/mainImages/achievements/{img}(img=${i}+'.jpg')}" 
@@ -162,11 +191,11 @@
                          data-speed="100"
                          data-slideshow-speed = "1400"
                          data-is-slideshow-auto-start="true"
-                         style="top: 235px;left: 1570px;width: 375px;position: absolute;">
-                        <img class="img-fluid rounded" src="/img/foldersImages/ideological.png" alt="Image Description" style="height: 228px;filter: alpha(Opacity=100);  opacity: 1.00;">
+                         style="top: 16px;left: 224px;width: 395px;position: absolute;">
+                        <img class="img-fluid rounded" src="/img/foldersImages/ideological.png" alt="Image Description" style="height: 292px;filter: alpha(Opacity=100);  opacity: 1.00;">
                       </a>
 
-                    <div th:each="i : ${#numbers.sequence(2, 44)}">
+                    <div th:each="i : ${#numbers.sequence(2, 43)}">
                        <div class="col-sm-4 mb-3" hidden>
                         <a class="js-fancybox u-media-viewer" 
                          th:data-src="@{/img/mainImages/ideological/{img}(img=${i}+'.jpg')}" 
@@ -191,7 +220,7 @@
                         <img class="img-fluid rounded" src="/img/foldersImages/brsm.png" alt="Image Description" style="height: 290px;filter: alpha(Opacity=100);  opacity: 1.00;">
                       </a>
 
-                    <div th:each="i : ${#numbers.sequence(2, 16)}">
+                    <div th:each="i : ${#numbers.sequence(2, 19)}">
                        <div class="col-sm-4 mb-3" hidden>
                         <a class="js-fancybox u-media-viewer" 
                          th:data-src="@{/img/mainImages/brsm/{img}(img=${i}+'.jpg')}" 
@@ -216,7 +245,7 @@
                         <img class="img-fluid rounded" src="/img/foldersImages/construction.png" alt="Image Description" style="height: 290px;filter: alpha(Opacity=100);  opacity: 1.00;">
                       </a>
 
-                    <div th:each="i : ${#numbers.sequence(2, 28)}">
+                    <div th:each="i : ${#numbers.sequence(2, 32)}">
                        <div class="col-sm-4 mb-3" hidden>
                         <a class="js-fancybox u-media-viewer" 
                          th:data-src="@{/img/mainImages/construction/{img}(img=${i}+'.jpg')}" 
@@ -237,8 +266,8 @@
                          data-speed="100"
                          data-slideshow-speed = "1400"
                          data-is-slideshow-auto-start="true"
-                         style="top: 480px;left: 50px;width: 405px;position: absolute;">
-                        <img class="img-fluid rounded" src="/img/foldersImages/sport.png" alt="Image Description" style="height: 290px;filter: alpha(Opacity=100);  opacity: 1.00;">
+                         style="top: 535px;left: 40px;width: 425px;position: absolute;">
+                        <img class="img-fluid rounded" src="/img/foldersImages/sport.png" alt="Image Description" style="height: 215px;filter: alpha(Opacity=100);  opacity: 1.00;">
                       </a>
 
                     <div th:each="i : ${#numbers.sequence(2, 38)}">
@@ -262,12 +291,11 @@
                          data-speed="100"
                          data-slideshow-speed = "1400"
                          data-is-slideshow-auto-start="true"
-                         data-is-infinite = "true"
-                         style="top: 85px;left: 300px;width: 305px;position: absolute;">
-                        <img class="img-fluid rounded" src="/img/foldersImages/mkc.png" alt="Image Description" style="height: 185px;filter: alpha(Opacity=100);  opacity: 1.00;">
+                         style="top: 695px;left: 405px;width: 505px;position: absolute;">
+                        <img class="img-fluid rounded" src="/img/foldersImages/mkc.png" alt="Image Description" style="height: 375px;filter: alpha(Opacity=100);  opacity: 1.00;">
                       </a>
 
-                    <div th:each="i : ${#numbers.sequence(2, 27)}"> <!-- 28 -->
+                    <div th:each="i : ${#numbers.sequence(2, 34)}">
                        <div class="col-sm-4 mb-3" hidden>
                         <a class="js-fancybox u-media-viewer" 
                          th:data-src="@{/img/mainImages/mkc/{img}(img=${i}+'.jpg')}" 
@@ -275,7 +303,6 @@
                          data-speed="100"
                          data-slideshow-speed = "1400"
                          data-is-slideshow-auto-start="true"
-                         data-is-infinite = "true"
                          hidden>
                         <img class="img-fluid rounded" src="https://demo2.madrasthemes.com/bookworm-html/redesigned-octo-fiesta/documentation/assets/img/img41.jpg" alt="Image Description">
                         </a>
