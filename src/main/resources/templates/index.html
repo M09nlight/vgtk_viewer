@@ -84,7 +84,7 @@
 	 <!-- Main -->
                       <a class="js-fancybox u-media-viewer"  href="javascript:;"
                          th:data-src="@{/img/mainImages/main/1.jpg}" 
-                         data-fancybox="fancyboxGallery1"
+                         data-fancybox="fancyboxGallery0"
                          data-speed="100"
                          data-is-slideshow-auto-start="true"
                          data-slideshow-speed = "1400"
@@ -97,7 +97,7 @@
                        <div class="col-sm-4 mb-3" hidden>
                         <a class="js-fancybox u-media-viewer"
                          th:data-src="@{/img/mainImages/main/{img}(img=${i}+'.jpg')}" 
-                         data-fancybox="fancyboxGallery1"
+                         data-fancybox="fancyboxGallery0"
                          data-speed="100"
                           data-slideshow-speed = "1400"
                          data-is-slideshow-auto-start="true"
@@ -220,7 +220,7 @@
                         <img class="img-fluid rounded" src="/img/foldersImages/brsm.png" alt="Image Description" style="height: 290px;filter: alpha(Opacity=100);  opacity: 1.00;">
                       </a>
 
-                    <div th:each="i : ${#numbers.sequence(2, 19)}">
+                    <div th:each="i : ${#numbers.sequence(2, 18)}">
                        <div class="col-sm-4 mb-3" hidden>
                         <a class="js-fancybox u-media-viewer" 
                          th:data-src="@{/img/mainImages/brsm/{img}(img=${i}+'.jpg')}" 
