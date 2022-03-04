@@ -1,28 +1,20 @@
 package by.vgtk.mvc;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.extern.slf4j.Slf4j;
-
-@Slf4j
 @Controller
 public class IndexController {
 
     @RequestMapping(value = { "/index" }, method = { RequestMethod.POST, RequestMethod.GET })
     public String messages(Model model) {
+
+        System.out.println("hello");
+        int v1=2;
+
+        System.out.println(v1+22);
 
 //        @AllArgsConstructor
 //        class DirAndSize{
