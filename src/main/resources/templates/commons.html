@@ -1,439 +1,318 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head th:fragment="head">
-<!-- Required meta tags -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!-- link th:href="@{{css}(css=${#themes.code('css')})}" rel="stylesheet" /-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"></script>
+
+    <link th:href="@{/css/{css}(css=${#themes.code('main')})}" rel="stylesheet"/>
+    <link rel="shortcut icon" href="/img/Logo.png" type="image/png">
+    <link rel="stylesheet" th:href="@{/css/chosen.css}">
+    <link rel="stylesheet" th:href="@{/css/select2_settings.css}">
+    <link rel="stylesheet" href="https://snipp.ru/cdn/select2/4.0.13/dist/css/select2.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-
-<link th:href="@{/css/{css}(css=${#themes.code('main')})}" rel="stylesheet" />
-<link rel="shortcut icon" href="/img/Logo.png" type="image/png">
-<link rel="stylesheet" th:href="@{/css/chosen.css}">
-<link rel="stylesheet" th:href="@{/css/select2_settings.css}">
-<link rel="stylesheet" href="https://snipp.ru/cdn/select2/4.0.13/dist/css/select2.min.css">
-<!-- link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"-->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-
-<script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
     <script type="text/javascript" th:src="@{/js/select2.min.js}"></script>
     <script type="text/javascript" th:src="@{/js/ru.js}"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
-    <script type="text/javascript" th:src="@{/js/jquery.maskedinput.min.js}"></script>
 
+    <title>ВГТК</title>
+    <!--  padding-top: 112px; -->
+    <style type="text/css">
+        a {
+            text-decoration: none;
+        }
 
-<title>ВГТК</title>
-<!--  padding-top: 112px; -->
-<style type="text/css">
-a {
-	text-decoration: none;
-}
+        body {
+            background-image: url([[@{/img/fon.jpg}]]);
+        }
 
-body {
-	background-image: url([[@{/img/fon.jpg}]]);
-}
+        .breadcrumb-item.active {
+            color: red;
+        }
 
-.breadcrumb-item.active {
-	color: red;
-}
+        .wrapper {
+            padding-top: 30px;
+            display: flex;
+            width: 100%;
+            align-items: stretch;
+        }
 
-.wrapper {
-	padding-top: 30px;
-	display: flex;
-	width: 100%;
-	align-items: stretch;
-}
+        @media ( min-width: 992px) {
+            #sidebar {
+                display: block;
+                min-width: 250px;
+                max-width: 250px;
+            }
+        }
 
-@media ( min-width : 992px) {
-	#sidebar {
-		display: block;
-		min-width: 250px;
-		max-width: 250px;
-	}
-}
+        @media ( min-width: 1200px) {
+            #sidebar {
+                display: block;
+                min-width: 350px;
+                max-width: 350px;
+            }
+        }
 
-@media ( min-width : 1200px) {
-	#sidebar {
-		display: block;
-		min-width: 350px;
-		max-width: 350px;
-	}
-}
+        @media ( max-width: 575.98px) {
+            div.card.login {
+                margin-left: auto;
+                margin-right: auto;
+                width: 90%;
+            }
+        }
 
-@media ( max-width : 575.98px) {
-	div.card.login {
-		margin-left: auto;
-		margin-right: auto;
-		width: 90%;
-	}
-}
+        @media ( min-width: 576px) {
+            div.card.login {
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
 
-@media ( min-width : 576px) {
-	div.card.login {
-		width: 100%;
-		margin-left: auto;
-		margin-right: auto;
-	}
-}
+        @media ( min-width: 768px) {
+            div.card.login {
+                width: 576px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
 
-@media ( min-width : 768px) {
-	div.card.login {
-		width: 576px;
-		margin-left: auto;
-		margin-right: auto;
-	}
-}
+        @media ( min-width: 992px) {
+            div.card.login {
+                margin-left: auto;
+                margin-right: auto;
+                width: 576px;
+            }
+        }
 
-@media ( min-width : 992px) {
-	div.card.login {
-		margin-left: auto;
-		margin-right: auto;
-		width: 576px;
-	}
-}
+        @media ( min-width: 1200px) {
+            div.card.login {
+                width: 576px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
 
-@media ( min-width : 1200px) {
-	div.card.login {
-		width: 576px;
-		margin-left: auto;
-		margin-right: auto;
-	}
-}
+        .login {
+            width: 576px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-.login {
-	width: 576px;
-	margin-left: auto;
-	margin-right: auto;
-}
+        .row-m-0 {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
 
-.row-m-0 {
-	margin-left: 0px;
-	margin-right: 0px;
-}
+        .pad-rl-0 {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
 
-.pad-rl-0 {
-	padding-left: 0px;
-	padding-right: 0px;
-}
+        .li-pers {
+            height: 55px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
 
-.li-pers {
-	height: 55px;
-	padding-top: 15px;
-	padding-bottom: 15px;
-}
+        .sp-width {
+            width: 220px;
+        }
 
-.sp-width {
-	width: 220px;
-}
+        .in-width {
+            width: 246px;
+        }
 
-.in-width {
-	width: 246px;
-}
+        /*galery person*/
+        .column1 {
+            float: left;
+            width: 15%;
+            padding: 10px;
+        }
 
-/*galery person*/
-.column1 {
-	float: left;
-	width: 15%;
-	padding: 10px;
-}
+        /* Style the images inside the grid */
+        .column1 img {
+            opacity: 0.8;
+            cursor: pointer;
+        }
 
-/* Style the images inside the grid */
-.column1 img {
-	opacity: 0.8;
-	cursor: pointer;
-}
+        .column1 img:hover {
+            opacity: 1;
+        }
 
-.column1 img:hover {
-	opacity: 1;
-}
+        /* Clear floats after the columns */
+        .row1:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
 
-/* Clear floats after the columns */
-.row1:after {
-	content: "";
-	display: table;
-	clear: both;
-}
+        /* The expanding image container */
+        .container1 {
+            width: 500px;
+            position: relative;
+            display: none;
+        }
 
-/* The expanding image container */
-.container1 {
-	width: 500px;
-	position: relative;
-	display: none;
-}
+        /* Expanding image text */
+        #imgtext1 {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            color: white;
+            font-size: 20px;
+        }
 
-/* Expanding image text */
-#imgtext1 {
-	position: absolute;
-	bottom: 15px;
-	left: 15px;
-	color: white;
-	font-size: 20px;
-}
+        /* Closable button inside the expanded image */
+        .closebtn1 {
+            position: absolute;
+            top: 0px;
+            right: 10px;
+            color: white;
+            font-size: 25px;
+            cursor: pointer;
+        }
 
-/* Closable button inside the expanded image */
-.closebtn1 {
-	position: absolute;
-	top: 0px;
-	right: 10px;
-	color: white;
-	font-size: 25px;
-	cursor: pointer;
-}
+        .deleteph {
+            position: absolute;
+            top: 350px;
+            right: 0px;
+            cursor: pointer;
+        }
 
-.deleteph {
-	position: absolute;
-	top: 350px;
-	right: 0px;
-	cursor: pointer;
-}
+        .w-30 {
+            width: 30%
+        }
 
-.w-30 {
-	width: 30%
-}
+        .chosen-flex {
+            flex: 1 1 auto;
+        }
 
-.chosen-flex {
-	flex: 1 1 auto;
-}
+        .chosen-inline {
+            width: 100%;
+            max-inline-size: min-content;
+        }
 
-.chosen-inline {
-    width: 100%;
-    max-inline-size: min-content;
-}
+        .minimized {
+            width: 240px;
+            /*  height: 200px; */
+            cursor: pointer;
+            border: 1px solid #FFF;
+        }
 
-.minimized {
-  width: 240px;
- /*  height: 200px; */
-  cursor: pointer;
-  border: 1px solid #FFF;
-}
+        .minimized1 {
+            width: 240px;
+            /*  height: 200px; */
+            cursor: pointer;
+            border: 1px solid #FFF;
+        }
 
-.minimized1 {
-  width: 240px;
- /*  height: 200px; */
-  cursor: pointer;
-  border: 1px solid #FFF;
-}
+        .minimized:hover {
+            border: 1px solid green;
+        }
 
-.minimized:hover {
-  border: 1px solid green;
-}
-/* увеличенная картинка */
-#magnify {
-  display: none;
-  /* position: absolute; upd: 24.10.2016 */
-  position: fixed;
-  max-width: 600px;
-  height: auto;
-  z-index: 9999;
-}
-#magnify img {
-  width: 100%;
-}
-/* затемняющий фон */
-#overlay {
-  display: none;
-  background: #000;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0.5;
-  z-index: 9990;
-}
-/* кнопка закрытия */
-#close-popup {
-  width: 30px;
-  height: 30px;
-  background: #FFFFFF;
-  border: 1px solid #AFAFAF;
-  border-radius: 15px;
-  cursor: pointer;
-  position: absolute;
-  top: 15px;
-  right: 20px;
-}
-#close-popup i {
-  width: 30px;
-  height: 30px;
-  background: url(https://codernote.ru/files/cross.png) no-repeat center center;
-  background-size: 16px 16px;
-  display: block;
-}
+        /* увеличенная картинка */
+        #magnify {
+            display: none;
+            /* position: absolute; upd: 24.10.2016 */
+            position: fixed;
+            max-width: 600px;
+            height: auto;
+            z-index: 9999;
+        }
 
-#delete-popup {
-  width: 30px;
-  height: 30px;
-  background: #FFFFFF;
-  border: 1px solid #AFAFAF;
-  border-radius: 15px;
-  cursor: pointer;
-  position: absolute;
-  bottom: 15px;
-  right: 20px;
-}
-#delete-popup p {
-  width: 30px;
-  height: 30px;
-  background: url(/img/can.png) no-repeat center center;
-  background-size: 16px 16px;
-  display: block;
-}
-@keyframes rota {
- 25% { transform: rotate(360deg); }
-}
-#close-popup:hover {
-  animation: rota 4s infinite normal;
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1;
-}
+        #magnify img {
+            width: 100%;
+        }
 
-.input,
-.input-buffer{
-    font-family: Arial, Verdana, sans-serif;
-    font-size: 14px;
-    letter-spacing: 0.05em;
-}
- 
-.input{
-    width: 100px;
-    min-width: 100px;
-}
- 
-.input-buffer{
-    position: absolute;
-    top: -1000px;
-    left: -1000px;
-    visibility: hidden;
-    white-space: nowrap;
-}
+        /* затемняющий фон */
+        #overlay {
+            display: none;
+            background: #000;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0.5;
+            z-index: 9990;
+        }
 
-.chosen-container{
-padding-left: 0px;
-padding-right: 0px;
-}
+        /* кнопка закрытия */
+        #close-popup {
+            width: 30px;
+            height: 30px;
+            background: #FFFFFF;
+            border: 1px solid #AFAFAF;
+            border-radius: 15px;
+            cursor: pointer;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
 
-.col-30{
-    padding-left: 0px;
-    padding-right: 0px;
-}
-.col-70{
-    padding-left: 0px;
-    padding-right: 0px;
-} 
+        #close-popup i {
+            width: 30px;
+            height: 30px;
+            background: url(https://codernote.ru/files/cross.png) no-repeat center center;
+            background-size: 16px 16px;
+            display: block;
+        }
 
+        #delete-popup {
+            width: 30px;
+            height: 30px;
+            background: #FFFFFF;
+            border: 1px solid #AFAFAF;
+            border-radius: 15px;
+            cursor: pointer;
+            position: absolute;
+            bottom: 15px;
+            right: 20px;
+        }
 
-</style>
+        #delete-popup p {
+            width: 30px;
+            height: 30px;
+            background: url(/img/can.png) no-repeat center center;
+            background-size: 16px 16px;
+            display: block;
+        }
+
+        @keyframes rota {
+            25% {
+                transform: rotate(360deg);
+            }
+        }
+
+        #close-popup:hover {
+            animation: rota 4s infinite normal;
+            -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+        }
+
+    </style>
 </head>
-<body>
-
-    <nav class="navbar fixed-top navbar-expand-lg bg-success" style="background-color: #03c03c;" th:fragment="navbar">
-        <div class="container-fluid">
-            <a class="navbar-brand h1" style="color: white; font-size: 130%;" th:href="@{/}">Витебский государственный технический колледж</a> <img src="/img/Logo.png" height="40" class="rounded float-left">
-        </div>
-    </nav>
-
-
-    <ul class="nav" th:fragment="nav" style="background-color: #009e5c;">
-        <li class="nav-item"><a class="nav-link" th:href="@{/dormitory}" style="color: white; font-size: 110%;">Общежития</a></li>
-        <li class="nav-item"><a class="nav-link" th:href="@{/addPersonInRoom}" style="color: white; font-size: 110%;">Заселить\Переселить жильца</a></li>
-        <li class="nav-item"><a class="nav-link" th:href="@{/personEvict}" style="color: white; font-size: 110%;">Выселить жильца</a></li>
-
-        <li class="menu-item nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 110%; color: white;"> Документы </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="/dormitory/docs">Все документы</a>
-                <hr style="margin-top: 5px; margin-bottom: 5px;">
-                <a class="dropdown-item" href="/downWord/dormitory/Заявление.docx">Заявление</a> <a class="dropdown-item" href="/downWord/dormitory/Договор.docx">Договор</a> <a class="dropdown-item" href="/downWord/dormitory/Акт о сдаче жилого помещения.docx">Акт о сдаче жилого
-                    помещения в общежитии</a>
-            </div></li>
-        <li class="menu-item nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 110%; color: white;"> Графики общежитий </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" target="_blank" href="https://docs.google.com/spreadsheets/d/1-xUUKI3f_cvk-YCsibsFCEjEEXJXL738HfWT3ZZ4Dxw/edit?usp=sharing">Общежитие №1</a> <a class="dropdown-item" target="_blank"
-                    href="https://docs.google.com/spreadsheets/d/14VAnoan163UTvmc-S-nauAfGyP8bgIJdg98X0SxHcAc/edit?usp=sharing">Общежитие №2</a> <a class="dropdown-item" target="_blank"
-                    href="https://docs.google.com/spreadsheets/d/131fRBx_29qouMiQgiF669kWFDkJNT_eHjR6LX_DM-7s/edit?usp=sharing">Общежитие №3</a>
-            </div></li>
-        <li class="menu-item nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 110%; color: white;"> Фотогалерея </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" th:href="@{/photodorm?id=3}">Общежитие №1</a> <a class="dropdown-item" th:href="@{/photodorm?id=2}">Общежитие №2</a> <a class="dropdown-item" th:href="@{/photodorm?id=1}">Общежитие №3</a>
-            </div></li>
-
-    </ul>
-
-
-    <ul class="nav" th:fragment="navSpps" style="background-color: #009e5c;">
-        <li class="nav-item"><a class="nav-link" th:href="@{/spps}" style="color: white; font-size: 110%;">СППС</a></li>
-        <li class="nav-item"><a class="nav-link" th:href="@{/addPersonInSpps}" style="color: white; font-size: 110%;">Добавить</a></li>
-        <li class="nav-item"><a class="nav-link" th:href="@{/deletePersonInSpps}" style="color: white; font-size: 110%;">Снять с учета</a></li>
-        <li class="nav-item"><a class="nav-link" th:href="@{/archiveSpps}" style="color: white; font-size: 110%;">Архив</a></li>
-
-        <li class="menu-item nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 110%; color: white;"> Статистика </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" th:href="@{/sppsStat}">Вся статистика</a>
-                <hr style="margin-top: 5px; margin-bottom: 5px;">
-                <a class="dropdown-item" th:href="@{/statSpps}">Статистика СОП, ИПР, ПИРП</a> <a class="dropdown-item" th:href="@{/statOrphans}">Статистика сирот</a> <a class="dropdown-item" th:href="@{/statSppsByGroup}">Статистика СОП, ИПР, ПИРП по отделению и группе</a>
-            </div></li>
-
-        <li class="menu-item nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 110%; color: white;"> Документы </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="/spps/docs">Все документы</a>
-                <!--<hr style="margin-top: 5px;margin-bottom: 5px;">
-                      <a class="dropdown-item" href="/downWord/Заявление.docx" >Заявление</a>
-                      <a class="dropdown-item" href="/downWord/Договор.docx" >Договор</a>
-                      <a class="dropdown-item" href="/downWord/Акт о сдаче жилого помещения.docx" >Акт о сдаче жилого помещения в общежитии</a>
-                      -->
-            </div></li>
-
-        <li class="nav-item"><a class="nav-link" th:href="@{/photoSpps}" style="color: white; font-size: 110%;">Фотогалерея</a></li>
-
-        <li class="nav-item" style="margin-left: auto;"><a class="nav-link disabled" style="color: white; font-size: 110%;">Контактный телефон: 66-14-11</a></li>
-
-    </ul>
-
-    <ul class="nav" th:fragment="navEdu" style="background-color: #009e5c;">
-        <li class="nav-item"><a class="nav-link" th:href="@{/educational}" style="color: white; font-size: 110%;">Учебная часть</a></li>
-        <li class="nav-item"><a class="nav-link" th:href="@{/educational/docs}" style="color: white; font-size: 110%;">Документы</a></li>
-        <li class="nav-item"><a class="nav-link" th:href="@{/educational/reports}" style="color: white; font-size: 110%;">Отчеты</a></li>
-        <li class="nav-item"><a class="nav-link" th:href="@{/educational/listStudents}" style="color: white; font-size: 110%;">Список учащихся</a></li>
-        <li class="nav-item"><a class="nav-link" th:href="@{/educational/archive}" style="color: white; font-size: 110%;">Архив</a></li>
-    </ul>
-
-    <ul class="nav" th:fragment="navAdmission" style="background-color: #009e5c;">
-        <li class="nav-item"><a class="nav-link" th:href="@{/admissionsOffice}" style="color: white; font-size: 110%;">Приемная комиссия</a></li>
-        <li class="nav-item"><a class="nav-link" th:href="@{/transferSelCom}" style="color: white; font-size: 110%;">Перевод</a></li>
-        <!-- li class="nav-item"><a class="nav-link" th:href="@{/staticticAvgBySpecialty}" style="color: white; font-size: 110%;">Статистика</a></li-->
-        <!-- li class="nav-item"><a class="nav-link" th:href="@{/personSelComSearch}" style="color: white; font-size: 110%;">Выборка</a></li-->
-        
-        <!-- >li class="menu-item nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 110%; color: white;">Статистика по ср. балл</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="/staticticAvgBySpecialty">Статистика по специальностям</a>
-                
-                <a class="dropdown-item" href="/index/createDocxStatisticAvgScoreSelCom/ССО">Средние баллы (ССО)</a>
-                <a class="dropdown-item" href="/index/createDocxStatisticAvgScoreSelCom/ПТО">Средние баллы (ПТО)</a>
-            </div></li-->
-        <!-- li class="nav-item"><a class="nav-link" th:href="@{/admissionsOffice}" style="color: white; font-size: 110%;">Отчеты</a></li-->
-        
-        <li class="menu-item nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 110%; color: white;"> Отчёты</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="/index/docxSelCom/ССО">ССО</a>
-                <a class="dropdown-item" href="/index/docxSelCom/ПТО">ПТО</a>
-                <a class="dropdown-item" href="/index/createDocxStatisticAvgScoreSelCom/ССО">Средние баллы (ССО)</a>
-                <a class="dropdown-item" href="/index/createDocxStatisticAvgScoreSelCom/ПТО">Средние баллы (ПТО)</a>
-            </div></li>
-        <!-- li class="nav-item"><a class="nav-link" th:href="@{/admissionsOffice}" style="color: white; font-size: 110%;">Добавление профессии</a></li-->
-        <li class="nav-item"><a class="nav-link" th:href="@{/enrollment}" style="color: white; font-size: 110%;">Зачисление</a></li>
-        <li class="nav-item"><a class="nav-link" th:href="@{/admissionsOffice/archive}" style="color: white; font-size: 110%;">Архив</a></li>
-    </ul>
-
-</body>
+<body></body>
 </html>
